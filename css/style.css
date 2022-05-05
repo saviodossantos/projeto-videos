@@ -1,1 +1,9 @@
-/* teste */
+body{
+    background-color: black;
+    color: white;
+}
+
+.imagens{
+    width: 90%;
+    border-radius: 20px;
+}
