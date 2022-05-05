@@ -1,169 +1,101 @@
-<!DOCTYPE html>
-
+<!Doctype html>
 <html>
     <head>
         <title>StreamOn</title>
         <meta charset="utf-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-    </head>
-    
-    <body>
-
-        <header>
-
-            <a href="index.html">
-                <img src="imgs/logo.jpeg" width="100">
-            </a>
-            
-        </header>
         
-        <nav>
-            
-            <a href="index.html">Início</a>
-            <a href="produtos.html">Catálogo</a>
-            <a href="contato.html">Entre em contato</a>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <img src="imgs/logo.jpeg" width="150">
+            </a>
+        </header>
 
+        <nav class="text-center">
+            <a href="index.html" target="_blank">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
         </nav>
 
-        <section>
+        <section class="container">
 
-            <h1><i>Bem vindo ao StreamOn</i></h1>
-
+            <h1 class="text-center">Conheça nossa galeria de leitura</h1>
+            
             <article>
+
                 <p>
-                    Nullam iaculis nisi ac mauris laoreet, dignissim consectetur velit fringilla. Maecenas id fringilla orci. Nullam ut magna elit. Nam vel odio lectus. Morbi ultrices sapien sed eros convallis faucibus. Etiam id ipsum ut purus sodales mattis. Curabitur enim odio, iaculis in placerat nec, porttitor id augue. Suspendisse potenti. Nullam lacinia id mi nec porttitor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsam molestias aperiam ad possimus numquam delectus rem cumque atque consectetur quia dolore dicta assumenda et, similique natus. Voluptatum, facere repudiandae.
+                    Nullam iaculis nisi ac mauris laoreet, dignissim consectetur velit fringilla. <b>Maecenas id fringilla orci.</b> <i> Nullam ut magna elit.</i> Nam vel odio lectus. Morbi ultrices sapien sed eros convallis faucibus.<br>Etiam id ipsum ut purus sodales mattis. Curabitur enim odio, iaculis in placerat nec, porttitor id augue. Suspendisse potenti. Nullam lacinia id mi nec porttitor.
                 </p>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo accusamus assumenda error aliquam, eum impedit placeat laboriosam fugit quas facere fuga, pariatur eveniet atque minus officia mollitia, consectetur omnis quidem! Eaque alias aliquam vitae, similique consequatur quam ipsam possimus repellat consectetur rerum, dolore voluptates fugiat eveniet, recusandae aliquid. Vel, qui ipsa nemo dicta consequuntur nobis, ea molestias non asperiores, magnam sint sed tempore optio. Officia at animi minima tenetur vero.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsam molestias aperiam ad possimus numquam delectus rem cumque atque consectetur quia dolore dicta assumenda et, similique natus. Voluptatum, facere repudiandae.
                 </p>
 
                 <hr>
 
-                <ul>
+                <div id="galeriaVideos" class="mt-4 mb-4">
+                    <div class="row wrap">
+                        <div class="col-sm-4">
+                            <a href="https://www.youtube.com/watch?v=rsQEor4y2hg" target="_blank">
+                                <img src="imgs/filme1.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://www.youtube.com/watch?v=X23XCFgdh2M" target="_blank">
+                                <img src="imgs/filme2.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://www.youtube.com/watch?v=gLRLkTdi5Ns" target="_blank">
+                                <img src="imgs/filme3.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mt-5">
+                            <a href="https://www.youtube.com/watch?v=f1ozk30l5YQ" target="_blank">
+                                <img src="imgs/filme4.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mt-5">
+                            <a href="https://www.youtube.com/watch?v=LcCrLZceCmg" target="_blank">
+                                <img src="imgs/filme5.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mt-5">
+                            <a href="https://www.youtube.com/watch?v=gLRLkTdi5Ns" target="_blank">
+                                <img src="imgs/filme6.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mt-5">
+                            <a href="http://youtube.com/watch?v=-azqkQ3c1bo" target="_blank">
+                                <img src="imgs/filme7.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mt-5">
+                            <a href="https://www.youtube.com/watch?v=no0d18qvw0o" target="_blank">
+                                <img src="imgs/filme8.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mt-5">
+                            <a href="https://www.youtube.com/watch?v=Gm3o0bfGP3g" target="_blank">
+                                <img src="imgs/filme9.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
 
-                    <li>Minha Lista</li> 
-                    <li>Filmes</li>
-                    <li>Séries</li>
-                    <li>Documentários</li>
-
-                </ul>
             </article>
+            
 
-            <h2>Filmes</h2>
-
-            <article>
-
-                <h3>Lançando Hoje</h3>
-
-                <a href="#">
-                    <p>Doutor Esranho: Multiverso da Loucura</p>
-                    <img src="imgs/film1.jpg" width="180">
-                </a>
-
-                <h3>Em nosso catálogo</h3>
-
-                <table border="1" width="300">
-                    <tr>
-                        <th>Título</th>
-                        <th>Duração</th>
-                        <th>Lançamento</th>
-                    </tr>
-                    <tr>
-                        <td>The Batman</td>
-                        <td>192min</td>
-                        <td>2022</td>
-                    </tr>
-                    <tr>
-                        <td>Sonic 2</td>
-                        <td>148min</td>
-                        <td>2022</td>
-                    </tr>
-
-                </table>
-
-            </article>
 
         </section>
 
-        <section>
-
-            <h2>Séries</h2>
-
-            <article>
-
-                <h3>Lançando Hoje</h3>
-
-                <a href="#">
-                    <p>Blindspot</p>
-                    <img src="imgs/serie3.jpg" width="180">
-                </a>
-
-                <h3>Em nosso catálogo</h3>
-
-                <table border="1" width="400">
-                    <tr>
-                        <th>Título</th>
-                        <th>Duração</th>
-                        <th>Lançamento</th>
-                    </tr>
-                    <tr>
-                        <td>Greys Anatomy</td>
-                        <td>42min</td>
-                        <td>2010 - Atual</td>
-                    </tr>
-                    <tr>
-                        <td>Orange is the new Black</td>
-                        <td>44min</td>
-                        <td>2015 - Atual</td>
-                    </tr>
-
-                </table>
-
-            </article>
-
-        </section>
-
-        <section>
-
-            <h2>Documentários</h2>
-
-            <article>
-
-                <h3>Lançando Hoje</h3>
-
-                <a href="#">
-                    <p>A Terra à Noite</p>
-                    <img src="imgs/doc1.jpg" width="180">
-                </a>
-
-                <h3>Em nosso catálogo</h3>
-
-                <table border="1" width="400">
-                    <tr>
-                        <th>Título</th>
-                        <th>Duração</th>
-                        <th>Lançamento</th>
-                    </tr>
-                    <tr>
-                        <td>Vida Após a Morte</td>
-                        <td>175min</td>
-                        <td>2021</td>
-                    </tr>
-                    <tr>
-                        <td>O Código Bill Gates</td>
-                        <td>146min</td>
-                        <td>2019</td>
-                    </tr>
-
-                </table>
-
-            </article>
-
-        </section>
-
-        <footer>
-            <p>&copy; 2022 - Todos os Direitos Reservados.</p>
+        <footer class="mt-5">
+            <p>&copy;2022 - Todos os direitos reservados</p>
         </footer>
     </body>
 </html>
