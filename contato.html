@@ -4,12 +4,14 @@
     <head>
         <title>StreamOn</title>
         <meta charset="utf-8">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     
     <body>
 
-        <header>
+        <header class="text-center">
 
             <a href="index.html">
                 <img src="imgs/logo.jpeg" width="100">
@@ -17,22 +19,40 @@
             
         </header>
         
-        <nav>
+        <nav class="text-center">
             
             <a href="index.html">Início</a>
             <a href="produtos.html">Catálogo</a>
-            <a href="contato.html">Entre em contato</a>
 
         </nav>
 
-        <section>
-            <article>
-
-            </article>
+        <section class="text-center">
+        <h1> Entre em contato conosco!</h1>
+        <form id="formContato" method="get" action="index.html">
+            <fieldset>
+                <legend>Fale conosco</legend>
+                <div>
+                    <label> Nome :</label>
+                    <input name="nomeUsuario" id="nomeUsuario"maxlength="50">
+                </div>
+                <div>
+                    <label> Email:</label required>
+                    <input name="emailUsuario" id="emailUsuario"type="email" maxlength="50" required>
+                </div>
+                <label> Comentarios :<br   /></label required>
+                    <textarea name="comentario" id="comentario"rows="8"></textarea>
+                </div>
+                <div>
+                    <button id="btContato" type="button">Confirmar</button>
+                </div>
+            </fieldset>
+        </form>
+            <article> </article>
         </section>
 
         <footer>
-
-        </footer>
+            <p>&copy;2022 - Todos os direitos reservados. </p>
+  </footer>
     </body>
+    <script src= "../projeto-videos/js/controle.js"></script>
 </html>
