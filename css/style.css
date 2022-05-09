@@ -6,4 +6,10 @@ body{
 .imagens{
     width: 90%;
     border-radius: 20px;
+    transition: width .5s; /*aplica o efeito de transição em cada elemento com essa class */
+}
+
+.imagens:hover{ /*faz o efeito de transição acontecer*/
+    width: 93%;
+    border:1px solid red;
 }
