@@ -1,14 +1,13 @@
 var formC=document.forms.formContato
-document.querySelector("#btContato").onclick=function(){
-    //alert('Aprende a escrever direito')
+var formL=document.forms.formLogin
+ document.querySelector("#btContato").onclick=function(){
     if(formC.nomeUsuario.value == ""){
         alert("Preencha o nome!")
-     }else if (formC.emailUsuario.value == ""){
-        alert("Preencha o email!")
-    }else if (senhaUsuario.value == ""){
-        alert("Preencha a senha!")
-    }else if (comentario.value == ""){
+     }else if (formC.emailContato.value == ""){
+       alert("Preencha o email!")
+     }else if (formC.comentario.value == ""){
             alert("Preencha o comentario!")
-    }else{
-        formC.submit()}
-    }
+     }else{
+       formC.submit()}
+     }
+clea
