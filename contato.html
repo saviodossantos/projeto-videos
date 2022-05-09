@@ -6,51 +6,59 @@
         <meta charset="utf-8">
         <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
     </head>
     
     <body>
+        <div class="container">
+            <header class="text-center">
+                <div>
+                    <div >
+                        <a href="index.html">
+                            <img src="imgs/logo.jpeg" width="300">
+                        </a>
+                    </div>
+                    <div>
+                       
+                    </div>
 
-        <header class="text-center">
+                </div>
+            </header>
 
-            <a href="index.html">
-                <img src="imgs/logo.jpeg" width="100">
-            </a>
-            
-        </header>
-        
-        <nav class="text-center">
-            
-            <a href="index.html">Início</a>
-            <a href="produtos.html">Catálogo</a>
-
-        </nav>
-
-        <section class="text-center">
-        <h1> Entre em contato conosco!</h1>
-        <form id="formContato" method="get" action="index.html">
+            <nav class="text-center">
+                <a href="index.html" target="_blank">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <section class="container">
+                <h1 class="text-center mt-5 mb-5 " > <i>Número 1 em streaming!</i></h1>
+                <form id="formContato" class="w-50 mx-auto p-3 mt-4 mb-4"
+                style="border:1px solid #ccc; border-radius:12px;">
             <fieldset>
-                <legend>Fale conosco</legend>
                 <div>
+                <legend class="text-center" class="col-sm-4 mt-5">Entre em contato conosco! </legend>
+                </div>
+                <div class="form-group">
                     <label> Nome :</label>
-                    <input name="nomeUsuario" id="nomeUsuario"maxlength="50">
+                    <input class="form-control" name="nomeUsuario" id="nomeUsuario"maxlength="50">
                 </div>
-                <div>
-                    <label> Email:</label required>
-                    <input name="emailUsuario" id="emailUsuario"type="email" maxlength="50" required>
+                <div class=""form-group">
+                    <label> E-mail :</label required>
+                    <input class="form-control" name="emailContato" id="emailUsuario"type="email" maxlength="50" required>
                 </div>
+                <div class="form-group">
                 <label> Comentarios :<br   /></label required>
-                    <textarea name="comentario" id="comentario"rows="8"></textarea>
+                    <textarea class="form-control" name="comentario" id="comentario"rows="8"></textarea>
                 </div>
                 <div>
-                    <button id="btContato" type="button">Confirmar</button>
+                    <button id="btContato" type="button" class="btn btn-info">Confirmar</button>
                 </div>
             </fieldset>
         </form>
             <article> </article>
         </section>
 
-        <footer>
+        <footer class="mt-5">
             <p>&copy;2022 - Todos os direitos reservados. </p>
   </footer>
     </body>

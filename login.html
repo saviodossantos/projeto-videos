@@ -8,15 +8,24 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header class="text-center">
-            <a href="">
-                <img src="imgs/logo.jpeg" width="250">
-            </a>
-       </header>
+       <div class="container">
+            <header>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="index.html">
+                            <img src="imgs/logo.jpeg" width="150">
+                        </a>
+                    </div>
+                    <div class="col-sm-8">
+                        <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                    </div>
+
+                </div>
+            </header>
        <nav></nav>
        <section class="text-center">
            <h1>Login</h1>
-           <form id="formContato" method="get" action="index.html">
+           <form id="formLogin" method="get" action="index.html">
             <fieldset>
                 <legend> </legend>
                 <div>
@@ -28,7 +37,7 @@
                 <input name="senha" id="senhaUsuario" type="password" maxlength="600" /></label required>
                 </div>
                 <div>
-                <button id="btContato" type="button">Confirmar</button>
+                <button id="btLogin" type="button">Confirmar</button>
                 </div>
             </fieldset>
             </form>
@@ -37,5 +46,5 @@
         <p>&copy;2022 - Todos os direitos reservados. </p>
      </footer>
     </body>
-    <script src= "../projeto-videos/js/controle.js"></script>
+    <script src= "../projeto-videos/js/controlelogin.js"></script>
 </html>
