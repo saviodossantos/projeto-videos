@@ -14,27 +14,27 @@
             </a>
        </header>
        <nav></nav>
-       <section class="text-center">
-           <h1>Login</h1>
-           <form id="formContato" method="get" action="index.html">
-            <fieldset>
-                <legend> </legend>
-                <div>
-                    <label> email :</label required>
-                    <input name="email" id= "emailUsuario"  maxlength="600" required>
-                </div>
-                <div>
-                <label> Senha :</label required>
-                <input name="senha" id="senhaUsuario" type="password" maxlength="600" /></label required>
-                </div>
-                <div>
-                <button id="btContato" type="button">Confirmar</button>
-                </div>
-            </fieldset>
+       <form id="formLogin" method="post" action="index.html" class="w-50 mx-auto p-3 mt-5 mb-5" 
+            style="border:1px solid #ccc;border-radius:12px;">
+                <fieldset>
+                    <legend>Preencha os campos para entrar</legend>
+                    <div class="form-group">
+                        <label>E-mail :</label>
+                        <input class="form-control" name="email" id="email" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha :</label>
+                        <input class="form-control" type="password" name="senha" id="senha" maxlength="8">
+                    </div>
+                    <div>
+                        <button type="button" id="btLogin" class="btn btn-info">Confirmar</button>
+                    </div>
+                </fieldset>
             </form>
-       </section>
-       <footer >
-        <p>&copy;2022 - Todos os direitos reservados. </p>
+    
+         <!-- Setor de rodapé-->
+      <footer class="bg-dark p-4 text-white text-center mt-4">
+    <p> &copy;2022 - Todos os direitos reservados.</p>
      </footer>
     </body>
     <script src= "../projeto-videos/js/controle.js"></script>
