@@ -60,7 +60,9 @@ for(var i=0;i<Super.length;i++){
     //insere o tag h3 com o titulo
     conteudo.innerHTML+= '<h3 class="col-sm-12">' + Super[i][0]+ '</h3>'
     //insere a imagem com 100% dentro de uma div espaço 3
-    conteudo.innerHTML+= '<div class="col-sm-4"><img src="imgs/'+ Super[i][1]+ '" class="w-100" /></div>'
+  
+    conteudo.innerHTML+= '<div class="col-sm-4"><a href="single.html"><img src="imgs/' + Super[i][1]+ '" class="w-100"/></div>'
+
     //insere o paragrafo com a resenha dentro de uma div espaço 9
     
     conteudo.innerHTML+=resenha
