@@ -1,5 +1,5 @@
 console.log(document.forms.formContato)
-var formC=document.forms.formContato
+var formC = document.forms.formContato
 
 document.querySelector("#btContato").onclick=function(){
     

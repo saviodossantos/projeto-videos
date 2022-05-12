@@ -21,7 +21,7 @@ for (var i=0; i < videos.length; i++){ //lógica de iteração para consumo do a
     conteudo.classList.add('col-sm-4')
     conteudo.classList.add('mt-5')
     
-    conteudo.innerHTML += '<a href="' + single + '"><img src="imgs/' + videos[i] + '" class="imagens"></a>'
+    conteudo.innerHTML += '<a href="docs/' + single + '"><img src="imgs/' + videos[i] + '" class="imagens"></a>'
     galeriaVideos.appendChild(conteudo)
     
     console.log(videos)
