@@ -9,5 +9,6 @@ document.querySelector("#btLogin").onclick=function(){
         alert("Preencha a senha!")
     }else{
         formL.submit()
+        localStorage.emailUser=formL.email.value
     }
 }
