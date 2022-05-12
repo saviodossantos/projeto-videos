@@ -1,3 +1,4 @@
+
 var videos = [
     ["filme1.jpeg"],
     ["filme2.jpeg"],
@@ -25,3 +26,5 @@ for (var i=0; i < videos.length; i++){ //lógica de iteração para consumo do a
     
     console.log(videos)
 }
+
+
