@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center">
+            <div>
+                <div>
+                    <a href="../index.html">
+                        <img src="../imgs/logo.jpeg" width="300">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="text-center">
+            <a href="../index.html" target="_blank">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <section class="container">
+            <article>
+                <h1 class="text-center mt-5 mb-5 "> <i>Número 1 em streaming!</i></h1>
+                <form id="formContato" class="w-50 mx-auto p-3 mt-4 mb-4"
+                    style="border:1px solid #ccc; border-radius:12px;">
+                    <fieldset>
+                        <div>
+                            <legend class="text-center" class="col-sm-4 mt-5"><b>Entre em contato conosco!</b>
+                                <legend>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Nome :</b></label>
+                            <input class="form-control" name="nomeUsuario" id="nomeUsuario" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label><b>E-mail :</b></label required>
+                            <input class="form-control" name="emailContato" id="emailUsuario" type="email"
+                                maxlength="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Comentários :</b><br /></label required>
+                            <textarea class="form-control" name="comentario" id="comentario" rows="8"></textarea>
+                        </div>
+                        <div>
+                            <button id="btContato" type="button" class="btn btn-info"><b>Confirmar</b></button>
+                        </div>
+                    </fieldset>
+                </form>
+            </article>
+        </section>
+
+        <footer class="mt-5">
+            <p>&copy;2022 - Todos os direitos reservados. </p>
+        </footer>
+</body>
+<script src="../js/controle.js"></script>
+
+</html>
