@@ -1,7 +1,7 @@
 console.log('Testando JS')
 
 //escopos var let const
-let videos='{"Nome":"Karol","idade":"","email":"", "preferencia":"","dataInicio":"","tipoAssinante":"","valor":""}'
+let videos = '{"Nome":"Silvio","idade":"50","email":"silvio22@gmail.com","preferencia": "Açao ,Terror, Suspense","dataInicio":"13/05/2022","tipoAssinante":"Ouro","valor":"R$:39,50"}'
 
 console.log(videos)
 let videosJSON= JSON.parse(videos)
@@ -28,3 +28,36 @@ p5.innerHTML="Tipo Assinante:" +videosJSON.tipoAssinante
 p6.innerHTML="Valor:" +videosJSON.valor
 
 
+
+let user = localStorage.emailUser
+let bemVindo = document.querySelector("#bemVindo")
+let entrar = document.querySelector("#entrar")
+let sair = document.querySelector("#sair")
+
+
+//console.log(user.indexOf('@'))
+//console.log(user.substring(0,user.indexOf('@')))
+
+
+
+function msgUser() {
+    let nomeUser = user.substring(0, user.indexOf('@'))
+    bemVindo.innerHTML = 'Olá <b>' + nomeUser + '</b>'
+    entrar.style.display = "none"
+
+
+}
+function resetUser() {
+    sair.style.display = "none"
+}
+
+sair.onclick=function(){
+    localStorage.removeItem('emailUser')
+    location.href='../index.html'
+}
+
+localStorage.emailUser ? msgUser() : resetUser()
+
+localStorage.setItem("nome","Silvio")
+localStorage.setItem("email","silvio22@gmail.com")
+localStorage.setItem("telefone","2230-0000")
