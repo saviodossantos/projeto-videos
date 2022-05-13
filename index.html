@@ -4,10 +4,8 @@
 <head>
     <title>StreamOn</title>
     <meta charset="utf-8">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -15,7 +13,7 @@
     <div class="container">
         <header>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <a href="index.html">
                         <img src="imgs/logo.jpeg" width="150">
                     </a>
@@ -23,24 +21,22 @@
                 <div class="col-sm-6">
                     <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3 mt-3 dd-flex justify-content-end">
                     <span id="bemVindo"></span>
-                    <a id="entrar" href="docs/login.html" class="btn btn-danger" class="ml-5 pl-5">Entrar</a>
-                    <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger" class="ml-5 pl-5"
-                        id="Sair">Sair</a>
-
+                    <a id="entrar" href="docs/login.html" class="btn btn-danger">Entrar</a>
+                    <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
                 </div>
             </div>
         </header>
 
         <nav class="d-flex justify-content-around mb-4 mt-2">
-            <a href="index.html" target="_blank">Início</a>
-            <a href="docs/produtos.html">Produtos</a>
-            <a href="docs/contato.html">Contato</a>
-            <a href="docs/cadastro.html" class="text-end">Cadastre-se</a>
+            <a href="index.html" class="btn btn-dark">Início</a>
+            <a href="docs/produtos.html" class="btn btn-dark">Produtos</a>
+            <a href="docs/contato.html" class="btn btn-dark">Contato</a>
+            <a href="docs/cadastro.html" class="btn btn-dark">Cadastre-se</a>
         </nav>
-        <section>
 
+        <section>
             <article>
                 <hr>
                 <div id="galeriaVideos" class="mt-4 mb-4 row"></div>
@@ -53,6 +49,6 @@
 
 </body>
 <script src="js/index.js"></script>
-<script src="js/index2.js"></script>
+<script src="js/geral.js"></script>
 
 </html>
