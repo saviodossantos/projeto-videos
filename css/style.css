@@ -13,3 +13,9 @@ body{
     width: 93%;
     border:1px solid red;
 }
+
+.resumoPedido{
+    border: 1px solid #fff;
+    border-radius: 13px;
+    background-color: rgb(45, 45, 45);
+}

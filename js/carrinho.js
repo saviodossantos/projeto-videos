@@ -1,14 +1,40 @@
-let carrinho = '{"nome":"Adalberto","idade":34,"livros":["Bill Gates","Terror em Lake City","O Elefante Branco","Capitães de Areia"]}'
+let carrinho = [
+    '{"produto":["filme1.jpeg","filme2.jpeg","filme3.jpg"],"qtd":"100","preco":["R$10,90","R$29,90","R$7,33"]}'
+]
 let carrinhoJSON = JSON.parse(carrinho) //JSON.parse transforma o array usuario em objeto
-console.log(carrinho)
 let listaCarrinho = document.querySelector("#listaCarrinho")
-listaCarrinho.innerHTML = carrinho.nome + ", " + carriho.idade + " anos"
-listaLivros.innerHTML = '<li>' + carrinhoJSON.livros[1] + '</li>'
-listaLivros.innerHTML += '<li>' +carrinhoJSON.livros[2] + '</li>'
-listaLivros.innerHTML += '<li>' +carrinhoJSON.livros[0] + '</li>'
+let td
+console.log(carrinho)
+console.log(carrinhoJSON)
 
-let livrosFor = document.querySelector("#livrosFor")
+for (var i = 0; i < carrinhoJSON.produto.length; i++) {
+    
+    let produtoCarrinho = document.querySelector("#produtoCarrinho")
+    produtoCarrinho.innerHTML += '<img src="../imgs/' + carrinhoJSON.produto[i] + '">'
+    // produtoCarrinho.classList.add('w-50')
 
-for(var i=0; i < usuarioJSON.livros.length; i++){
-    livrosFor.innerHTML += (i+1) + ': ' + usuarioJSON.livros[i] + '<br>'
 }
+
+// for (var i = 0; i < carrinhoJSON.qtd.length; i++) {
+    
+//     let qtdCarrinho = document.querySelector("#qtdCarrinho")
+//     qtdCarrinho.innerHTML += '<td>' + carrinhoJSON.qtd[i] + '</td>'
+
+// }
+
+// for (var i = 0; i < carrinhoJSON.preco.length; i++) {
+    
+//     let precoCarrinho = document.querySelector("#preco")
+//     precoCarrinho.innerHTML += '<td>' + carrinhoJSON.preco[i] + '</td>'
+
+// }
+
+listaCarrinho.appendChild("#produtoCarrinho")
+
+
+
+// let livrosFor = document.querySelector("#livrosFor")
+
+// for(var i=0; i < usuarioJSON.livros.length; i++){
+//     livrosFor.innerHTML += (i+1) + ': ' + usuarioJSON.livros[i] + '<br>'
+// }

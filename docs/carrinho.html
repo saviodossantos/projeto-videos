@@ -36,14 +36,41 @@
         </nav>
 
         <section>
-            <div id="carrinho" class="mt-5 mb-5">
-                <ul id="listaCarrinho"></ul>
-            </div>
+            <article>
+                <div class="row">
+                    <div id="carrinho" class="col-sm-9 mt-5 mb-5 text-center">
+                        <table border="1" width="500">
+                            <tr>
+                                <td>Produto</td>
+                                <td>Quantidade</td>
+                                <td>Preço</td>
+                            </tr>
+                            <tr id="listaCarrinho">
+                                <td id="produtoCarrinho"></td>
+                                <!-- <td id="qtdCarrinho"></td> -->
+                                <!-- <td id="preco"></td> -->
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center">Resumo do Pedido</h5>
+                        <div class="resumoPedido p-3 mt-3">
+                            <p>$totalProdutos Protudos</p>
+                            <p>Total R$ $valorTotal</p>
+                            <button class="btn btn-sm btn-primary mt-5">Continuar</button>
+                            <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
         </section>
         <footer class="mt-5">
             <p>&copy;2022 - Todos os direitos reservados</p>
         </footer>
     </div>
 </body>
+<script src="../js/carrinho.js"></script>
 
 </html>
