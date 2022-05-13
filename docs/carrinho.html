@@ -32,61 +32,44 @@
 
         <nav class="d-flex justify-content-around mb-4 mt-2">
             <a href="../index.html" class="btn btn-dark">Início</a>
-            <a href="produtos.html" class="btn btn-dark">Produtos</a>
-            <a href="contato.html" class="btn btn-dark">Contato</a>
-            <a href="cadastro.html" class="btn btn-dark">Cadastre-se</a>
+            <a href="docs/produtos.html" class="btn btn-dark">Produtos</a>
+            <a href="docs/contato.html" class="btn btn-dark">Contato</a>
+            <a href="docs/cadastro.html" class="btn btn-dark">Cadastre-se</a>
         </nav>
 
         <section>
-            <div id="galeriaLivros" class="mt-5 mb-5">
+            <article>
                 <div class="row">
-                    <div class="col-sm-10">
-                        <h1>Meu Carrinho</h1>
-                        <div class="row">
-
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <a href="single.html">
-                                            <p class="col-sm-4 ">Produto</p>
-                                        </a>
-                                    </div>
-                                    <p class="col-sm-4 ">Qtd</p>
-                                    <p class="col-sm-4 ">Preço</p>
-                                </div>
-                            </div>
-
-                            <div id="galeriaVideos" class="mt-4 mb-4">
-                                <div class="row wrap">
-                                    <div class="col-sm-3">
-                                        <a href="produtos.html">
-                                            <img src="imgs/filme13.jpeg" class="imagens">
-                                        </a>
-                                    </div>
-
-                                    <div class="col-sm-3">
-                                        <a href="produtos.html">
-                                            <img src="imgs/filme17.jpeg" class="imagens">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <a href="produtos.html">
-                                            <img src="imgs/filme19.jpeg" class="imagens">
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
+                    <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
+                        <table class="table text-white" id="listaCarrinho">
+                            <tr>
+                                <th scope="">Produto</th>
+                                <th scope="">Quantidade</th>
+                                <th scope="">Preço</th>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center">Resumo do Pedido</h5>
+                        <div class="resumoPedido p-3 mt-3">
+                            <p>$totalProdutos Produtos</p>
+                            <p>Total R$ <span id="valorTotal"></span> </p>
+                            <button class="btn btn-sm btn-primary mt-5">Continuar</button>
+                            <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
                         </div>
                     </div>
+
                 </div>
-            </div>
+            </article>
         </section>
         <footer class="mt-5">
             <p>&copy;2022 - Todos os direitos reservados</p>
         </footer>
     </div>
 </body>
+<script src="../js/carrinho.js"></script>
 <!-- <script src="../js/geral.js"></script> -->
 
 </html>
