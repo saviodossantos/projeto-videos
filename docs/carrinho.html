@@ -31,35 +31,31 @@
         </header>
 
         <nav class="d-flex justify-content-around mb-4 mt-2">
-            <a href="../index.html">Início</a>
-            <a href="docs/produtos.html">Produtos</a>
-            <a href="docs/contato.html">Contato</a>
-            <a href="docs/cadastro.html" class="text-end">Cadastre-se</a>
+            <a href="../index.html" class="btn btn-dark">Início</a>
+            <a href="docs/produtos.html" class="btn btn-dark">Produtos</a>
+            <a href="docs/contato.html" class="btn btn-dark">Contato</a>
+            <a href="docs/cadastro.html" class="btn btn-dark">Cadastre-se</a>
         </nav>
 
         <section>
             <article>
                 <div class="row">
-                    <div id="carrinho" class="col-sm-9 mt-5 mb-5 text-center">
-                        <table border="1" width="500">
+                    <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
+                        <table class="table text-white" id="listaCarrinho">
                             <tr>
-                                <td>Produto</td>
-                                <td>Quantidade</td>
-                                <td>Preço</td>
-                            </tr>
-                            <tr id="listaCarrinho">
-                                <td id="produtoCarrinho"></td>
-                                <!-- <td id="qtdCarrinho"></td> -->
-                                <!-- <td id="preco"></td> -->
+                                <th scope="">Produto</th>
+                                <th scope="">Quantidade</th>
+                                <th scope="">Preço</th>
                             </tr>
                             
                         </table>
                     </div>
+                    <div class="col-sm-2"></div>
                     <div class="col-sm-3">
                         <h5 class="text-center">Resumo do Pedido</h5>
                         <div class="resumoPedido p-3 mt-3">
-                            <p>$totalProdutos Protudos</p>
-                            <p>Total R$ $valorTotal</p>
+                            <p>$totalProdutos Produtos</p>
+                            <p>Total R$ <span id="valorTotal"></span> </p>
                             <button class="btn btn-sm btn-primary mt-5">Continuar</button>
                             <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
                         </div>
