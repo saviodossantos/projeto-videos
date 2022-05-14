@@ -23,7 +23,8 @@ if(formC.nomeContato.value == ""){
     localStorage.Nome=formC.nomeContato.value
     localStorage.Email=formC.emailContato.value
     localStorage.Telefone=formC.telefoneContato.value
-    localStorage.removeItem=senhaContato
-    localStorage.removeItem=confsenhaContato     
+    localStorage.removeItem("senhaContato")
+    localStorage.removeItem("confsenhaContato")
+
 }
 }
