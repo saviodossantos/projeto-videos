@@ -1,3 +1,7 @@
+footer{bottom: 0 !important;position:fixed;}
+
+/* ajeitar o css abaixo em outro momento */
+
 body{
     background-color: black;
     color: white;
