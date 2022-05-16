@@ -10,4 +10,3 @@ var formL=document.forms.formLogin
      }else{
        formC.submit()}
      }
-clea
