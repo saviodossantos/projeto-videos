@@ -1,4 +1,4 @@
-body{
+ body{
     background-color: black;
     color: white;
 }
@@ -13,3 +13,13 @@ body{
     width: 93%;
     border:1px solid red;
 }
+
+body {
+    background-color: lightblue; /* cor de fundo*/
+    /* imagens de fundo*/
+    background-image: url('https://www.ppt-backgrounds.net/thumbs/hells-hd-frame-presentation.jpeg');
+    /* não repetir a imagens*/
+    background-repeat:no-repeat ;
+    /* ajustar ao tamanho de capa*/
+    background-size: cover;
+  }
