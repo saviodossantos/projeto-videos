@@ -15,5 +15,10 @@ if(formC.nomeContato.value == ""){
     alert("Confirme a sua senha!")
 }else{
     formC.submit()
+    localStorage.nomeContato=formC.nomeContato.value
+    localStorage.emailContato=formC.emailContato.value
+    localStorage.telefoneContato=formC.telefoneContato.value
+    localStorage.senhaContato=formC.senhaContato.value
+    localStorage.confsenhaContato=formC.confsenhaContato.value      
 }
 }
