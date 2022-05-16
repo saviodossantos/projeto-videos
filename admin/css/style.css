@@ -1,1 +1,30 @@
-footer{bottom: 0!important;position:fixed;}
+footer{bottom: 0 !important;position:fixed;}
+
+/* ajeitar o css abaixo em outro momento */
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.imagens{
+    width: 90%;
+    border-radius: 20px;
+    transition: width .5s; /*aplica o efeito de transição em cada elemento com essa class */
+}
+
+.imagens:hover{ /*faz o efeito de transição acontecer*/
+    width: 93%;
+    border:1px solid red;
+}
+
+/* carrinho  */
+.imagemCarrinho{
+    border-radius: 5%;
+    border:1px solid red;
+}
+
+.resumoPedido{
+    border: 1px solid #fff;
+    border-radius: 13px;
+    background-color: rgb(45, 45, 45);
