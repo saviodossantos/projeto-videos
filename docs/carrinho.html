@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="../index.html">
+                        <img src="../imgs/logo.jpeg" width="150">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                </div>
+                <div class="col-sm-3 mt-3 dd-flex justify-content-end">
+                    <span id="bemVindo"></span>
+                    <a id="entrar" href="login.html" class="btn btn-danger">Entrar</a>
+                    <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="d-flex justify-content-around mb-4 mt-2">
+            <a href="../index.html" class="btn btn-dark">Início</a>
+            <a href="docs/produtos.html" class="btn btn-dark">Produtos</a>
+            <a href="docs/contato.html" class="btn btn-dark">Contato</a>
+            <a href="docs/cadastro.html" class="btn btn-dark">Cadastre-se</a>
+        </nav>
+
+        <section>
+            <article>
+                <div class="row">
+                    <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
+                        <table class="table text-white" id="listaCarrinho">
+                            <tr>
+                                <th scope="">Produto</th>
+                                <th scope="">Quantidade</th>
+                                <th scope="">Preço</th>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center">Resumo do Pedido</h5>
+                        <div class="resumoPedido p-3 mt-3">
+                            <p>$totalProdutos Produtos</p>
+                            <p>Total R$ <span id="valorTotal"></span> </p>
+                            <button class="btn btn-sm btn-primary mt-5">Continuar</button>
+                            <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+        <footer class="mt-5">
+            <p>&copy;2022 - Todos os direitos reservados</p>
+        </footer>
+    </div>
+</body>
+<script src="../js/carrinho.js"></script>
+<!-- <script src="../js/geral.js"></script> -->
+
+</html>

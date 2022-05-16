@@ -1,11 +1,12 @@
-<!Doctype html>
+<!DOCTYPE html>
+
 <html>
 
 <head>
     <title>StreamOn</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -14,8 +15,8 @@
         <header>
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="index.html">
-                        <img src="imgs/logo.jpeg" width="150">
+                    <a href="../index.html">
+                        <img src="../imgs/logo.jpeg" width="150">
                     </a>
                 </div>
                 <div class="col-sm-6">
@@ -23,32 +24,33 @@
                 </div>
                 <div class="col-sm-3 mt-3 dd-flex justify-content-end">
                     <span id="bemVindo"></span>
-                    <a id="entrar" href="docs/login.html" class="btn btn-danger">Entrar</a>
+                    <a id="entrar" href="login.html" class="btn btn-danger">Entrar</a>
                     <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
                 </div>
             </div>
         </header>
 
         <nav class="d-flex justify-content-around mb-4 mt-2">
-            <a href="index.html" class="btn btn-dark">Início</a>
-            <a href="docs/produtos.html" class="btn btn-dark">Produtos</a>
-            <a href="docs/contato.html" class="btn btn-dark">Contato</a>
-            <a href="docs/cadastro.html" class="btn btn-dark">Cadastre-se</a>
+            <a href="../index.html" class="btn btn-dark">Início</a>
+            <a href="produtos.html" class="btn btn-dark">Produtos</a>
+            <a href="contato.html" class="btn btn-dark">Contato</a>
+            <a href="cadastro.html" class="btn btn-dark">Cadastre-se</a>
         </nav>
 
-        <section>
-            <article>
-                <hr>
-                <div id="galeriaVideos" class="mt-4 mb-4 row"></div>
-            </article>
+        <article>
+
+            <div id="filmes" class="row"></div>
+
+        </article>
         </section>
+
         <footer class="mt-5">
             <p>&copy;2022 - Todos os direitos reservados</p>
         </footer>
     </div>
-
 </body>
-<script src="js/index.js"></script>
-<script src="js/geral.js"></script>
+<script src="js/promocoes.js"></script>
+<!-- <script src="../js/geral.js"></script> -->
+
 
 </html>
