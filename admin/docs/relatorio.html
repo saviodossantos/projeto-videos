@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="../index-admin.html">
+                        <img src="../imgs/logo.jpeg" width="150">
+                    </a>
+                </div>
+                <nav class="mt-5 col-sm-9">
+                    <a href="../index.html" class="btn btn-dark mr-4">Início</a>
+                    <a href="docs/produtos.html" class="btn btn-dark mr-4">Produtos</a>
+                    <a href="docs/contato.html" class="btn btn-dark mr-4">Contato</a>
+                    <a href="docs/cadastro.html" class="btn btn-dark">Cadastre-se</a>
+                </nav>
+
+            </div>
+        </header>
+
+        <section id="tabs" class="project-tab mt-5">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2 class="font-weight-bold mb-3">Relatório Comercial</h2>
+                    <nav class="navListaRelatorio">
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active col-sm-3" id="nav-home-tab" data-toggle="tab"
+                                href="#assinantes" role="tab" aria-controls="nav-home"
+                                aria-selected="true">Assinantes</a>
+                            <a class="nav-item nav-link col-sm-3" id="nav-profile-tab" data-toggle="tab" href="#aluguel"
+                                role="tab" aria-controls="nav-profile" aria-selected="false">Aluguel</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="assinantes" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
+                            <table id="listaRelatorioAssinantes" class="table listaRelatorio" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>vazio</th>
+                                        <th>vazio</th>
+                                        <th>vazio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="nomeClienteAssinantes"></tr>
+                                    <tr id="descricaoServicoAssinantes"></tr>
+                                    <tr id="valorAssinantes"></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="aluguel" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <table id="listaRelatorioAluguel" class="table listaRelatorio" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Descrição do Serviço</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listaRelatorioAluguelBody">
+                                    <tr id="nomeClienteAluguel"></tr>
+                                    <tr id="descricaoServicoAluguel"></tr>
+                                    <tr id="valorAluguel"></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-3">
+                    <h5 class="text-center">Visão Macro</h5>
+                    <div class="visaoMacro p-3 mt-3">
+                        <p>Assinantes: <span id="totalAssinantes"></span></p>
+                        <p>Total: R$ <span id="totalAssinantesValor"></span> </p><br>
+                        <p>Filmes Alugados: <span id="totalAlugados"></span> </p>
+                        <p>Total: R$ <span id="totalAlugadosValor"></span> </p><br>
+                        <p>Média de filmes alugados: <span id="mediaFilmesAlugados"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-5">
+            <p>&copy;2022 - Todos os direitos reservados. </p>
+        </footer>
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/relatorio.js"></script>
+</html>
