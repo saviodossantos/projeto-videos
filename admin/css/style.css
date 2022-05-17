@@ -28,3 +28,16 @@ body{
     border: 1px solid #fff;
     border-radius: 13px;
     background-color: rgb(45, 45, 45);
+
+}
+/*
+body {
+    background-color: lightblue;
+    /* imagens de fundo
+    background-image: url('https://www.ppt-backgrounds.net/thumbs/hells-hd-frame-presentation.jpeg');
+    /* não repetir a imagem
+    background-repeat:no-repeat ;
+    /* ajustar ao tamanho de capa
+    background-size: cover;
+  }
+*/
