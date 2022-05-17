@@ -1,3 +1,7 @@
+footer{bottom: 0 !important;position:fixed;}
+
+/* ajeitar o css abaixo em outro momento */
+
 body{
     background-color: black;
     color: white;
@@ -24,14 +28,16 @@ body{
     border: 1px solid #fff;
     border-radius: 13px;
     background-color: rgb(45, 45, 45);
-}
 
+}
+/*
 body {
-    background-color: lightblue; /* cor de fundo*/
-    /* imagens de fundo*/
+    background-color: lightblue;
+    /* imagens de fundo
     background-image: url('https://www.ppt-backgrounds.net/thumbs/hells-hd-frame-presentation.jpeg');
-    /* não repetir a imagens*/
+    /* não repetir a imagem
     background-repeat:no-repeat ;
-    /* ajustar ao tamanho de capa*/
+    /* ajustar ao tamanho de capa
     background-size: cover;
   }
+*/
