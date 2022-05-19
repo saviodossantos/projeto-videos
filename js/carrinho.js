@@ -15,7 +15,7 @@ for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
 
     listaCarrinho.appendChild(tr)
-    
+
 }
 
 var val1 = carrinhoJSON.preco[0];
@@ -23,4 +23,53 @@ var val2 = carrinhoJSON.preco[1];
 var val3 = carrinhoJSON.preco[2];
 var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
 valor.innerHTML = valorTotal
+
+var Cupom20 = "123"
+var Cupom10 = "456"
+
+var DESCONTO1 = ("20")
+var DESCONTO2 = ("10")
+
+
+let cupom = document.querySelector("#cupom")
+
+let totalDesconto = document.querySelector("#totalDesconto")
+totalDesconto.style.display = "none"
+let totalDesconto2 = document.querySelector("#totalDesconto2")
+totalDesconto2.style.display = "none"
+
+let valor1 = document.querySelector("#TOTAL") // Cupom20
+let valor2 = document.querySelector("#TOTAL2") // Cupom10
+
+var PORCENTAGEM = parseInt((valorTotal * DESCONTO1) / 100);
+var TOTAL = parseInt((valorTotal - PORCENTAGEM))
+valor1.innerHTML = TOTAL
+
+var PORCENTAGEM2 = parseInt((valorTotal * DESCONTO2) / 100);
+var TOTAL2 = parseInt((valorTotal - PORCENTAGEM2))
+valor2.innerHTML = TOTAL2
+
+document.querySelector("#botao1").onclick = function () {
+
+    console.log(cupom.value)
+
+    if (totalDesconto.style.display == "none" && totalDesconto2.style.display == "none") { //se o display do totalDesconto e totalDesconto2 for igual a none
+
+        if (cupom.value == Cupom20) {
+            alert("cupom de 20% aplicado")
+            totalDesconto.style.display = ""
+        } else if (cupom.value == Cupom10) {
+            alert("cupom de 10% aplicado")
+            totalDesconto2.style.display = ""
+        } else {
+            alert("cupom nao aplicado")
+        }
+
+    } else {
+        alert("cupom já aplicado")
+    }
+
+}
+
+
 
