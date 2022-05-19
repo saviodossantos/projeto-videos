@@ -1,9 +1,11 @@
 let carrinho = [
-    '{"produto":["filme1.jpeg","filme2.jpeg","filme3.jpeg"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","2","3"],"preco":[20,30,10]}'
+    '{"produto":["filme1.jpeg","filme2.jpeg","filme3.jpeg"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]
 let carrinhoJSON = JSON.parse(carrinho)
 
 let listaCarrinho = document.querySelector("#listaCarrinho")
+
+let totalProdutos = document.querySelector("#totalProdutos")
 
 let valor = document.querySelector("#valorTotal")
 
@@ -15,6 +17,7 @@ for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
 
     listaCarrinho.appendChild(tr)
+    totalProdutos.innerHTML = carrinhoJSON.produto.length
 
 }
 
@@ -23,6 +26,10 @@ var val2 = carrinhoJSON.preco[1];
 var val3 = carrinhoJSON.preco[2];
 var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
 valor.innerHTML = valorTotal
+
+
+
+//cupom de desconto abaixo
 
 var Cupom20 = "123"
 var Cupom10 = "456"
@@ -56,17 +63,17 @@ document.querySelector("#botao1").onclick = function () {
     if (totalDesconto.style.display == "none" && totalDesconto2.style.display == "none") { //se o display do totalDesconto e totalDesconto2 for igual a none
 
         if (cupom.value == Cupom20) {
-            alert("cupom de 20% aplicado")
+            alert("Você ganhou 20% de desconto.")
             totalDesconto.style.display = ""
         } else if (cupom.value == Cupom10) {
-            alert("cupom de 10% aplicado")
+            alert("Você ganhou 10% de desconto.")
             totalDesconto2.style.display = ""
         } else {
-            alert("cupom nao aplicado")
+            alert("Código incorreto ou expirado.")
         }
 
     } else {
-        alert("cupom já aplicado")
+        alert("Você já tem um desconto aplicado.")
     }
 
 }

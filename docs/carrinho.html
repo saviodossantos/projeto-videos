@@ -54,18 +54,18 @@
                     <div class="col-sm-3">
                         <h5 class="text-center">Resumo do Pedido</h5>
                         <div class="resumoPedido p-3 mt-3">
-                            <p>$totalProdutos Produtos</p>
+                            <p><span id="totalProdutos"></span> Produtos</p>
                             <p>Total R$ <span id="valorTotal"></span> </p>
-                            <button class="btn btn-sm btn-primary mt-5">Continuar</button>
                             <div>
-                                <label for="valor"> Aplicar Cupom de desconto: </label>
+                                <label for="valor" class="mt-5">Tem cupom de desconto?</label>
                                 <br>
-                                <input type="text" id="cupom" name="valor" placeholder="Cupom de Desconto">
+                                <input type="text" id="cupom" name="valor" class="form-control" placeholder="Insira o código aqui">
                                 <br>
                             </div>
                             <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
                             <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p>
-                            <input id="botao1" type="button" class="btn btn-info mt-4" value="Calcular">
+                            <input id="botao1" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
+                            <button class="btn btn-sm btn-primary mt-3">Continuar</button>
                             <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
                         </div>
                     </div>
