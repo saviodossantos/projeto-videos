@@ -1,45 +1,50 @@
-let relatorioAluguel = [
-    '{"cliente":["Luiz","Grazielle","Silvio"],"descricaoServico":["Premium","alguma coisa 2","alguma coisa 3"],"valor":[10,20,30],"filmes":[1,2,3]}'
+let relatorioChamadas = [
+    '{"nomeCliente":["Luiz","Grazielle","Silvio"],"assuntoCliente":["Conta bloqueada","Troca de senha","MEU PC ESTÁ COM VÍRUS"],"emailCliente":["teste@email.com","teste1@email.com","teste2@email.com"],"telefoneCliente":["2199999-9999","2198888-8888","5397777-7777"]}'
 ]
-let relatorioAluguelJSON = JSON.parse(relatorioAluguel)
-
-let listaRelatorioAssinantes = document.querySelector("#listaRelatorioAssinantes") //ainda fora de uso
-let listaRelatorioAluguel = document.querySelector("#listaRelatorioAluguel")
-let nomeClienteAluguel = document.querySelector("#nomeClienteAluguel")
-let descricaoServicoAluguel = document.querySelector("#descricaoServicoAluguel")
-let valorAluguel = document.querySelector("#valorAluguel")
 
 
-for (var i = 0; i < relatorioAluguelJSON.cliente.length; i++) {
-    let tbody = document.querySelector("#listaRelatorioAluguelBody")
-    var tr = document.createElement('tr')
 
-    tr.innerHTML += '<td style="vertical-align:unset;">' + relatorioAluguelJSON.cliente[i] + '</td>'
-    tr.innerHTML += '<td style="vertical-align:unset;">' + relatorioAluguelJSON.descricaoServico[i] + '</td>'
-    tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + relatorioAluguelJSON.valor[i] + '</td>'
 
-    tbody.appendChild(tr)
-    listaRelatorioAluguel.appendChild(tbody)
-    console.log(relatorioAluguelJSON[i])
+let relatorioChamadasJSON = JSON.parse(relatorioChamadas)
+
+let listaRelatorioChamadas = document.querySelector("#listaRelatorioChamadas")
+let assuntoCliente = document.querySelector("#assuntoCliente")
+let nomeCliente = document.querySelector("#nomeCliente")
+let emailCliente = document.querySelector("#emailCliente")
+let telefoneCliente = document.querySelector("#telefoneCliente")
+
+
+// for (var i = 0; i < relatorioChamadasJSON.nomeCliente.length; i++) {
+//     let tbody = document.querySelector("#relatorioChamadasBody")
+//     var tr = document.createElement('tr')
+
+//     tr.innerHTML += '<td style="vertical-align:unset;">' + relatorioChamadasJSON.nomeCliente[i] + '</td>'
+//     tr.innerHTML += '<td style="vertical-align:unset;">' + relatorioChamadasJSON.assuntoCliente[i] + '</td>'
+//     tr.innerHTML += '<td style="vertical-align:unset;">' + relatorioChamadasJSON.emailCliente[i] + '</td>'
+//     tr.innerHTML += '<td style="vertical-align:unset;">' + relatorioChamadasJSON.telefoneCliente[i] + '</td>'
+
+//     tbody.appendChild(tr)
+//     listaRelatorioChamadas.appendChild(tbody)
     
-}
+// }
 
-let totalAssinantes = document.querySelector("#totalAssinantes")
-let totalAssinantesValor = document.querySelector("#totalAssinantesValor")
-let totalAlugados = document.querySelector("#totalAlugados")
-let totalAlugadosValor = document.querySelector("#totalAlugadosValor")
-let mediaFilmesAlugados = document.querySelector("#mediaFilmesAlugados")
+let chamadasAtendidas = document.querySelector("#chamadasAtendidas")
+let totalChamadasAtendidas = document.querySelector("#totalChamadasAtendidas")
 
-totalAssinantes.innerHTML += relatorioAluguelJSON.cliente.length
+let chamadasPendentes = document.querySelector("#chamadasPendentes")
+let totalChamadasPendentes = document.querySelector("#totalChamadasPendentes")
 
-totalAssinantesValor.innerHTML = parseInt(relatorioAluguelJSON.valor[0]) + parseInt(relatorioAluguelJSON.valor[1]) + parseInt(relatorioAluguelJSON.valor[2])
+chamadasAtendidas.innerHTML = parseInt(relatorioChamadasJSON.nomeCliente.length)
+totalChamadasAtendidas.innerHTML = parseInt(relatorioChamadasJSON.nomeCliente.length)
 
-totalAlugados.innerHTML = parseInt(relatorioAluguelJSON.filmes[0]) + parseInt(relatorioAluguelJSON.filmes[1]) + parseInt(relatorioAluguelJSON.filmes[2])
+chamadasPendentes.innerHTML = parseInt(relatorioChamadasJSON.nomeCliente.length)
+totalChamadasPendentes.innerHTML = parseInt(relatorioChamadasJSON.nomeCliente.length)
 
-totalAlugadosValor.innerHTML = parseInt(relatorioAluguelJSON.valor[0]) + parseInt(relatorioAluguelJSON.valor[1]) + parseInt(relatorioAluguelJSON.valor[2])
 
-mediaFilmesAlugados.innerHTML = (parseInt(relatorioAluguelJSON.filmes[0]) + parseInt(relatorioAluguelJSON.filmes[1]) + parseInt(relatorioAluguelJSON.filmes[2])) / relatorioAluguelJSON.cliente.length
+//proximo atendimento
+let proximoCliente = document.querySelector("#proximoCliente")
+let confirmarAtendimento = document.querySelector("#confirmarAtendimento")
+let darBaixa = document.querySelector("#darBaixa")
 
-console.log(relatorioAluguelJSON.filmes.length)
-console.log(relatorioAluguelJSON.cliente.length)
+
 

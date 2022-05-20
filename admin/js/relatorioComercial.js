@@ -1,5 +1,5 @@
 let relatorioAluguel = [
-    '{"cliente":["Luiz","Grazielle","Silvio"],"descricaoServico":["Premium","alguma coisa 2","alguma coisa 3"],"valor":[10,20,30],"filmes":[1,2,3]}'
+    '{"cliente":["Luiz","Grazielle","Silvio","Teste"],"descricaoServico":["Premium","alguma coisa 2","alguma coisa 3","teste"],"valor":[10,20,30,40],"filmes":[1,2,3]}'
 ]
 let relatorioAluguelJSON = JSON.parse(relatorioAluguel)
 
@@ -8,7 +8,7 @@ let listaRelatorioAluguel = document.querySelector("#listaRelatorioAluguel")
 let nomeClienteAluguel = document.querySelector("#nomeClienteAluguel")
 let descricaoServicoAluguel = document.querySelector("#descricaoServicoAluguel")
 let valorAluguel = document.querySelector("#valorAluguel")
-
+let totalRelatorio = document.querySelector("#totalRelatorio")
 
 for (var i = 0; i < relatorioAluguelJSON.cliente.length; i++) {
     let tbody = document.querySelector("#listaRelatorioAluguelBody")
@@ -24,6 +24,11 @@ for (var i = 0; i < relatorioAluguelJSON.cliente.length; i++) {
     
 }
 
+totalRelatorio.innerHTML = parseInt(relatorioAluguelJSON.valor[0]) + parseInt(relatorioAluguelJSON.valor[1]) + parseInt(relatorioAluguelJSON.valor[2]) + parseInt(relatorioAluguelJSON.valor[3])
+
+
+
+//visao macro
 let totalAssinantes = document.querySelector("#totalAssinantes")
 let totalAssinantesValor = document.querySelector("#totalAssinantesValor")
 let totalAlugados = document.querySelector("#totalAlugados")
@@ -36,7 +41,7 @@ totalAssinantesValor.innerHTML = parseInt(relatorioAluguelJSON.valor[0]) + parse
 
 totalAlugados.innerHTML = parseInt(relatorioAluguelJSON.filmes[0]) + parseInt(relatorioAluguelJSON.filmes[1]) + parseInt(relatorioAluguelJSON.filmes[2])
 
-totalAlugadosValor.innerHTML = parseInt(relatorioAluguelJSON.valor[0]) + parseInt(relatorioAluguelJSON.valor[1]) + parseInt(relatorioAluguelJSON.valor[2])
+totalAlugadosValor.innerHTML = parseInt(relatorioAluguelJSON.valor[0]) + parseInt(relatorioAluguelJSON.valor[1]) + parseInt(relatorioAluguelJSON.valor[2]) + parseInt(relatorioAluguelJSON.valor[3])
 
 mediaFilmesAlugados.innerHTML = (parseInt(relatorioAluguelJSON.filmes[0]) + parseInt(relatorioAluguelJSON.filmes[1]) + parseInt(relatorioAluguelJSON.filmes[2])) / relatorioAluguelJSON.cliente.length
 
