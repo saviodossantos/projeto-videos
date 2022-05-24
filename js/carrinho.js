@@ -12,9 +12,11 @@ let valor = document.querySelector("#valorTotal")
 for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     var tr = document.createElement('tr')
 
-    tr.innerHTML += '<td style="vertical-align:unset;">' + '<img class="w-25 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><input type="number" min="1" max="5"></td>'
     tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger">Excluir</button></td>'
 
     listaCarrinho.appendChild(tr)
     totalProdutos.innerHTML = carrinhoJSON.produto.length
