@@ -2,12 +2,10 @@ let carrinho = [
     '{"produto":["filme1.jpeg","filme2.jpeg","filme3.jpeg"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]
 let carrinhoJSON = JSON.parse(carrinho)
-
 let listaCarrinho = document.querySelector("#listaCarrinho")
-
 let totalProdutos = document.querySelector("#totalProdutos")
-
 let valor = document.querySelector("#valorTotal")
+let conteudoCarrinho = document.querySelector("#conteudoCarrinho")
 
 for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     var tr = document.createElement('tr')
@@ -18,7 +16,7 @@ for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger">Excluir</button></td>'
 
-    listaCarrinho.appendChild(tr)
+    conteudoCarrinho.appendChild(tr)
     totalProdutos.innerHTML = carrinhoJSON.produto.length
 
 }
@@ -66,14 +64,17 @@ limparCarrinho.onclick = function () {
 
     if (carrinhoJSON.produto.length > 0) {
 
-        // listaResult.push(carrinhoJSON.produto[0])
-        document.querySelector("#listaCarrinho").innerHTML = ""
         for (var i = 0; i < carrinhoJSON.produto.length; i++) {
-            document.querySelector("#result").innerHTML += "<li>" + listaResult[i] + "</li>"
+            document.querySelector("#conteudoCarrinho").innerHTML = ""
+
+            carrinhoJSON.produto.shift()
+            valor.innerHTML = "0"
+            totalProdutos.innerHTML = "0"
         }
-        carrinhoJSON.produto.shift()
-        valorTotal.innerHTML = ""
-        totalProdutos.innerHTML = "0"
+        
+        // conteudoCarrinho.removeChild(tr)
+        console.log(carrinhoJSON.produto.length)
+        console.log(carrinhoJSON.produto)
     }
     
     limparCarrinho.style.display = ""
