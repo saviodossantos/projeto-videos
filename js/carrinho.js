@@ -34,7 +34,7 @@ valor.innerHTML = valorTotal
 
 // function calcular() {
 //     let result = (qtdTelas.value * 9.9).toFixed(2)
-    
+
 //     result = result.replace('.', ',')
 //     console.log(result)
 
@@ -43,30 +43,42 @@ valor.innerHTML = valorTotal
 
 // }
 
-let qtdTelas = document.querySelector("#qtdTelas")
+// let qtdTelas = document.querySelector("#qtdTelas")
 
-function calcularPorcentagem() {
-    for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
+// function calcularPorcentagem() {
+//     for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
 
-        let pct1 = (qtdTelas.value * carrinhoJSON.preco[0]) * 0.07
-        let pct2 = (qtdTelas.value * carrinhoJSON.preco[1]) * 0.07
-        let pct3 = (qtdTelas.value * carrinhoJSON.preco[2]) * 0.07
-        pctTotal = pct1 + pct2 + pct3
-        // valor.innerHTML = (qtdTelas.value * valorTotal + pct).toFixed(2)
-        valor.innerHTML = pctTotal
-    }
-    console.log(valor)
-}
-
-qtdTelas.addEventListener('change',calcularPorcentagem)
-
-// let limparCarrinho = document.querySelector("#limparCarrinho")
-
-// limparCarrinho.onclick = function () {
-
-//     carrinhoJSON.shift()
-
+//         let pct1 = (qtdTelas.value * carrinhoJSON.preco[0]) * 0.07
+//         let pct2 = (qtdTelas.value * carrinhoJSON.preco[1]) * 0.07
+//         let pct3 = (qtdTelas.value * carrinhoJSON.preco[2]) * 0.07
+//         pctTotal = pct1 + pct2 + pct3
+//         // valor.innerHTML = (qtdTelas.value * valorTotal + pct).toFixed(2)
+//         valor.innerHTML = pctTotal
+//     }
+//     console.log(valor)
 // }
+
+// qtdTelas.addEventListener('change',calcularPorcentagem)
+
+let limparCarrinho = document.querySelector("#limparCarrinho")
+
+limparCarrinho.onclick = function () {
+
+    if (carrinhoJSON.produto.length > 0) {
+
+        // listaResult.push(carrinhoJSON.produto[0])
+        document.querySelector("#listaCarrinho").innerHTML = ""
+        for (var i = 0; i < carrinhoJSON.produto.length; i++) {
+            document.querySelector("#result").innerHTML += "<li>" + listaResult[i] + "</li>"
+        }
+        carrinhoJSON.produto.shift()
+        valorTotal.innerHTML = ""
+        totalProdutos.innerHTML = "0"
+    }
+    
+    limparCarrinho.style.display = ""
+
+}
 
 
 //cupom de desconto abaixo
