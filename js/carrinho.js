@@ -13,7 +13,7 @@ for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     var tr = document.createElement('tr')
 
     tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
-    tr.innerHTML += '<td style="vertical-align:unset;"><input type="number" min="1" max="5"></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas" type="number" min="1" max="5" value="1"></td>'
     tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger">Excluir</button></td>'
@@ -29,10 +29,47 @@ var val3 = carrinhoJSON.preco[2];
 var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
 valor.innerHTML = valorTotal
 
+// inputNumber = qtdTelas
+// resultadoTelas = valorTotal
+
+// function calcular() {
+//     let result = (qtdTelas.value * 9.9).toFixed(2)
+    
+//     result = result.replace('.', ',')
+//     console.log(result)
+
+//     valor.innerHTML = 'R$' + result
+//     // valorTotal.innerHTML = (qtdTelas.value * 9.9).toFixed(2)
+
+// }
+
+let qtdTelas = document.querySelector("#qtdTelas")
+
+function calcularPorcentagem() {
+    for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
+
+        let pct1 = (qtdTelas.value * carrinhoJSON.preco[0]) * 0.07
+        let pct2 = (qtdTelas.value * carrinhoJSON.preco[1]) * 0.07
+        let pct3 = (qtdTelas.value * carrinhoJSON.preco[2]) * 0.07
+        pctTotal = pct1 + pct2 + pct3
+        // valor.innerHTML = (qtdTelas.value * valorTotal + pct).toFixed(2)
+        valor.innerHTML = pctTotal
+    }
+    console.log(valor)
+}
+
+qtdTelas.addEventListener('change',calcularPorcentagem)
+
+// let limparCarrinho = document.querySelector("#limparCarrinho")
+
+// limparCarrinho.onclick = function () {
+
+//     carrinhoJSON.shift()
+
+// }
 
 
 //cupom de desconto abaixo
-
 var Cupom20 = "123"
 var Cupom10 = "456"
 
