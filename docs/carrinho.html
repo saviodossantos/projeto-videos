@@ -40,8 +40,8 @@
         <section>
             <article>
                 <div class="row">
-                    <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
-                        <table class="table text-white" id="listaCarrinho">
+                    <div id="carrinho" class="col-sm-7 mt-5 mb-5">
+                        <table class="table text-white text-center" id="listaCarrinho">
                             <tr>
                                 <th>Produto</th>
                                 <th>Telas</th>
@@ -50,9 +50,12 @@
                                 <th></th>
                             </tr>
                             <tbody id="conteudoCarrinho"></tbody>
-
+                            
                         </table>
-                        <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                        <div id="totalCarrinho">
+                            <button class="btn btn-info btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                            <p id="carrinhoVazio"></p>
+                        </div>
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">

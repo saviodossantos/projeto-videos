@@ -9,12 +9,13 @@ let conteudoCarrinho = document.querySelector("#conteudoCarrinho")
 
 for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     var tr = document.createElement('tr')
+    tr.id = "produto" + i
 
     tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas" type="number" min="1" max="5" value="1"></td>'
     tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
-    tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger">Excluir</button></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger" id="excluirProduto">Excluir</button></td>'
 
     conteudoCarrinho.appendChild(tr)
     totalProdutos.innerHTML = carrinhoJSON.produto.length
@@ -27,42 +28,43 @@ var val3 = carrinhoJSON.preco[2];
 var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
 valor.innerHTML = valorTotal
 
-// inputNumber = qtdTelas
-// resultadoTelas = valorTotal
+let excluirProduto = document.querySelector("#excluirProduto")
 
-// function calcular() {
-//     let result = (qtdTelas.value * 9.9).toFixed(2)
+excluirProduto.onclick = function() {
 
-//     result = result.replace('.', ',')
-//     console.log(result)
+    if (confirm("Deseja deletar esse produto?")) {
 
-//     valor.innerHTML = 'R$' + result
-//     // valorTotal.innerHTML = (qtdTelas.value * 9.9).toFixed(2)
+        for (var i = 0; i < carrinhoJSON.produto.length; i++) {
+            document.querySelector("#produto"+i).innerHTML = ""
 
-// }
+            // tr.i.shift()
+        }
 
-// let qtdTelas = document.querySelector("#qtdTelas")
+        //     // conteudoCarrinho.removeChild(tr)
+        //     console.log(carrinhoJSON.produto.length)
+        //     console.log(carrinhoJSON.produto)
+    }
 
-// function calcularPorcentagem() {
-//     for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
+}
 
-//         let pct1 = (qtdTelas.value * carrinhoJSON.preco[0]) * 0.07
-//         let pct2 = (qtdTelas.value * carrinhoJSON.preco[1]) * 0.07
-//         let pct3 = (qtdTelas.value * carrinhoJSON.preco[2]) * 0.07
-//         pctTotal = pct1 + pct2 + pct3
-//         // valor.innerHTML = (qtdTelas.value * valorTotal + pct).toFixed(2)
-//         valor.innerHTML = pctTotal
-//     }
-//     console.log(valor)
-// }
 
-// qtdTelas.addEventListener('change',calcularPorcentagem)
+let totalCarrinho = document.querySelector("#totalCarrinho")
+var p = document.createElement("p")
+
+totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-between d-flex flex-row-reverse"
+totalCarrinho.style.border = "1px solid white"
+p.innerHTML = 'Total dos itens: R$ ' + valorTotal
+
+totalCarrinho.appendChild(p)
 
 let limparCarrinho = document.querySelector("#limparCarrinho")
+let carrinhoVazio = document.querySelector("#carrinhoVazio")
+carrinhoVazio.style.display = "none"
+totalCarrinho.style.display = ""
 
 limparCarrinho.onclick = function () {
 
-    if (carrinhoJSON.produto.length > 0) {
+    if (carrinhoJSON.produto.length > 0 && carrinhoVazio.style.display == "none") {
 
         for (var i = 0; i < carrinhoJSON.produto.length; i++) {
             document.querySelector("#conteudoCarrinho").innerHTML = ""
@@ -71,13 +73,16 @@ limparCarrinho.onclick = function () {
             valor.innerHTML = "0"
             totalProdutos.innerHTML = "0"
         }
-        
+
         // conteudoCarrinho.removeChild(tr)
         console.log(carrinhoJSON.produto.length)
         console.log(carrinhoJSON.produto)
     }
-    
-    limparCarrinho.style.display = ""
+
+    limparCarrinho.style.display = "none"
+    carrinhoVazio.innerHTML = "O carrinho está vazio."
+    carrinhoVazio.style.display = ""
+    p.style.display = "none"
 
 }
 
