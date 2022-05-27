@@ -47,11 +47,78 @@
                                 <th>Telas</th>
                                 <th>Quantidade</th>
                                 <th>Preço</th>
-                                <th></th>
                             </tr>
+                            
+
+                            <tbody id="conteudoCarrinho">
+                                <tr id="linha1">
+                            <td>
+                                <img id="img1"class="w-40 m-1" src="../imgs/filme1.jpeg"  >
+                                <p id="nome1"></p>
+                                <td>
+                               <input class="form-control" id="qtdTelas1" type="number" min="1" max="5" value="1">
+                               </td>
+                               <td>
+                                <p class="font-italic" id="qtd1"> </p>
+                               </td>
+                               <td>
+                                   <p id="paragrafo"class="form-italic"></p>
+                               </td>
+                               <td>
+                                <button id="btn1" class="btn btn-sm btn-outline-danger">Excluir</button></p>
+                    </td>
+                    </tr>
+                      </div>
+                            </td>
+                               </td>
+                            
+                               <tr  id="linha2">
+                                <td>
+                                    <img class="w-40 m-1" src="../imgs/filme2.jpeg">
+                                    <p id="nome2"></p>
+                                    <td>
+                                   <input class="form-control" id="qtdTelas2" type="number" min="1" max="5" value="1">
+                                   </td>
+                                   <td>
+                                    <p class="font-italic" id="qtd2"></p>
+                                   </td>
+                                   <td>
+                                       <p id="paragrafo2"class="form-italic"></p>
+                                   </td>
+                                   <td>
+                                    <button id="btn2" class="btn btn-sm btn-outline-danger">Excluir</button></p>
+                                </td>
+                                   </td>
+                               <tr id="linha3">
+                                <td>
+                                    <img class="w-40 m-1" src="../imgs/filme3.jpeg">
+                                    <p id="nome3"></p>
+                                    <td>
+                                   <input class="form-control" id="qtdTelas3" type="number" min="1" max="5" value="1">
+                                   </td>
+                                   <td>
+                                    <p class="font-italic" id="qtd3"></p>
+                                   </td>
+                                   <td>
+                                       <p id="paragrafo3"class="form-italic"></p>
+                                   </td>
+                                   <td>
+                                    <button id="btn3" class="btn btn-sm btn-outline-danger">Excluir</button></p>
+                                </td>
+                                   </td>
+                               </tr>
+                               </tbody>
+
+                            
+                               </table>
+                        
+                               
 
                         </table>
+                        <div id="totalCarrinho">
                         <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                        <p id="carrinhoVazio">O carrinho está vazio.</p>
+                    </div>
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
@@ -71,6 +138,8 @@
                             <input id="botao1" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
                             <button class="btn btn-sm btn-primary mt-3">Continuar</button>
                             <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
+
+                            
                         </div>
                     </div>
 
