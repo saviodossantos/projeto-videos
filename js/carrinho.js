@@ -1,5 +1,5 @@
-let carrinho = [
-    '{"produto":["filme1.jpeg","filme2.jpeg","filme3.jpeg"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
+let carrinho = [ //alteracao no nome do produto
+    '{"produto":["filme1","filme2","filme3"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]
 let carrinhoJSON = JSON.parse(carrinho)
 let listaCarrinho = document.querySelector("#listaCarrinho")
@@ -11,8 +11,8 @@ for (var i = 0; i < carrinhoJSON.produto.length; i++) {
     var tr = document.createElement('tr')
     tr.id = "produto" + i
 
-    tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
-    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas" type="number" min="1" max="5" value="1"></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '.jpeg"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas' + carrinhoJSON.produto[i] + '" type="number" min="1" max="5" value="1"></td>' //id qtdTelas pegando o nome do produto
     tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger" id="excluirProduto">Excluir</button></td>'
@@ -34,8 +34,11 @@ excluirProduto.onclick = function() {
 
     if (confirm("Deseja deletar esse produto?")) {
 
-        for (var i = 0; i < carrinhoJSON.produto.length; i++) {
-            document.querySelector("#produto"+i).innerHTML = ""
+// lógica para cada value do id do input de qtdTelas ser impresso
+for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
+    let qtdTelas = document.querySelector("#qtdTelas" + carrinhoJSON.produto[i])
+    qtdTelas.addEventListener('change',console.log("qtdTelas + 1"))
+}
 
             // tr.i.shift()
         }
@@ -47,6 +50,7 @@ excluirProduto.onclick = function() {
 
 }
 
+// qtdTelas.addEventListener('change',calcularPorcentagem())
 
 let totalCarrinho = document.querySelector("#totalCarrinho")
 var p = document.createElement("p")
