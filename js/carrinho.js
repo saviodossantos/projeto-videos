@@ -1,5 +1,5 @@
-let carrinho = [
-    '{"produto":["filme1.jpeg","filme2.jpeg","filme3.jpeg"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
+let carrinho = [ //alteracao no nome do produto
+    '{"produto":["filme1","filme2","filme3"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]
 let carrinhoJSON = JSON.parse(carrinho)
 
@@ -46,6 +46,11 @@ for (var i = 0; i < carrinhoJSON.produto.length; i++) {
 
 
 
+    tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '.jpeg"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas' + carrinhoJSON.produto[i] + '" type="number" min="1" max="5" value="1"></td>' //id qtdTelas pegando o nome do produto
+    tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
+    tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
+    tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger">Excluir</button></td>'
 
     listaCarrinho.appendChild(tr)
     totalProdutos.innerHTML = carrinhoJSON.produto.length
@@ -83,7 +88,7 @@ valor.innerHTML = valorTotal
 //     valor.innerHTML = 'R$' + result
 //     // valorTotal.innerHTML = (qtdTelas.value * 9.9).toFixed(2)
 
-// }
+// 
 
 let qtdTelas = document.querySelector("#qtdTelas1")
 let qtdTelas2= document.querySelector("#qtdTelas2")
@@ -93,6 +98,12 @@ let qtdTotal= qtdTelas + qtdTelas2 + qtdTelas3
 //let btn = document.querySelector("#btn1")
 //let qtdTelas2= document.querySelector("#qtdTelasfilme2.jpeg")
 //let qtdTelas3= document.querySelector("#qtdTelasfilme3.jpeg")
+
+// lógica para cada value do id do input de qtdTelas ser impresso
+for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
+    let qtdTelas = document.querySelector("#qtdTelas" + carrinhoJSON.produto[i])
+    qtdTelas.addEventListener('change',console.log("qtdTelas + 1"))
+}
 
 function calcularPorcentagem() {
     for (i = 0 ; i < carrinhoJSON.produto.length ; i++){
@@ -109,6 +120,7 @@ function calcularPorcentagem() {
     //console.log(id="qtdTelas" + carrinhoJSON.produto[i])
 }
 
+
   qtdTelas.addEventListener('change',calcularPorcentagem)
    qtdTelas2.addEventListener('change',calcularPorcentagem)
    qtdTelas3.addEventListener('change',calcularPorcentagem)
@@ -121,6 +133,18 @@ function calcularPorcentagem() {
        //   }
       //}
   //}
+// qtdTelas.addEventListener('change',calcularPorcentagem())
+
+// let limparCarrinho = document.querySelector("#limparCarrinho")
+
+// limparCarrinho.onclick = function () {
+
+//     carrinhoJSON.shift()
+
+// }
+
+
+
 //cupom de desconto abaixo
 var Cupom20 = "123"
 var Cupom10 = "456"

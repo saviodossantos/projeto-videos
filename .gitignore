@@ -1,0 +1,5 @@
+# este arquivo faz o git ignorar arquivos ou pastas que nao devem subir para o repositorio remoto
+# adicionar o caminho ou o nome do arquivo 
+
+.DS_Store
+node_modules
