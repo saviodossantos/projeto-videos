@@ -4,10 +4,12 @@ const port = 3000
 
 app.set("view engine","ejs")
 
+
 app.use(express.static('projeto-videos'))
 app.use("/imgs",express.static("imgs"))
 app.use("/js",express.static("js"))
 app.use("/css",express.static("css"))
+
 
 //index (Quando criar o html diretamente no res.end() insira o writeHead)
 app.get("/",(req,res)=>{
