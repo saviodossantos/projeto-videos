@@ -40,14 +40,33 @@
         <article>
 
             <div id="filmes" class="row"></div>
-            <div  class="row"> 
-                
-                <% filmes.forEach((item,n)=>{ 
-                    if (n>-1){
-                %>             
-                <div class="col-sm-12"><%=n%> - <%=item.titulo%> -  <%=item.ano%> - <%=item.genero%></div>
-                <% }
-            }) %>
+
+            <div class="row">
+
+                <% filmes.forEach((item)=>{ %>
+
+                    <div class="col-sm-4 mt-3">
+                        <h4 class="col-sm-12">
+                            <%= item.titulo%>
+                                </h3>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <a href="/single-produto?=<%%>"><img src="../imgs/<%= item.imagem %>"
+                                                class="w-100 imagens" /></a>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <p>Categoria: <%= item.genero %>
+                                        </p>
+                                        <p>Ano: <%= item.ano %>
+                                        </p>
+                                        <p class="sinopse">
+                                            <%= item.sinopse.substring(0,100)+"..." %>
+                                        </p>
+                                    </div>
+                                </div>
+                    </div>
+
+                <% }) %>
             </div>
 
         </article>
@@ -58,7 +77,8 @@
         </footer>
     </div>
 </body>
-<script src="../js/promocoes.js"></script>
+
+<!-- <script src="../js/promocoes.js"></script> -->
 <!-- <script src="../js/geral.js"></script> -->
 
 
