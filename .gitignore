@@ -2,7 +2,11 @@
 # adicionar o caminho ou o nome do arquivo 
 
 .DS_Store
+<<<<<<< HEAD
+db.js
+=======
 db.js
 
 
 
+>>>>>>> 59f5ea67450d6160c5d696946f97c86a91ce871d
