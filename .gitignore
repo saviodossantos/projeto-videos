@@ -2,3 +2,5 @@
 # adicionar o caminho ou o nome do arquivo 
 
 .DS_Store
+
+db.js
