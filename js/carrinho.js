@@ -1,4 +1,4 @@
-let carrinho = [ //alteracao no nome do produto
+let carrinho = [
     '{"produto":["filme1","filme2","filme3"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]
 let carrinhoJSON = JSON.parse(carrinho)
@@ -9,10 +9,10 @@ let conteudoCarrinho = document.querySelector("#conteudoCarrinho")
 
 for (i = 0; i < carrinhoJSON.produto.length; i++) {
     var tr = document.createElement('tr')
-    tr.id = "produto" + i //cada linha do carrinho pega um id produto + numero correspondente
+    tr.id = "produto" + i
 
     tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '.jpeg"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
-    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas' + carrinhoJSON.produto[i] + '" type="number" min="1" max="5" value="1"></td>' //id qtdTelas pegando o nome do produto
+    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas' + carrinhoJSON.produto[i] + '" type="number" min="1" max="5" value="1"></td>'
     tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger" id="excluirProduto' + carrinhoJSON.produto[i] + '">Excluir</button></td>'
@@ -30,14 +30,17 @@ valor.innerHTML = valorTotal
 
 
 let totalCarrinho = document.querySelector("#totalCarrinho")
+let totalItens = document.querySelector("#totalItens")
+let totalItensResult = document.querySelector("#totalItensResult")
 var p = document.createElement("p")
 
-totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-between d-flex flex-row-reverse"
+totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-between d-flex "
 totalCarrinho.style.border = "1px solid white"
-p.innerHTML = 'Total dos itens: R$ ' + valorTotal
+totalItensResult.innerHTML =  valorTotal
 
 totalCarrinho.appendChild(p)
 
+// limpar carrinho ======================================================
 let limparCarrinho = document.querySelector("#limparCarrinho")
 let carrinhoVazio = document.querySelector("#carrinhoVazio")
 carrinhoVazio.style.display = "none"
@@ -60,14 +63,14 @@ limparCarrinho.onclick = function () {
     limparCarrinho.style.display = "none"
     carrinhoVazio.innerHTML = "O carrinho está vazio."
     carrinhoVazio.style.display = ""
-    p.style.display = "none"
+    totalItens.style.display = "none"
+    totalItensResult.style.display = "none"
 
 }
 
-//cupom de desconto
+//cupom de desconto ======================================================
 var Cupom20 = "123"
 var Cupom10 = "456"
-
 var DESCONTO1 = ("20")
 var DESCONTO2 = ("10")
 
@@ -89,9 +92,9 @@ var PORCENTAGEM2 = parseInt((valorTotal * DESCONTO2) / 100);
 var TOTAL2 = parseInt((valorTotal - PORCENTAGEM2))
 valor2.innerHTML = TOTAL2
 
-//botao calcular cupom
+// calcular cupom ======================================================
 document.querySelector("#calcularCupom").onclick = function () {
-    if (totalDesconto.style.display == "none" && totalDesconto2.style.display == "none") { //se o display do totalDesconto e totalDesconto2 for igual a none
+    if (totalDesconto.style.display == "none" && totalDesconto2.style.display == "none") {
 
         if (cupom.value == Cupom20) {
             alert("Você ganhou 20% de desconto.")
@@ -110,33 +113,32 @@ document.querySelector("#calcularCupom").onclick = function () {
 }
 
 
-// excluir produto
+// excluir produto ======================================================
 for (i = 0; i < carrinhoJSON.produto.length; i++) {
     let excluirProduto = document.querySelector("#excluirProduto" + carrinhoJSON.produto[i])
     let tr = document.querySelector("#produto" + i)
 
+    console.log(i)
     excluirProduto.onclick = function () {
         if (confirm("Deseja deletar esse produto?")) {
             if (excluirProduto[i] == tr[i]) {
                 tr.innerHTML = ""
                 totalProdutos.innerHTML = totalProdutos.innerHTML - 1
-                console.log(carrinhoJSON.preco[0])
-                
-                valor.innerHTML = parseInt(valorTotal) - parseInt(carrinhoJSON.preco[i])
+                valor.innerHTML = valorTotal - carrinhoJSON.preco[0]
+                totalItensResult.innerHTML = valorTotal - carrinhoJSON.preco[0]
                 
             }
-            
         }
+        
+        i--
+        console.log(i)
+        
     }
-    
-    
-    console.log(carrinhoJSON.preco[i])
-
 
 }
 
 
-//calcular porcentagem
+//calcular porcentagem ======================================================
 function calcularPorcentagem() {
     for (i = 0; i < carrinhoJSON.produto.length; i++) {
         let qtdTelas = document.querySelector("#qtdTelas" + carrinhoJSON.produto[i])
@@ -159,9 +161,32 @@ function calcularPorcentagem() {
 
 
 // lógica para cada value do id do input de qtdTelas ser impresso
-for (i = 0; i < carrinhoJSON.produto.length; i++) {
-    let qtdTelas = document.querySelector("#qtdTelas" + carrinhoJSON.produto[i])
-    qtdTelas.addEventListener('change', calcularPorcentagem)
+// for (i = 0; i < carrinhoJSON.produto.length; i++) {
+//     let qtdTelas = document.querySelector("#qtdTelas" + carrinhoJSON.produto[i])
+//     qtdTelas.addEventListener('change', calcularPorcentagem)
+// }
+
+
+
+
+
+function q(el){
+    return document.querySelector(el)
 }
 
 
+ function calcularCarrinho() {
+     carrinho = parseFloat(q("#pre1").innerHTML) + parseFloat(q("#pre2").innerHTML) + parseFloat(q("#pre3").innerHTML)
+
+     q("#subTotal").innerHTML = `R$ ${carrinho.toFixed(2)}`
+ }
+
+ function alteraCarrinho() {
+     q("#pre1").innerHTML = (parseFloat(q("#pre1").innerHTML) * q("#tela1").value).toFixed(2)
+
+     calcularCarrinho();
+ }
+
+ calcularCarrinho()
+
+ document.querySelector("#qtdTelas" + carrinhoJSON.produto[i]).addEventListener("change", alteraCarrinho)
