@@ -14,7 +14,7 @@ for (i = 0; i < carrinhoJSON.produto.length; i++) {
     tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '.jpeg"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas' + carrinhoJSON.produto[i] + '" type="number" min="1" max="5" value="1"></td>'
     tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
-    tr.innerHTML += '<td style="vertical-align:unset;">R$ ' + carrinhoJSON.preco[i] + '</td>'
+    tr.innerHTML += '<td style="vertical-align:unset;">R$ <span id="preco' + carrinhoJSON.produto[i] + '">' + carrinhoJSON.preco[i] + '</span></td>'
     tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger" id="excluirProduto' + carrinhoJSON.produto[i] + '">Excluir</button></td>'
 
     conteudoCarrinho.appendChild(tr)
@@ -22,11 +22,11 @@ for (i = 0; i < carrinhoJSON.produto.length; i++) {
 
 }
 
-var val1 = carrinhoJSON.preco[0];
-var val2 = carrinhoJSON.preco[1];
-var val3 = carrinhoJSON.preco[2];
-var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
-valor.innerHTML = valorTotal
+// var val1 = carrinhoJSON.preco[0];
+// var val2 = carrinhoJSON.preco[1];
+// var val3 = carrinhoJSON.preco[2];
+// var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
+// valor.innerHTML = valorTotal
 
 
 let totalCarrinho = document.querySelector("#totalCarrinho")
@@ -176,17 +176,17 @@ function q(el){
 
 
  function calcularCarrinho() {
-     carrinho = parseFloat(q("#pre1").innerHTML) + parseFloat(q("#pre2").innerHTML) + parseFloat(q("#pre3").innerHTML)
+     valorTotal = parseFloat(q("#preco" + carrinhoJSON.produto[0]).innerHTML) + parseFloat(q("#preco" + carrinhoJSON.produto[1]).innerHTML) + parseFloat(q("#preco" + carrinhoJSON.produto[2]).innerHTML)
 
-     q("#subTotal").innerHTML = `R$ ${carrinho.toFixed(2)}`
+     valor.innerHTML = valorTotal
  }
 
  function alteraCarrinho() {
-     q("#pre1").innerHTML = (parseFloat(q("#pre1").innerHTML) * q("#tela1").value).toFixed(2)
+     q("#preco" + carrinhoJSON.produto[0]).innerHTML = (parseFloat(q("#preco" + carrinhoJSON.produto[0]).innerHTML) * q("#qtdTelas" + carrinhoJSON.produto[0]).value)
 
      calcularCarrinho();
  }
 
  calcularCarrinho()
 
- document.querySelector("#qtdTelas" + carrinhoJSON.produto[i]).addEventListener("change", alteraCarrinho)
+ document.querySelector("#qtdTelas" + carrinhoJSON.produto[0]).addEventListener("change", alteraCarrinho)
