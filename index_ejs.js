@@ -37,6 +37,14 @@ app.get("/cadastro",(req,res)=>{
     res.render(`single`)
  })
 
+ app.get("/login",(req,res)=>{
+    res.render(`login`)
+ })
+
+ app.get("/carrinho",(req,res)=>{
+    res.render(`carrinho`)
+ })
+
  app.get("/promocoes",(req,res)=>{
     res.render(`promocoes`,{filmes:consulta})
  })
