@@ -50,7 +50,7 @@
                             <%= item.titulo%>
                                 </h3>
                                 <div class="row">
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-5 filmes">
                                         <a href="/single-produto?=<%%>"><img src="../imgs/<%= item.imagem %>"
                                                 class="w-100 imagens" /></a>
                                     </div>
@@ -61,6 +61,7 @@
                                         </p>
                                         <p class="sinopse">
                                             <%= item.sinopse.substring(0,100)+"..." %>
+                                            <a href="carrinho/?id=<%=item.filmes_id%>" class="btn btn-primary">Adicionar ao carrinho</a>
                                         </p>
                                     </div>
                                 </div>
