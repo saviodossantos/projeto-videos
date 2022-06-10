@@ -49,6 +49,26 @@
                                 <th>Preço</th>
                                 <th></th>
                             </tr>
+                            <% carrinho.forEach((item) => { %>
+                            <tr>
+                                <td style="vertical-align:unset;">
+                                    <img class="w-50 m-1 imagemCarrinho" src="../imgs/<%= item.imagem %>">
+                                    <p class="font-italic"><%= item.titulo %></p>
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    <input class="form-control" id="qtdTelasfilme<%= item.filmes_id %>" type="number" min="1" max="5" value="1">
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    <!-- Quantidade -->
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    R$ <%= item.valor %>
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            <% }) %>
 
                         </table>
                         <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
@@ -103,7 +123,7 @@
         </footer>
     </div>
 </body>
-<script src="../js/carrinho.js"></script>
+<!-- <script src="../js/carrinho.js"></script> -->
 <!-- <script src="../js/geral.js"></script> -->
 
 </html>

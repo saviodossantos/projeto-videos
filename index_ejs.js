@@ -1,5 +1,6 @@
 (async () => {
-    const express = require('express')
+
+const express = require('express')
     const app = express()
     const db = require("./db.js")
     const url=require("url")
@@ -14,9 +15,9 @@
     app.use("/css",express.static("css"))
     
     const consulta = await db.selectFilmes()
-        console.log(consulta[0])
-    
+    const consultaCarrinho = await db.selectCarrinho()
     consultaFilmes = await db.selectFilmes()
+
     //index (Quando criar o html diretamente no res.end() insira o writeHead)
     app.get("/",(req,res)=>{
         res.render(`index`,{promo:"Todos os filmes com 10% de desconto!"})
@@ -33,18 +34,27 @@
     app.get("/cadastro",(req,res)=>{
         res.render(`cadastro`)
      })
+
+ app.get("/single",(req,res)=>{
+    res.render(`single`)
+ })
     
      app.get("/login",(req,res)=>{
         res.render(`login`)
      })
+
+ app.get("/carrinho", (req, res) => {
+    res.render(`carrinho`, {
+        carrinho: consultaCarrinho
+    })
     
      app.get("/promocoes",async(req,res)=>{
        const consultaPromo=await db.selectPromo()
         res.render(`promocoes`,{
             filmes:consulta,
         galeria:consultaPromo})
-
      })
+   
      app.get("/single",async(req,res)=>{
          let infoUrl=req.url
          let urlProp=url.parse(infoUrl,true)
