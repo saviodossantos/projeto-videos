@@ -10,13 +10,13 @@
 </head>
 
 <body>
-eQUILIBRA
+
     <div class="container">
         <header>
             <div class="row">
                 <div class="col-sm-3">
                     <a href="../index.html">
-                        <img src="/imgs/LogotipoStreamOn.png" width="150">
+                        <img src="../imgs/logo.jpeg" width="150">
                     </a>
                 </div>
                 <div class="col-sm-6">
@@ -24,17 +24,17 @@ eQUILIBRA
                 </div>
                 <div class="col-sm-3 mt-3 dd-flex justify-content-end">
                     <span id="bemVindo"></span>
-                    <a id="entrar" href="/login" class="btn btn-danger">Entrar</a>
+                    <a id="entrar" href="login.html" class="btn btn-danger">Entrar</a>
                     <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
                 </div>
             </div>
         </header>
 
         <nav class="d-flex justify-content-around mb-4 mt-2">
-            <a href="/" class="btn btn-dark">Início</a>
-            <a href="/produtos" class="btn btn-dark">Produtos</a>
-            <a href="/contato" class="btn btn-dark">Contato</a>
-            <a href="/cadastro" class="btn btn-dark">Cadastre-se</a>
+            <a href="../index.html" class="btn btn-dark">Início</a>
+            <a href="produtos.html" class="btn btn-dark">Produtos</a>
+            <a href="contato.html" class="btn btn-dark">Contato</a>
+            <a href="cadastro.html" class="btn btn-dark">Cadastre-se</a>
         </nav>
 
         <section>
@@ -42,65 +42,58 @@ eQUILIBRA
                 <p class="text-center">Stream ON é um serviço de transmissão online que oferece uma ampla variedade de
                     séries, filmes e documentários premiados em milhares de aparelhos conectados à internet.</p>
 
-                <div id="galeriaLivros" class="mt-5 mb-5">
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <div class="row">
-                                <div class="col-sm-6 text-justify">Em Doutor Estranho no Multiverso da Loucura, após
-                                    derrotar Dormammu e enfrentar Thanos nos eventos de Vingadores: Ultimato, o Mago
-                                    Supremo, Stephen Strange (Benedict Cumberbatch), e seu parceiro Wong (Benedict
-                                    Wong), continuam suas pesquisas sobre a Joia do Tempo. Mas um velho amigo que virou
-                                    inimigo coloca um ponto final nos seus planos e faz com que Strange desencadeie um
-                                    mal indescritível, o obrigando a enfrentar uma nova e poderosa ameaça. O longa se
-                                    conecta com a série do Disney+ WandaVision e tem relação também com Loki. O longa
-                                    pertence a fase 4 do MCU onde a realidade do universo pode entrar em colapso por
-                                    causa do mesmo feitiço que trouxe os vilões do Teioso para o mundo dos Vingadores e
-                                    o Mago Supremo precisará contar com a ajuda de Wanda (Elizabeth Olsen), que vive
-                                    isolada desde os eventos de WandaVision.
-                                </div>
-                                <div class="col-sm-6">
-                                    <iframe width="950" height="600" src="https://www.youtube.com/embed/X23XCFgdh2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="col-sm-6">
-                                   
-                                </div>
+                <div class="row ">
+                    <div class="col-sm-4 mt-3 filmes">
+                        <h4 class="col-sm-12">
+                            <%=galeria[0].titulo%>
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <img src="/imgs/<%=galeria[0].imagem%>" class="w-100 imagens">
                             </div>
-
-                            <div id="galeriaVideos" class="mt-4 mb-4">
-                                <div class="row wrap">
-                                    <div class="col-sm-4">
-                                        <a href="produtos.html">
-                                            <img src="../imgs/filme1.jpeg" class="imagens">
-                                        </a>
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <a href="produtos.html">
-                                            <img src="../imgs/filme3.jpeg" class="imagens">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a href="produtos.html">
-                                            <img src="../imgs/filme9.jpeg" class="imagens">
-                                        </a>
-                                    </div>
-                                </div>
+                            <div clas="col-sm-7">
+                                <p>Ano: <%=galeria[0].ano%>
+                                </p>
+                                <p>Categoria: <%=galeria[0].genero%>
+                                </p>
+                                <p>
+                                    <%=galeria[0].sinopse.substring(0,100)+"..."%>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div id="galeriaVideos" class="mt-4 mb-4">
+                    <div class="row wrap">
+                        <div class="col-sm-4">
+                            <a href="produtos.html">
+                                <img src="../imgs/filme1.jpeg" class="imagens">
+                            </a>
+                        </div>
 
-        </section>
+                        <div class="col-sm-4">
+                            <a href="produtos.html">
+                                <img src="../imgs/filme3.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="produtos.html">
+                                <img src="../imgs/filme9.jpeg" class="imagens">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+  
+    </article>
 
-        <footer class="mt-5">
-            <p>&copy;2022 - Todos os direitos reservados</p>
-        </footer>
+    </section>
 
-    </div>
-</body>
+    <footer class="mt-5">
+        <p>&copy;2022 - Todos os direitos reservados</p>
+    </footer>
+</div>
+ </body>
 <script src="../js/controle.js"></script>
 <!-- <script src="../js/geral.js"></script> -->
-
 
 </html>
