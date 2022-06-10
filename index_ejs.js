@@ -16,7 +16,7 @@
     const consulta = await db.selectFilmes()
         console.log(consulta[0])
     
-    
+    consultaFilmes = await db.selectFilmes()
     //index (Quando criar o html diretamente no res.end() insira o writeHead)
     app.get("/",(req,res)=>{
         res.render(`index`,{promo:"Todos os filmes com 10% de desconto!"})
@@ -55,6 +55,18 @@
             galeria:consultaSingle,
         inicio:consultaInit})
      })
+     app.get("/atualiza-promo",async(req,res)=>{
+        let qs = url.parse(req.url,true).query
+        await db.updatePromo(qs.promo,qs.id)//localhost:3000/atualiza-promo?promo=1&id=1
+            res.send("<h2>Lista de promoções atualizada!</h2><a href='./promocoes'>Voltar</a>")
+    })
+      
+     app.get("/upd-promo",async(req,res)=>{
+        res.render(`adm/atualiza-promocoes`,{
+           filmes:consulta,
+          filmes:consultaFilmes
+        })
+    })
     
      app.listen(port,() => console.log(`Servidor rodando na porta ${port} - ${__dirname}`))
     })()
