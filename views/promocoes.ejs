@@ -45,13 +45,13 @@
 
                 <% filmes.forEach((item)=>{ %>
 
-                    <div class="col-sm-4 mt-3">
+                    <div class="col-sm-4 mt-3 filmes">
                         <h4 class="col-sm-12">
                             <%= item.titulo%>
                                 </h3>
                                 <div class="row">
                                     <div class="col-sm-5">
-                                        <a href="/single-produto?=<%%>"><img src="../imgs/<%= item.imagem %>"
+                                        <a href="/single?id=<%=item.filmes_id%>"><img src="../imgs/<%= item.imagem %>"
                                                 class="w-100 imagens" /></a>
                                     </div>
                                     <div class="col-sm-7">
