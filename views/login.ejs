@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+
+<%- include('header.ejs') %>
+<%- include('nav.ejs') %>
 
 <head>
     <title>StreamOn</title>
@@ -33,17 +34,11 @@
             </div>
         </fieldset>
     </form>
-    <nav>
-        <nav class="text-center">
-            <a href="/cadastro">
-                <font size=+2><b>Cadastre-se agora</b></font>
-            </a>
-        </nav>
+
 
         <!-- Setor de rodapé-->
-        <footer class="bg-dark p-4 text-white text-center mt-4">
-            <p> &copy;2022 - Todos os direitos reservados.</p>
-        </footer>
+        <%- include('footer.ejs') %>
+
 </body>
 <script src="../js/login.js"></script>
 
