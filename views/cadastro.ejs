@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>StreamOn</title>
-        <meta charset="utf-8">
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/style.css">
-    </head>    
-    <body>
+<%- include("header.ejs")%>
+<%- include('nav.ejs') %>
+    
         <div class="container">
             <header class="text-center">
                 <div>
@@ -20,12 +13,7 @@
                     </div>
                 </div>
             </header>
-            <nav class="d-flex justify-content-around mb-4 mt-2">
-                <a href="/" class="btn btn-dark">Início</a>
-                <a href="/produtos" class="btn btn-dark">Produtos</a>
-                <a href="/contato" class="btn btn-dark">Contato</a>
-                <a href="/cadastro" class="btn btn-dark">Cadastre-se</a>
-            </nav>
+           
             <section class="container">
                 <h1 class="text-center mt-5 mb-5" > <i>Número 1 em streaming!</i></h1>
                 <form id="formContato" method="post" action="../index.html" class="w-50 mx-auto p-3 mt-4 mb-4"
@@ -60,9 +48,6 @@
             <article> </article>
         </section>
 
-        <footer class="mt-5">
-            <p>&copy;2022 - Todos os direitos reservados. </p>
-  </footer>
-    </body>
+
     <script src= "../js/cadastro.js"></script>
-</html>
+    <%- include("footer.ejs")%>
