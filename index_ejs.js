@@ -35,20 +35,21 @@ const express = require('express')
         res.render(`cadastro`)
      })
 
- app.get("/single",(req,res)=>{
+    app.get("/single",(req,res)=>{
     res.render(`single`)
- })
+    })
     
-     app.get("/login",(req,res)=>{
+    app.get("/login",(req,res)=>{
         res.render(`login`)
      })
 
- app.get("/carrinho", (req, res) => {
-    res.render(`carrinho`, {
+    app.get("/carrinho", (req, res) => {
+     res.render(`carrinho`, {
         carrinho: consultaCarrinho
+     })
     })
     
-     app.get("/promocoes",async(req,res)=>{
+    app.get("/promocoes",async(req,res)=>{
        const consultaPromo=await db.selectPromo()
         res.render(`promocoes`,{
             filmes:consulta,
@@ -65,6 +66,7 @@ const express = require('express')
             galeria:consultaSingle,
         inicio:consultaInit})
      })
+    
      app.get("/atualiza-promo",async(req,res)=>{
         let qs = url.parse(req.url,true).query
         await db.updatePromo(qs.promo,qs.id)//localhost:3000/atualiza-promo?promo=1&id=1
@@ -79,4 +81,7 @@ const express = require('express')
     })
     
      app.listen(port,() => console.log(`Servidor rodando na porta ${port} - ${__dirname}`))
+    
     })()
+
+    
