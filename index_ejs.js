@@ -19,9 +19,10 @@ const express = require('express')
     consultaFilmes = await db.selectFilmes()
 
     //index (Quando criar o html diretamente no res.end() insira o writeHead)
-    app.get("/",(req,res)=>{
-        res.render(`index`)
-    })
+    
+    //app.get("/",(req,res)=>{
+        //res.render(`index`)
+    //})
     
     app.get("/produtos",(req,res)=>{
         res.render(`produtos`)
@@ -75,6 +76,13 @@ const express = require('express')
            filmes:consulta,
           filmes:consultaFilmes
         })
+    })
+    app.get("/",async(req,res)=>{
+        res.render(`index`,{
+          titulo:" Conheça os nossos Filmes",
+          promo:" Todos os Filmes com 10% de desconto !",
+          filmes:consulta,
+          galeria:consultaFilmes})
     })
     
      app.listen(port,() => console.log(`Servidor rodando na porta ${port} - ${__dirname}`))

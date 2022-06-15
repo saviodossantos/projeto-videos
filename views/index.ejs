@@ -40,13 +40,30 @@
             <% 
                 arr=[1,5,6,7,8,9,10,4,11,12]
                 n= parseInt(Math.random()* arr.length) %>
-                <a class="nav-link" href="/single?id=<%=arr[n]%>">Surpreenda-me</a>
+                <a class="btn btn-dark" href="/single?id=<%=arr[n]%>">Surpreenda-me</a>
         </nav>
 
         <section>
             <article>
-                <hr>
-                <div id="galeriaVideos" class="mt-4 mb-4 row"></div>
+                <div class="row">
+                    <!--inicio da iteração-->
+                    <% filmes.forEach((item)=>{ %>
+                    <div class="col-md-16 col-sm-16 col-lg-3 ml-3 mt-3">
+                        <div>
+                            <a href="/single?id=<%=item.filmes_id%>">
+                            <img class="w-100 imagens" src="imgs/<%=item.imagem%>" alt="Card image cap">
+                            </a>
+                            <div>
+                                <h4 ><%=item.titulo%></h4>
+                                <p ><%=item.sinopse.substring(0,100)+"..."%></p>
+                                <h2>R$ <%=item.valor%></h2>
+                              <button class="btn btn-dark bt-carrinho">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                   </div>
+                
             </article>
         </section>
         <footer class="mt-5">
