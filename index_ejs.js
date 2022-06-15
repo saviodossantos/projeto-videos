@@ -20,7 +20,7 @@ const express = require('express')
 
     //index (Quando criar o html diretamente no res.end() insira o writeHead)
     app.get("/",(req,res)=>{
-        res.render(`index`,{promo:"Todos os filmes com 10% de desconto!"})
+        res.render(`index`)
     })
     
     app.get("/produtos",(req,res)=>{
@@ -33,15 +33,12 @@ const express = require('express')
     
     app.get("/cadastro",(req,res)=>{
         res.render(`cadastro`)
-     })
-
-    app.get("/single",(req,res)=>{
-    res.render(`single`)
     })
+  
     
     app.get("/login",(req,res)=>{
         res.render(`login`)
-     })
+    })
 
     app.get("/carrinho", (req, res) => {
      res.render(`carrinho`, {
