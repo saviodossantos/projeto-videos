@@ -1,0 +1,11 @@
+<nav class="d-flex justify-content-around mb-4 mt-2">
+    <a href="/" class="btn btn-dark">Início</a>
+    <a href="/produtos" class="btn btn-dark">Produtos</a>
+    <a href="/contato" class="btn btn-dark">Contato</a>
+    <a href="/cadastro" class="btn btn-dark">Cadastre-se</a>
+    <a href="/carrinho" class="btn btn-dark">Carrinho</a>
+    <% 
+        arr=[1,5,6,7,8,9,10,4,11,12]
+        n= parseInt(Math.random()* arr.length) %>
+        <a class="btn btn-dark" href="/single?id=<%=arr[n]%>">Surpreenda-me</a>
+</nav>

@@ -1,0 +1,91 @@
+
+<%- include('header.ejs') %>
+<%- include('nav.ejs') %>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="/">
+                        <img src="/imgs/LogotipoStreamOn.png" width="150">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                </div>
+                <div class="col-sm-3 mt-3 dd-flex justify-content-end">
+                    <span id="bemVindo"></span>
+                    <a id="entrar" href="login" class="btn btn-danger">Entrar</a>
+                    <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        
+        <section>
+            <article>
+                <p class="text-center">Stream ON é um serviço de transmissão online que oferece uma ampla variedade de
+                    séries, filmes e documentários premiados em milhares de aparelhos conectados à internet.</p>
+
+                <div class="row ">
+                    <div class="col-sm-4 mt-3 filmes">
+                        <h4 class="col-sm-12">
+                            <%=galeria[0].titulo%>
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <img src="/imgs/<%=galeria[0].imagem%>" class="w-100 imagens">
+                            </div>
+                            <div clas="col-sm-7">
+                                <p>Ano: <%=galeria[0].ano%>
+                                </p>
+                                <p>Categoria: <%=galeria[0].genero%>
+                                </p>
+                                <p>
+                                    <%=galeria[0].sinopse.substring(0,100)+"..."%>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="galeriaVideos" class="mt-4 mb-4">
+                    <div class="row wrap">
+                        <div class="col-sm-4">
+                            <a href="produtos.html">
+                                <img src="../imgs/filme1.jpeg" class="imagens">
+                            </a>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <a href="produtos.html">
+                                <img src="../imgs/filme3.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="produtos.html">
+                                <img src="../imgs/filme9.jpeg" class="imagens">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+  
+    </article>
+
+    </section>
+
+ 
+</div>
+ </body>
+<script src="../js/controle.js"></script>
+<!-- <script src="../js/geral.js"></script> -->
+<%- include('footer.ejs') %>
+</html>

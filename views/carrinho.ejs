@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="/">
+                        <img src="/imgs/LogotipoStreamOn.png" width="150">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                </div>
+                <div class="col-sm-3 mt-3 dd-flex justify-content-end">
+                    <span id="bemVindo"></span>
+                    <a id="entrar" href="login.html" class="btn btn-danger">Entrar</a>
+                    <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="d-flex justify-content-around mb-4 mt-2">
+            <a href="/" class="btn btn-dark">Início</a>
+            <a href="/produtos" class="btn btn-dark">Produtos</a>
+            <a href="/contato" class="btn btn-dark">Contato</a>
+            <a href="/cadastro" class="btn btn-dark">Cadastre-se</a>
+        </nav>
+
+        <section>
+            <article>
+                <div class="row">
+                    <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
+                        <table class="table text-white" id="listaCarrinho">
+                            <tr>
+                                <th>Produto</th>
+                                <th>Telas</th>
+                                <th>Quantidade</th>
+                                <th>Preço</th>
+                                <th></th>
+                            </tr>
+                            <% carrinho.forEach((item) => { %>
+                            <tr>
+                                <td style="vertical-align:unset;">
+                                    <img class="w-50 m-1 imagemCarrinho" src="../imgs/<%= item.imagem %>">
+                                    <p class="font-italic"><%= item.titulo %></p>
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    <input class="form-control" id="qtdTelasfilme<%= item.filmes_id %>" type="number" min="1" max="5" value="1">
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    <!-- Quantidade -->
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    R$ <%= item.valor %>
+                                </td>
+                                <td style="vertical-align:unset;">
+                                    <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            <% }) %>
+
+                        </table>
+                        <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center">Resumo do Pedido</h5>
+                        <div class="resumoPedido p-3 mt-3">
+                            <p><span id="totalProdutos"></span> Produtos</p>
+                            <p>Total R$ <span id="valorTotal"></span> </p>
+                            <div>
+                                <label for="valor" class="mt-5">Tem cupom de desconto?</label>
+                                <br>
+                                <input type="text" id="cupom" name="valor" class="form-control"
+                                    placeholder="Insira o código aqui">
+                                <br>
+                            </div>
+                            <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
+                            <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p>
+                            <input id="botao1" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
+                            <button class="btn btn-sm btn-primary mt-3">Continuar</button>
+                            <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="galeriaVideos" class="mt-4 mb-4">
+                    <div class="row wrap">
+                        <div class="col-sm-4">
+                            <a href="../docs/produtos.html">
+                                <img src="../imgs/filme1.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="../docs/produtos.html">
+                                <img src="../imgs/filme2.jpeg" class="imagens">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="../docs/produtos.html">
+                                <img src="../imgs/filme3.jpeg" class="imagens">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+        </section>
+        <footer class="mt-5">
+            <p>&copy;2022 - Todos os direitos reservados</p>
+        </footer>
+    </div>
+</body>
+<!-- <script src="../js/carrinho.js"></script> -->
+<!-- <script src="../js/geral.js"></script> -->
+
+</html>

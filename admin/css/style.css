@@ -4,7 +4,7 @@ footer{bottom: 0 !important;position:fixed; background-color: black;}
 
 body{
     background-color: black;
-    color: white;
+    color: rgb(202, 31, 31);
     /* background-color: lightblue;
     /* imagens de fundo
     background-image: url('https://www.ppt-backgrounds.net/thumbs/hells-hd-frame-presentation.jpeg');
@@ -15,7 +15,7 @@ body{
 }
 
 .listaRelatorio{
-    background-color: #fff;
+    background-color: rgb(221, 208, 208);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -33,14 +33,15 @@ body{
 
 
 /* relatorio chamadas */
-.listaRelatorioChamadas{
-    background-color: #fff;
-    border-radius: 15px;
+.listaRelatorioChamadas{    
+    background-color: rgba(11, 10, 10, 0.331);
+    color: rgb(248, 248, 247);
 }
 
 .visaoMacroRelatorioChamadas{
-    border: 1px solid #fff;
+    border: 1px solid rgb(102, 4, 4);
     border-radius: 13px;
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(13, 8, 8);
+    color: rgb(239, 11, 11);
 }
 
