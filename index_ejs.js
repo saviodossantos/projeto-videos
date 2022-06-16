@@ -46,6 +46,13 @@ const express = require('express')
         carrinho: consultaCarrinho
      })
     })
+
+    app.get("/produtos",async(req,res)=>{
+        const consultaProduto= await db.selectFilmes()
+       res.render(`produtos`,{
+           galeria:consultaProduto
+       })
+   })
     
     app.get("/promocoes",async(req,res)=>{
        const consultaPromo=await db.selectPromo()
