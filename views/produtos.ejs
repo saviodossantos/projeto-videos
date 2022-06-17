@@ -1,45 +1,38 @@
 <%- include ('header') %>
 <%- include ('nav') %>
 
-<section>
-    <table class="w-100" border="0">            
-        <tr>
-            <td><iframe class="w-100" width="400" height="250" marginheight="40" marginwidth="100"src="" id=tra0 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
-            <td><iframe class="w-100" width="400" height="250" marginheight="40" marginwidth="100" src="" id=tra1 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
-            <td><iframe class="w-100" width="400" height="250" src="" id=tra2 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></td>
-        </tr>
-        </table>
-    <article>
-        <div id="galeriaLivros" class="mt-4 mb-6">
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3> Doutor Estranho 2</h3>
+        <section>
+            <table class="w-100" border="0">            
+                <tr>
+                    <td><iframe class="w-100" width="400" height="250" marginheight="40" marginwidth="100"src="" id=tra0 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                    <td><iframe class="w-100" width="400" height="250" marginheight="40" marginwidth="100" src="" id=tra1 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                    <td><iframe class="w-100" width="400" height="250" src="" id=tra2 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></td>
+                </tr>
+                </table>
+            <article>
+                <p class="col-sm-8"> Aqui você encontra o melhor dos nossos conteúdos em HD!</p>
+                <hr>
+                <div id="galeriaLivros" class="mt-4 mb-6">
                     <div class="row">
+                        <% galeria.forEach((item)=>{ %>
                         <div class="col-sm-6">
-                            <a href="single.html">
-                                <img src="../imgs/filme2.jpeg" class="w-100 imagens"  />
-                            </a>
-                        </div>
-                        <p class="col-sm-6 text-white">Em Doutor Estranho no Multiverso da Loucura, após
-                            derrotar Dormammu e enfrentar Thanos nos eventos de Vingadores: Ultimato, o Mago
-                            Supremo, Stephen Strange (Benedict Cumberbatch), e seu parceiro Wong (Benedict
-                            Wong), continuam suas pesquisas sobre a Joia do Tempo. Mas um velho amigo que virou
-                            inimigo coloca um ponto final nos seus planos e faz com que Strange desencadeie um
-                            mal indescritível, o obrigando a enfrentar uma nova e poderosa ameaça. O longa se
-                            conecta com a série do Disney+ WandaVision e tem relação também com Loki. O longa
-                            pertence a fase 4 do MCU onde a realidade do universo pode entrar em colapso por
-                            causa do mesmo feitiço que trouxe os vilões do Teioso para o mundo dos Vingadores e
-                            o Mago Supremo precisará contar com a ajuda de Wanda (Elizabeth Olsen), que vive
-                            isolada desde os eventos de WandaVision.
-                        </p>
+                            <h3> <%=item.titulo%></h3>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="/single?id=<%=item.filmes_id%>">
+                                        <img src="imgs/<%=item.imagem%>" class="w-100 imagens"  />
+                                    </a>
+                                </div>
+                                <p class="col-sm-6 text-white"><%=item.sinopse.substring(0,200)+"..."%>
+                                </p>
 
-                    </div>
+                            </div>
+                        </div> <% }) %>
+                        </div>
                 </div>
-                <div class="col-sm-6">
-                    <h3>Batman</h3>
-                    <div class="row">
-                        <div class="col-sm-5">
+                <div class="row">
+                        <div class="col-sm-4 mt-5">
+
                             <a href="single.html">
                                 <img src="../imgs/filme1.jpeg" class="w-100 imagens" />
                             </a>
@@ -80,44 +73,16 @@
                                 <img src="../imgs/filme4.jpeg" class="w-100 imagens" />
                             </a>
                         </div>
-                        <p class="col-sm-7 text-white">Baseado no personagem de mesmo nome da Marvel Comics,
-                            Michael Morbius (Jared Letto) sempre sofreu com uma condição rara em seu sangue que
-                            o faz andar de bengala e desde criança ser excluído por outros, mas sua vida
-                            solitária foi preenchida por livros. Após se formar na faculdade, Doutor Morbius é
-                            renomado na área de biomedicina e tenta achar uma cura para sua rara condição, afim
-                            de não apenas se ajudar, mas ajudar outras pessoas que também sofrem como ele.
-                            Experimentando com o DNA de morcegos, Morbius espera achar a cura e se usa como
-                            teste para o soro. Usando o DNA que isolou e uma mistura de eletrochoque, a cura foi
-                            um sucesso temporário, mas os efeitos colaterais acabaram transformando-o em um
-                            pseudo-vampiro e que agora precisa sobreviver como um. Apesar de ganhar capacidades
-                            iguais a de um morcego, Morbius precisa de sangue humano para sobreviver, os efeitos
-                            colaterais também o fez mudar fisicamente, ganhando presas e uma pele pálida. Além
-                            disso, a cada pessoa que ele morde, ela também vira um ser igual a ele.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-4 mt-5">
-                    <a href="single.html">
-                        <img src="../imgs/filme5.jpeg" class="imagens">
-                    </a>
-                </div>
-                <div class="col-sm-4 mt-5">
-                    <a href="single.html">
-                        <img src="../imgs/filme6.jpeg" class="imagens">
-                    </a>
-                </div>
-                <div class="col-sm-4 mt-5">
-                    <a href="single.html">
-                        <img src="../imgs/filme7.jpeg" class="imagens">
-                    </a>
-                </div>
-            </div>
-        </div>
 
 
-    </article>
-</section>
+                    </div></div>
+                </div>
+  
 
-<script src="../js/produtos.js"></script>
+            </article>
+        </section>
+
+<!-- <script src="../js/geral.js"></script> -->
 
 <%- include ('footer') %>
+
