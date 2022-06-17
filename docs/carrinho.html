@@ -40,8 +40,8 @@
         <section>
             <article>
                 <div class="row">
-                    <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
-                        <table class="table text-white" id="listaCarrinho">
+                    <div id="carrinho" class="col-sm-7 mt-5 mb-5">
+                        <table class="table text-white text-center" id="listaCarrinho">
                             <tr>
                                 <th>Produto</th>
                                 <th>Telas</th>
@@ -49,9 +49,14 @@
                                 <th>Preço</th>
                                 <th></th>
                             </tr>
-
+                            <tbody id="conteudoCarrinho"></tbody>
+                            
                         </table>
-                        <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                        <div id="totalCarrinho">
+                            <p id="totalItens">Total dos itens: R$ <span id="totalItensResult"></span></p>
+                            <button class="btn btn-info btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                            <p id="carrinhoVazio"></p>
+                        </div>
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
@@ -68,7 +73,7 @@
                             </div>
                             <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
                             <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p>
-                            <input id="botao1" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
+                            <input id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
                             <button class="btn btn-sm btn-primary mt-3">Continuar</button>
                             <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
                         </div>
