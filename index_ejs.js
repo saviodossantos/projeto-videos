@@ -15,6 +15,9 @@
 
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
+   // const consultaCupom = await db.selectCupom()
+   const deleteItemCarrinho = await db.deleteItemCarrinho()
+   const deleteAllCarrinho = await db.deleteAllCarrinho()
    consultaFilmes = await db.selectFilmes()
 
    app.get("/", async (req, res) => {
@@ -46,7 +49,10 @@
 
    app.get("/carrinho", (req, res) => {
       res.render(`carrinho`, {
-         carrinho: consultaCarrinho
+         carrinho: consultaCarrinho,
+         deleteItemCarrinho: deleteItemCarrinho,
+         deleteAllCarrinho: deleteAllCarrinho
+         // cupom: consultaCupom
       })
    })
 
