@@ -3,11 +3,15 @@
    const express = require('express')
    const app = express()
    const db = require("./db.js")
+   const bodyParser=require("body-parser")
+    const session=require("express-session")
+const mysqlSession = require("express-mysql-session")(session)
    const url = require("url")
    const port = 3000
 
    app.set("view engine", "ejs")
-
+   app.use(bodyParser.urlencoded({extended:false}))
+   app.use(bodyParser.json())
    app.use(express.static('projeto-videos'))
    app.use("/imgs", express.static("imgs"))
    app.use("/js", express.static("js"))
@@ -32,9 +36,27 @@
       })
    })
 
-   app.get("/contato", (req, res) => {
-      res.render(`contato`)
+   app.get("/contato",async(req,res)=>{
+      let infoUrl=req.url
+      let urlProp= url.parse(infoUrl,true)
+      let q =urlProp.query
+      res.render(`contato`,{
+        titulo:" Conheça os nossos Livros",
+        promo:" Todos os livros com 10% de desconto !",
+        filmes:consulta,
+      galeria:consultaFilmes
+    })
    })
+    app.post("/contato",async(req,res)=>{
+      const info=req.body
+       await db.insertContato({
+         nome:info.cad_nome,
+      sobrenome:info.cad_sobrenome,
+      email:info.cad_email,
+      mensagem:info.cad_mensagem})
+      res.redirect("/promocoes")
+    })
+ 
 
    app.get("/cadastro", (req, res) => {
       res.render(`cadastro`)
@@ -83,6 +105,12 @@
          filmes: consultaFilmes
       })
    })
+   app.get("/produtos",async(req,res)=>{
+      const consultaProduto= await db.selectFilmes()
+     res.render(`produtos`,{
+         galeria:consultaProduto
+     })
+ })
 
    app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 
