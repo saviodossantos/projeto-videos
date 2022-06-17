@@ -3,8 +3,9 @@
     "body-parser": "^1.20.0",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.16"
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3"
   },
   "name": "projeto-videos",
   "description": "Projeto do Grupo 1 (Squad One) do programa Impulso Tec",
@@ -14,6 +15,7 @@
     "doc": "docs"
   },
   "devDependencies": {
+    "-": "^0.0.1",
     "nodemon": "^2.0.16"
   },
   "scripts": {
