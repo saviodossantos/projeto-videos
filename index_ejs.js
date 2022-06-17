@@ -26,8 +26,10 @@
       })
    })
 
-   app.get("/produtos", (req, res) => {
-      res.render(`produtos`)
+  app.get("/produtos", (req, res) => {
+      res.render(`produtos`, {
+         galeria: consultaFilmes
+      })
    })
 
    app.get("/contato", (req, res) => {
