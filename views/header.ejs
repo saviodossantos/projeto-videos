@@ -26,9 +26,28 @@
 
                 </div>
                 <div class="col-sm-3 mt-3 dd-flex justify-content-end">
+                    <div class="navbar-text">
+                        
+                        <span class="d-inline-block mr-3 font-weight-bold text-white">
+                         <%=info.user%>
+                        </span>
+                
+                    </div>                    
                     <span id="bemVindo"></span>
-                    <a id="entrar" href="/login" class="btn btn-danger">Entrar</a>
-                    <a href="/" style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
-                </div>
+                                      
+                    <% if (info.user){ %>
+                        <li class="nav-item">
+                            <a  href="/logout" class="btn btn-danger ml-2" >Sair</a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a  href="/login" class="btn btn-danger " >Entrar</a>
+                        </li>
+                    <% } %>
+                </ul>
+                
             </div>
+            
         </header>
+        
+            

@@ -12,25 +12,25 @@
 
 <body>
     <header class="text-center">
-        <a href="./">
+        <a href="/">
             <img src="/imgs/LogotipoStreamOn.png" width="250">
         </a>
 
     </header>
-    <form id="formLogin" method="post" action="./" class="w-50 mx-auto p-4 mt-4 mb-4"
+    <form action="" method="post" action="/" class="w-50 mx-auto p-4 mt-4 mb-4"
         style="border:1px solid #ccc;border-radius:10px;">
         <fieldset>
             <legend>Preencha os campos para entrar</legend>
             <div class="form-group">
                 <label><big>E-mail</big> :</label>
-                <input class="form-control" name="email" id="email" maxlength="50">
+                <input class="form-control" type="email" name="email" id="email" maxlength="50" required>
             </div>
             <div class="form-group">
                 <label><big>Senha </big>:</label>
-                <input class="form-control" type="password" name="senha" id="senha" maxlength="8">
+                <input class="form-control" type="password" name="senha" id="senha" maxlength="8" required>
             </div>
             <div>
-                <button type="button" id="btLogin" class="btn btn-info"><b>Confirmar</b></button>
+                <button class="btn btn-info" ><b>Confirmar</b></button>
             </div>
         </fieldset>
     </form>
@@ -40,6 +40,8 @@
         <%- include('footer.ejs') %>
 
 </body>
-<script src="../js/login.js"></script>
+<script src="/js/login.js"></script>
+
+
 
 </html>

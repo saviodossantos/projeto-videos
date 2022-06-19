@@ -1,11 +1,12 @@
 (async () => {
-
+   
+   const { application } = require('express')
    const express = require('express')
    const app = express()
    const db = require("./db.js")
    const bodyParser=require("body-parser")
-    const session=require("express-session")
-const mysqlSession = require("express-mysql-session")(session)
+   const session=require("express-session")
+   const mysqlSession = require("express-mysql-session")(session)
    const url = require("url")
    const port = 3000
 
@@ -16,10 +17,73 @@ const mysqlSession = require("express-mysql-session")(session)
    app.use("/imgs", express.static("imgs"))
    app.use("/js", express.static("js"))
    app.use("/css", express.static("css"))
+   app.use("/adm",express.static("adm"))
+
+   const options ={
+      expiration: 10800000,
+      createDatabaseTable: true,
+      schema: {
+          tableName: 'session_tbl',
+          columnNames: {
+              session_id: 'session_id',
+              expires: 'expires',
+              data: 'data'
+          }
+      }  
+  }
+
+
+await db.makeSession(app,options,session)
+
+function checkFirst(req, res, next) {
+   if (!req.session.userInfo) {
+     res.redirect('/promocoes');
+   } else {
+     next();
+   }
+ }
+ 
+ function checkAuth(req, res, next) {
+   if (!req.session.userInfo) {
+     res.send('Você não está autorizado para acessar esta página');
+   } else {
+     next();
+   }
+ }
+ 
+ var userInfo=''
+ app.locals.info = {
+     user:userInfo
+ }
+ 
 
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
    consultaFilmes = await db.selectFilmes()
+   
+   app.get("/login",async(req,res) => {
+      res.render(`login`)
+   })
+
+   
+   app.post("/login", async (req,res)=>{
+      const {email,senha} = req.body
+      const logado = await db.selectUsers(email,senha)
+      if(logado != ""){
+      req.session.userInfo = email
+      userInfo = req.session.userInfo
+      req.app.locals.info.user= userInfo
+      res.redirect('/')
+      } else {res.send("<h2>Login ou senha não conferem</h2>")}
+  })
+  app.use('/logout', function (req,res) {
+   req.app.locals.info = {}
+   req.session.destroy()
+   res.clearCookie('connect.sid', { path: '/' });
+   res.redirect("/login") 
+
+ })
+
 
    app.get("/", async (req, res) => {
       res.render(`index`, {
@@ -41,9 +105,7 @@ const mysqlSession = require("express-mysql-session")(session)
       let urlProp= url.parse(infoUrl,true)
       let q =urlProp.query
       res.render(`contato`,{
-        titulo:" Conheça os nossos Livros",
-        promo:" Todos os livros com 10% de desconto !",
-        filmes:consulta,
+      filmes:consulta,
       galeria:consultaFilmes
     })
    })
@@ -56,15 +118,31 @@ const mysqlSession = require("express-mysql-session")(session)
       mensagem:info.cad_mensagem})
       res.redirect("/promocoes")
     })
- 
+   
+    app.get("/cadastro",async(req,res)=>{
+      let infoUrl=req.url
+      let urlProp= url.parse(infoUrl,true)
+      let q =urlProp.query
+      const consultaSingle = await db.selectSingle(q.id)
+      const consultaInit =await db.selectSingle(4)
+      res.render(`cadastro`,{
+      filme:consulta,
+      galeria:consultaInit
+    })
+    })
+    app.post("/cadastro",async(req,res)=>{
+      const info=req.body
+       await db.cadastroContato({
+      nome:info.nome,
+      email:info.email,
+      telefone:info.telefone,
+      senha:info.senha,
+      conf_senha:info.conf_senha})
+      res.redirect("/login")
+    })
+   
 
-   app.get("/cadastro", (req, res) => {
-      res.render(`cadastro`)
-   })
-
-   app.get("/login", (req, res) => {
-      res.render(`login`)
-   })
+   
 
    app.get("/carrinho", (req, res) => {
       res.render(`carrinho`, {
