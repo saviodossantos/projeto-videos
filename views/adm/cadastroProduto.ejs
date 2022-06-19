@@ -1,0 +1,75 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="/adm/">
+                        <img src="/imgs/LogotipoStreamOn.png" width="150">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                </div>
+        </header>
+
+    </div>
+    <form id="formContato" method="post" action="/index.html" class="w-50 mx-auto p-3 mt-4 mb-4"
+        style="border:1px solid #ccc; border-radius:12px;">
+        <fieldset>
+            <div class="form-group">
+                <label><b>Nome do filme:</b></label>
+                <input class="form-control" type="text" maxlength="30">
+            </div>
+            <div class="form-group">
+                <label><b>Sinopse:</b></label>
+                <textarea class="form-control" name="comentario" rows="8"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label><b>Categoria :</b></label>
+                <input class="form-control" type="text" maxlength="30">
+            </div>
+            <div class="form-group">
+                <label><b>Ano de Produção :</b></label>
+                <input class="form-control mb-3" type="text" maxlength="30">
+                <div>
+                    <div class="form-group">
+                        <label><b>Descrição :</b></label>
+                        <input class="form-control mb-3" type="text" maxlength="30">
+                        <div>
+                            <div class="form-group">
+                                <form class="upload-imagem">
+                                    <input type="file" class="upload" required>
+                                    <button class="btnAtualiza" type="button">Mostrar imagem</button>
+                                </form>
+                                <img class="imagem" src="http://via.placeholder.com/350x150" alt="Sua imagem" width="150" height="150">
+                                <div>
+                                    <div>
+                                        <button class="btn btn-info"><b>Confirmar
+                                                Cadastro</b></button>
+                                    </div>
+
+        </fieldset>
+    </form>
+    <article> </article>
+    </section>
+
+    <footer class="mt-5">
+        <p>&copy;2022 - Todos os direitos reservados. </p>
+    </footer>
+    <script src= "../js/cadastroProduto.js"></script>
+</body>
+
+</html>

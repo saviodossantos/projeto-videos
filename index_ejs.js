@@ -56,7 +56,7 @@ function checkFirst(req, res, next) {
      user:userInfo
  }
  
-
+   const consultaAdm = await db.selectAdm()
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
    consultaFilmes = await db.selectFilmes()
@@ -140,9 +140,7 @@ function checkFirst(req, res, next) {
       conf_senha:info.conf_senha})
       res.redirect("/login")
     })
-   
-
-   
+    
 
    app.get("/carrinho", (req, res) => {
       res.render(`carrinho`, {
@@ -189,6 +187,64 @@ function checkFirst(req, res, next) {
          galeria:consultaProduto
      })
  })
+ app.get("/adm", async (req, res) => {
+   res.render(`adm/index-admin`, {
+      titulo: "login do Adm",      
+      filmes: consulta,
+      galeria: consultaFilmes
+   })
+})
+app.get("/adm/cadastroAdm",async(req,res)=>{
+   let infoUrl=req.url
+   let urlProp= url.parse(infoUrl,true)
+   let q =urlProp.query   
+   res.render(`adm/cadastroAdm`,{
+ 
+ })
+ })
+ app.post("/adm/cadastroAdm",async(req,res)=>{
+   const info=req.body
+   await db.cadastroAdm({
+   nome:info.nome,
+   email:info.email,
+   telefone:info.telefone,
+   senha:info.senha,
+   confsenha:info.confsenha})
+   res.redirect(`/adm`)
+ })
+
+ app.get("/adm/login-admin",async(req,res) => {
+    res.render(`adm/login-admin`,{
+})
+ })
+
+ app.post("/adm/login-admin", async (req,res)=>{
+   const {email,senha} = req.body
+   const logado = await db.selectAdm(email,senha)
+   if(logado != ""){
+   req.session.userInfo = email
+   userInfo = req.session.userInfo
+   req.app.locals.info.user= userInfo
+   res.redirect('/adm')
+   } else {res.send("<h2>Login ou senha não conferem</h2>")}
+})
+app.use('/logout', function (req,res) {
+req.app.locals.info = {}
+req.session.destroy()
+res.clearCookie('connect.sid', { path: '/' });
+res.redirect(`adm/login-adm`) 
+})
+
+
+app.get("/adm/cadastroProduto",async(req,res)=>{
+   let infoUrl=req.url
+   let urlProp= url.parse(infoUrl,true)
+   let q =urlProp.query
+   res.render(`adm/cadastroProduto`,{
+   
+ })
+ }) 
+
 
    app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 
