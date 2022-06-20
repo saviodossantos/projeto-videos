@@ -1,47 +1,46 @@
-
-<%- include('header.ejs') %>
-<%- include('nav.ejs') %>
+<!DOCTYPE html>
+<html>
 
 <head>
     <title>StreamOn</title>
     <meta charset="utf-8">
-    <!-- Latest compiled and minified CSS -->
+  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header class="text-center">
-        <a href="/">
-            <img src="/imgs/LogotipoStreamOn.png" width="250">
+        <a href="/adm/">
+            <img src="/imgs/LogotipoStreamOn.png" width="150">
         </a>
-
+      
     </header>
-    <form action="" method="post" action="/" class="w-50 mx-auto p-4 mt-4 mb-4"
+    
+    <form action="" method="post" action="/adm/" class="w-50 mx-auto p-4 mt-4 mb-4"
         style="border:1px solid #ccc;border-radius:10px;">
         <fieldset>
             <legend>Preencha os campos para entrar</legend>
             <div class="form-group">
                 <label><big>E-mail</big> :</label>
-                <input class="form-control" type="email" name="email" id="email" maxlength="50" required>
+                <input class="form-control" name="email" id="email" maxlength="50" required>
             </div>
             <div class="form-group">
                 <label><big>Senha </big>:</label>
                 <input class="form-control" type="password" name="senha" id="senha" maxlength="8" required>
             </div>
             <div>
-                <button class="btn btn-info" ><b>Confirmar</b></button>
+                <button class="btn btn-info"><b>Confirmar</b></button>
             </div>
         </fieldset>
-    </form>
+    </form> <nav>
 
 
         <!-- Setor de rodapé-->
-        <%- include('footer.ejs') %>
-
+        <footer>
+            <p> &copy;2022 - Todos os direitos reservados.</p>
+        </footer>
 </body>
-<script src="/js/login.js"></script>
-
-
+<script src="/admin/js/login-admin.js"></script>
 
 </html>
