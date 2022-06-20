@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="/adm/">
+                        <img src="/imgs/LogotipoStreamOn.png" width="150">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                    <table class="table text-white" id="listaCarrinho">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Email</th>
+                            <th>Mensagem</th>
+                            
+                        </tr>
+                        <% contato.forEach((item)=>{ %>
+                        <tr>
+                            
+                                
+                                 
+                            <td style="vertical-align:unset;">
+                                <%= item.nome %>
+                                 </td>
+                                <td style="vertical-align:unset;">
+                                    <%= item.sobrenome %>
+                                </td>
+                                    <td style="vertical-align:unset;">
+                                        <%= item.email %>
+                                    </td>
+                        
+                                <td style="vertical-align:unset;">
+                                    <%= item.mensagem%>
+                            
+                                </td>
+                                 
+                           <% }) %>
+                    </table>
+                </div>
+            </header>
+
+                        <footer class="mt-5">
+                            <p>&copy;2022 - Todos os direitos reservados</p>
+                        </footer>
+                    </body>
+                    </html>
