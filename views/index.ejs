@@ -6,23 +6,23 @@
         <div class="row">
             <% filmes.forEach((item)=>{ %>
                 <div class="col-sm-4 mt-5">
-                    <img class="w-100 imagens" src="imgs/<%=item.imagem%>" alt="Card image cap">
+                    <img class="w-100 imagensIndex" src="imgs/<%=item.imagem%>" alt="Card image cap">
                     <div class="infoFilme">
-                        <div class="infos d-flex justify-content-between">
-                            <a href="/single?id=<%=item.filmes_id%>">
-                                <i class="fas fa-info-circle"></i>
+                        <div class="fundo-escuro">
+
+                            <div class="infos d-flex justify-content-between">
+                                <a href="/single?id=<%=item.filmes_id%>">
+                                <i class="fas fa-info-circle ml-4"></i>
                             </a>
                             <!-- <h4 class="text-center"><%=item.titulo%></h4> -->
                             <!-- <span>R$ <%=item.valor%></span> -->
                             <a href="#">
-                                <i class="fas fa-cart-arrow-down"></i>
+                                <i class="fas fa-cart-arrow-down mr-4"></i>
                             </a>
                             <!-- <p ><%=item.sinopse.substring(0,100)+"..."%></p> -->
                             <!-- <button class="btn btn-dark bt-carrinho">Adicionar ao carrinho</button> -->
                         </div>
-                    </div>
-                    <div class="fundo-escuro">
-                        
+                        </div>
                     </div>
                 </div>
                 <% }) %>

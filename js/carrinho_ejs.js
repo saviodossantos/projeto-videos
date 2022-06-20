@@ -22,20 +22,7 @@ let totalProdutos = document.querySelector("#totalProdutos")
 let valor = document.querySelector("#valorTotal")
 let conteudoCarrinho = document.querySelector("#conteudoCarrinho")
 
-for (i = 0; i < carrinhoJSON.produto.length; i++) {
-    var tr = document.createElement('tr')
-    tr.id = "produto" + i
 
-    tr.innerHTML += '<td style="vertical-align:unset;"><img class="w-50 m-1 imagemCarrinho" src="../imgs/' + carrinhoJSON.produto[i] + '.jpeg"><p class="font-italic">' + carrinhoJSON.nome[i] + '</p></td>'
-    tr.innerHTML += '<td style="vertical-align:unset;"><input class="form-control" id="qtdTelas' + carrinhoJSON.produto[i] + '" type="number" min="1" max="5" value="1"></td>'
-    tr.innerHTML += '<td style="vertical-align:unset;">' + carrinhoJSON.qtd[i] + '</td>'
-    tr.innerHTML += '<td style="vertical-align:unset;">R$ <span id="preco' + carrinhoJSON.produto[i] + '">' + carrinhoJSON.preco[i] + '</span></td>'
-    tr.innerHTML += '<td style="vertical-align:unset;"><button class="btn btn-sm btn-outline-danger" id="excluirProduto' + carrinhoJSON.produto[i] + '">Excluir</button></td>'
-
-    conteudoCarrinho.appendChild(tr)
-    totalProdutos.innerHTML = carrinhoJSON.produto.length
-
-}
 
 // var val1 = carrinhoJSON.preco[0];
 // var val2 = carrinhoJSON.preco[1];
@@ -51,7 +38,7 @@ var p = document.createElement("p")
 
 totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-between d-flex "
 totalCarrinho.style.border = "1px solid white"
-totalItensResult.innerHTML =  valorTotal
+// totalItensResult.innerHTML =  valorTotal
 
 totalCarrinho.appendChild(p)
 
@@ -93,11 +80,11 @@ let cupom = document.querySelector("#cupom")
 
 let totalDesconto = document.querySelector("#totalDesconto")
 totalDesconto.style.display = "none"
-let totalDesconto2 = document.querySelector("#totalDesconto2")
-totalDesconto2.style.display = "none"
+// let totalDesconto2 = document.querySelector("#totalDesconto2")
+// totalDesconto2.style.display = "none"
 
 let valor1 = document.querySelector("#TOTAL") // Cupom20
-let valor2 = document.querySelector("#TOTAL2") // Cupom10
+// let valor2 = document.querySelector("#TOTAL2") // Cupom10
 
 var PORCENTAGEM = parseInt((valorTotal * DESCONTO1) / 100);
 var TOTAL = parseInt((valorTotal - PORCENTAGEM))
@@ -105,12 +92,12 @@ valor1.innerHTML = TOTAL
 
 var PORCENTAGEM2 = parseInt((valorTotal * DESCONTO2) / 100);
 var TOTAL2 = parseInt((valorTotal - PORCENTAGEM2))
-valor2.innerHTML = TOTAL2
+// valor2.innerHTML = TOTAL2
 
 // calcular cupom ======================================================
 console.log("onclick")
 document.querySelector("#calcularCupom").onclick = function () {
-    if (totalDesconto.style.display == "none" && totalDesconto2.style.display == "none") {
+    if (totalDesconto.style.display == "none") {
 
         if (cupom.value == Cupom20) {
             alert("Você ganhou 20% de desconto.")
@@ -130,28 +117,29 @@ document.querySelector("#calcularCupom").onclick = function () {
 
 
 // excluir produto ======================================================
-for (i = 0; i < carrinhoJSON.produto.length; i++) {
-    let excluirProduto = document.querySelector("#excluirProduto" + carrinhoJSON.produto[i])
-    let tr = document.querySelector("#produto" + i)
+// for (i = 0; i < carrinhoJSON.produto.length; i++) {
+//     let excluirProduto = document.querySelector("#excluirProduto" + [i])
+//     let tr = document.querySelector("#produto" + i)
 
-    console.log(i)
-    excluirProduto.onclick = function () {
-        if (confirm("Deseja deletar esse produto?")) {
-            if (excluirProduto[i] == tr[i]) {
-                tr.innerHTML = ""
-                totalProdutos.innerHTML = totalProdutos.innerHTML - 1
-                valor.innerHTML = valorTotal - carrinhoJSON.preco[0]
-                totalItensResult.innerHTML = valorTotal - carrinhoJSON.preco[0]
+//     console.log(i)
+//     console.log(excluirProduto)
+//     excluirProduto.onclick = function () {
+//         if (confirm("Deseja deletar esse produto?")) {
+//             if (excluirProduto[i] == tr[i]) {
+//                 tr.innerHTML = ""
+//                 totalProdutos.innerHTML = totalProdutos.innerHTML - 1
+//                 valor.innerHTML = valorTotal - carrinhoJSON.preco[0]
+//                 // totalItensResult.innerHTML = valorTotal - carrinhoJSON.preco[0]
                 
-            }
-        }
+//             }
+//         }
         
-        i--
-        console.log(i)
+//         i--
+//         console.log(i)
         
-    }
+//     }
 
-}
+// }
 
 
 //calcular porcentagem ======================================================

@@ -29,13 +29,20 @@
                             R$ <%= item.valor %>
                         </td>
                         <td style="vertical-align:unset;">
+                            
                             <button class="btn btn-sm btn-outline-danger btn-excluir" data-id="<%= item.carrinho_id %>">Excluir</button>
+
                         </td>
                     </tr>
                     <% }) %>
 
                 </table>
-                <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                <div id="totalCarrinho">
+                    <p id="totalItens">Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2) %> </span></p>
+                    <button class="btn btn-info btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                    <p id="carrinhoVazio"></p>
+                </div>
+                
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-3">
@@ -43,7 +50,7 @@
                 <div class="resumoPedido p-3 mt-3">
                     <!-- <p><span id="totalProdutos"></span> Produtos</p> -->
                     <p><%= carrinho.length %> Produtos</p>
-                    <p>Total R$ <%= total.toFixed(2) %> </p>
+                    <p>Total R$ <span id="valorTotal"><%= total.toFixed(2) %></span> </p>
                     <div>
                         <label for="valor" class="mt-5">Tem cupom de desconto?</label>
                         <br>
@@ -53,7 +60,7 @@
                     </div>
                     <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
                     <!-- <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p> -->
-                    <input id="botao1" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
+                    <input id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
                     <button class="btn btn-sm btn-primary mt-3">Continuar</button>
                     <p class="small mt-3"><a href="/">Adicionar mais produtos</a></p>
                 </div>
@@ -83,7 +90,7 @@
     </article>
 </section>
 
-<!-- <script src="../js/carrinho.js"></script> -->
+<script src="../js/carrinho_ejs.js"></script>
 <script>
     $().ready(function () {
     $('.btn-excluir').click(function () {
