@@ -15,7 +15,7 @@
                         <h4 ><%=item.titulo%></h4>
                         <p ><%=item.sinopse.substring(0,100)+"..."%></p>
                         <h2>R$ <%=item.valor%></h2>
-                        <button class="btn btn-dark bt-carrinho">Adicionar ao carrinho</button>
+                        <button class="btn btn-dark btn-adicionar" data-id="<%= item.filmes_id %>">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>

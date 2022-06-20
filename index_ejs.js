@@ -15,9 +15,10 @@
 
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
+   // const insertCarrinho = await db.insertCarrinho()
    // const consultaCupom = await db.selectCupom()
    const deleteItemCarrinho = await db.deleteItemCarrinho()
-   const deleteAllCarrinho = await db.deleteAllCarrinho()
+   // const limpaCarrinho = await db.deleteAllCarrinho()
    consultaFilmes = await db.selectFilmes()
 
    app.get("/", async (req, res) => {
@@ -51,10 +52,18 @@
       res.render(`carrinho`, {
          carrinho: consultaCarrinho,
          deleteItemCarrinho: deleteItemCarrinho,
-         deleteAllCarrinho: deleteAllCarrinho
+         // limpaCarrinho: limpaCarrinho
          // cupom: consultaCupom
       })
    })
+
+//    app.post("/carrinho", async (req, res) => {
+//       const info = req.body
+//       await db.insertCarrinho({
+//           produto: info.filmes_id
+//       })
+//       res.send(req.body)
+//   })
 
    app.get("/promocoes", async (req, res) => {
       const consultaPromo = await db.selectPromo()
@@ -89,6 +98,12 @@
          filmes: consultaFilmes
       })
    })
+
+   app.post("/delete-carrinho", async (req, res) => {
+      const info = req.body
+      await db.deleteItemCarrinho(info.id)
+      res.send(info)
+  })
 
    app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 

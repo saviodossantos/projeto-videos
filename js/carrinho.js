@@ -1,5 +1,18 @@
 console.log("teste")
 
+// $().ready(function () {
+//     $('.btn-excluir').click(function () {
+//         let dataid = $(this).attr('data-id')
+
+//         $.post("/delete-carrinho", {
+//             id: dataid
+//         },
+//             function (data, status) {
+//                 location.href = '/carrinho'
+//             }, 'json')
+//     })
+// })
+
 let carrinho = [
     '{"produto":["filme1","filme2","filme3"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]

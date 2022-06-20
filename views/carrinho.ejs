@@ -29,7 +29,7 @@
                             R$ <%= item.valor %>
                         </td>
                         <td style="vertical-align:unset;">
-                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                            <button class="btn btn-sm btn-outline-danger btn-excluir" data-id="<%= item.carrinho_id %>">Excluir</button>
                         </td>
                     </tr>
                     <% }) %>
@@ -43,7 +43,7 @@
                 <div class="resumoPedido p-3 mt-3">
                     <!-- <p><span id="totalProdutos"></span> Produtos</p> -->
                     <p><%= carrinho.length %> Produtos</p>
-                    <p>Total R$ <%= total %> </p>
+                    <p>Total R$ <%= total.toFixed(2) %> </p>
                     <div>
                         <label for="valor" class="mt-5">Tem cupom de desconto?</label>
                         <br>
@@ -83,6 +83,20 @@
     </article>
 </section>
 
-<script src="../js/carrinho.js"></script>
+<!-- <script src="../js/carrinho.js"></script> -->
+<script>
+    $().ready(function () {
+    $('.btn-excluir').click(function () {
+        let dataid = $(this).attr('data-id')
+
+        $.post("/delete-carrinho", {
+            carrinho_id: dataid
+        },
+            function (data, status) {
+                location.href = '/carrinho'
+            }, 'json')
+    })
+})
+</script>
 <%- include ('footer') %>
 
