@@ -24,40 +24,44 @@
         </header>
 
     </div>
-    <form id="formContato" method="post" action="/index.html" class="w-50 mx-auto p-3 mt-4 mb-4"
+    <form method="post" action="" class="w-50 mx-auto p-3 mt-4 mb-4"
         style="border:1px solid #ccc; border-radius:12px;">
         <fieldset>
             <div class="form-group">
                 <label><b>Nome do filme:</b></label>
-                <input class="form-control" type="text" maxlength="30">
+                <input name="titulo" class="form-control" type="text" maxlength="30">
             </div>
             <div class="form-group">
                 <label><b>Sinopse:</b></label>
-                <textarea class="form-control" name="comentario" rows="8"></textarea>
+                <textarea name="sinopse" class="form-control" name="comentario" rows="8"></textarea>
             </div>
 
 
             <div class="form-group">
                 <label><b>Categoria :</b></label>
-                <input class="form-control" type="text" maxlength="30">
+                <input name="genero" class="form-control" type="text" maxlength="30">
             </div>
             <div class="form-group">
                 <label><b>Ano de Produção :</b></label>
-                <input class="form-control mb-3" type="text" maxlength="30">
+                <input name="Ano"class="form-control mb-3" type="text" maxlength="30">
                 <div>
                     <div class="form-group">
-                        <label><b>Descrição :</b></label>
-                        <input class="form-control mb-3" type="text" maxlength="30">
+                        <label><b>Valor :</b></label>
+                        <input name="valor" class="form-control mb-3" type="text" maxlength="30">
                         <div>
                             <div class="form-group">
+                                <label><b>promo :</b></label>
+                                <input name="promo" class="form-control mb-3" type="text" maxlength="30">
+                                <div>
+                            <div class="form-group">
                                 <form class="upload-imagem">
-                                    <input type="file" class="upload" required>
+                                    <input name="imagem" type="file" class="upload" required>
                                     <button class="btnAtualiza" type="button">Mostrar imagem</button>
                                 </form>
                                 <img class="imagem" src="http://via.placeholder.com/350x150" alt="Sua imagem" width="150" height="150">
                                 <div>
                                     <div>
-                                        <button class="btn btn-info"><b>Confirmar
+                                        <button type="submit" class="btn btn-info"><b>Confirmar
                                                 Cadastro</b></button>
                                     </div>
 
