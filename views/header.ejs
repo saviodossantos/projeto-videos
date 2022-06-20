@@ -36,15 +36,14 @@
                     <span id="bemVindo"></span>
                                       
                     <% if (info.user){ %>
-                        <li class="nav-item">
+                        <button class="nav-item">
                             <a  href="/logout" class="btn btn-danger ml-26" >Sair</a>
-                        </li>
+                        </button>
                     <% } else { %>
-                        <li class="nav-item">
+                        <button class="nav-item">
                             <a  href="/login" class="btn btn-danger " >Entrar</a>
-                        </li>
+                        </button>
                     <% } %>
-                </ul>
                 
             </div>
             
