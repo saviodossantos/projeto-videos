@@ -9,10 +9,12 @@ Necessário: node
 
 No terminal, instalar via npm:
 - express;
+- express-mysql-session;
 - mysql2;
 - ejs;
-- nodemon;
 - body-parser;
+- jQuery;
+- nodemon;
 
 # Integrantes
 

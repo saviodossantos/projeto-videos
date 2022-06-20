@@ -1,3 +1,18 @@
+console.log("teste")
+
+// $().ready(function () {
+//     $('.btn-excluir').click(function () {
+//         let dataid = $(this).attr('data-id')
+
+//         $.post("/delete-carrinho", {
+//             id: dataid
+//         },
+//             function (data, status) {
+//                 location.href = '/carrinho'
+//             }, 'json')
+//     })
+// })
+
 let carrinho = [
     '{"produto":["filme1","filme2","filme3"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
 ]
@@ -69,7 +84,7 @@ limparCarrinho.onclick = function () {
 }
 
 //cupom de desconto ======================================================
-var Cupom20 = "123"
+var Cupom20 = 123
 var Cupom10 = "456"
 var DESCONTO1 = ("20")
 var DESCONTO2 = ("10")
@@ -93,6 +108,7 @@ var TOTAL2 = parseInt((valorTotal - PORCENTAGEM2))
 valor2.innerHTML = TOTAL2
 
 // calcular cupom ======================================================
+console.log("onclick")
 document.querySelector("#calcularCupom").onclick = function () {
     if (totalDesconto.style.display == "none" && totalDesconto2.style.display == "none") {
 
