@@ -4,28 +4,32 @@
 <section>
     <article>
         <div class="row">
-            <!--inicio da iteração-->
             <% filmes.forEach((item)=>{ %>
-            <div class="col-md-16 col-sm-16 col-lg-3 ml-3 mt-3">
-                <div>
-                    <a href="/single?id=<%=item.filmes_id%>">
+                <div class="col-sm-4 mt-5">
                     <img class="w-100 imagens" src="imgs/<%=item.imagem%>" alt="Card image cap">
-                    </a>
-                    <div>
-                        <h4 ><%=item.titulo%></h4>
-                        <p ><%=item.sinopse.substring(0,100)+"..."%></p>
-                        <h2>R$ <%=item.valor%></h2>
-                        <button class="btn btn-dark btn-adicionar" data-id="<%= item.filmes_id %>">Adicionar ao carrinho</button>
+                    <div class="infoFilme">
+                        <div class="infos d-flex justify-content-between">
+                            <a href="/single?id=<%=item.filmes_id%>">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <!-- <h4 class="text-center"><%=item.titulo%></h4> -->
+                            <!-- <span>R$ <%=item.valor%></span> -->
+                            <a href="#">
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </a>
+                            <!-- <p ><%=item.sinopse.substring(0,100)+"..."%></p> -->
+                            <!-- <button class="btn btn-dark bt-carrinho">Adicionar ao carrinho</button> -->
+                        </div>
+                    </div>
+                    <div class="fundo-escuro">
+                        
                     </div>
                 </div>
-            </div>
-            <% }) %>
-            </div>
-        
+                <% }) %>
+        </div>
+
     </article>
 </section>
 
-<script src="js/index.js"></script>
-<script src="js/geral.js"></script>
 
 <%- include ('footer') %>
