@@ -10,11 +10,13 @@
                     <tr>
                         <th>Produto</th>
                         <th>Telas</th>
-                        <th>Quantidade</th>
                         <th>Preço</th>
                         <th></th>
                     </tr>
-                    <% carrinho.forEach((item) => { %>
+                    <% total = 0 
+                    carrinho.forEach((item) => { 
+                        total += parseFloat(item.valor)
+                    %>
                     <tr>
                         <td style="vertical-align:unset;">
                             <img class="w-50 m-1 imagemCarrinho" src="../imgs/<%= item.imagem %>">
@@ -24,26 +26,31 @@
                             <input class="form-control" id="qtdTelasfilme<%= item.filmes_id %>" type="number" min="1" max="5" value="1">
                         </td>
                         <td style="vertical-align:unset;">
-                            <!-- Quantidade -->
-                        </td>
-                        <td style="vertical-align:unset;">
                             R$ <%= item.valor %>
                         </td>
                         <td style="vertical-align:unset;">
-                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                            
+                            <button class="btn btn-sm btn-outline-danger btn-excluir" data-id="<%= item.carrinho_id %>">Excluir</button>
+
                         </td>
                     </tr>
                     <% }) %>
 
                 </table>
-                <button class="btn btn-primary btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                <div id="totalCarrinho">
+                    <p id="totalItens">Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2) %> </span></p>
+                    <button class="btn btn-info btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                    <p id="carrinhoVazio"></p>
+                </div>
+                
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-3">
                 <h5 class="text-center">Resumo do Pedido</h5>
                 <div class="resumoPedido p-3 mt-3">
-                    <p><span id="totalProdutos"></span> Produtos</p>
-                    <p>Total R$ <span id="valorTotal"></span> </p>
+                    <!-- <p><span id="totalProdutos"></span> Produtos</p> -->
+                    <p><%= carrinho.length %> Produtos</p>
+                    <p>Total R$ <span id="valorTotal"><%= total.toFixed(2) %></span> </p>
                     <div>
                         <label for="valor" class="mt-5">Tem cupom de desconto?</label>
                         <br>
@@ -52,29 +59,28 @@
                         <br>
                     </div>
                     <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
-                    <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p>
-                    <input id="botao1" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
+                    <!-- <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p> -->
+                    <input id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
                     <button class="btn btn-sm btn-primary mt-3">Continuar</button>
-                    <p class="small mt-3"><a href="">Adicionar mais produtos</a></p>
+                    <p class="small mt-3"><a href="/">Adicionar mais produtos</a></p>
                 </div>
             </div>
-
         </div>
 
         <div id="galeriaVideos" class="mt-4 mb-4">
             <div class="row wrap">
                 <div class="col-sm-4">
-                    <a href="../docs/produtos.html">
+                    <a href="/produtos">
                         <img src="../imgs/filme1.jpeg" class="imagens">
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="../docs/produtos.html">
+                    <a href="/produtos">
                         <img src="../imgs/filme2.jpeg" class="imagens">
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="../docs/produtos.html">
+                    <a href="/produtos">
                         <img src="../imgs/filme3.jpeg" class="imagens">
                     </a>
                 </div>
@@ -84,6 +90,20 @@
     </article>
 </section>
 
-<!-- <script src="../js/carrinho.js"></script> -->
+<script src="../js/carrinho_ejs.js"></script>
+<script>
+    $().ready(function () {
+    $('.btn-excluir').click(function () {
+        let dataid = $(this).attr('data-id')
+
+        $.post("/delete-carrinho", {
+            carrinho_id: dataid
+        },
+            function (data, status) {
+                location.href = '/carrinho'
+            }, 'json')
+    })
+})
+</script>
 <%- include ('footer') %>
 
