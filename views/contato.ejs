@@ -1,64 +1,29 @@
 <%- include("header.ejs")%>
 <%- include('nav.ejs') %>
 
-
-    <div class="container">
-        <header>
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="../index.html">
-                        <img src="/imgs/LogotipoStreamOn.png" width="150">
-                    </a>
-                </div>
-                <div class="col-sm-6">
-                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
-                </div>
-                <div class="col-sm-3 mt-3 dd-flex justify-content-end">
-                    <span id="bemVindo"></span>
-                    <a id="entrar" href="login.html" class="btn btn-danger">Entrar</a>
-                    <a style="cursor:pointer;text-decoration:underline" class="btn btn-danger ml-2" id="sair">Sair</a>
-                </div>
+<section>
+    <article>
+        <form action="" method="POST" class="mt-5 mb-5">
+            <div class="form-group">
+              <label for="cad_nome">Nome</label>
+              <input type="text" class="form-control col-lg-9" id="cad_nome" placeholder="Seu nome aqui" name="cad_nome">
             </div>
-        </header>
+            <div class="form-group">
+              <label for="cad_sobrenome">Sobrenome</label>
+              <input type="text" class="form-control col-lg-9" id="cad_sobrenome" placeholder="Seu sobrenome aqui" name="cad_sobrenome">
+            </div>
+            <div class="form-group">
+              <label for="cad_email">Email</label>
+              <input type="email" class="form-control col-lg-9" id="cad_email"  name="cad_email" placeholder="Seu email aqui">
+            </div>        
+            <div class="form-group">
+              <label for="cad_mensagem">Mensagem</label>
+              <textarea name="cad_mensagem" class="form-control col-lg-9"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+          </form>
+</section>
 
+<script src= "../js/contato.js"></script>
 
-        <section>
-            <article>
-                <form id="formContato" class="w-50 mx-auto p-3 mt-4 mb-4"
-                style="border:1px solid #ccc; border-radius:12px;">
-            <fieldset>
-                <div>
-                <legend class="text-center" class="col-sm-4 mt-5"><b>Entre em contato conosco!</b><legend>
-                </div>
-                <div class="form-group">
-                    <label><b>Nome :</b></label>
-                    <input class="form-control" name="nomeContato" id="nomeUsuario"maxlength="50">
-                </div>
-                <div class="form-group">
-                    <label><b>E-mail :</b></label required>
-                    <input class="form-control" name="emailContato" id="emailUsuario"type="email" maxlength="50" required>
-                </div>
-                <div class="form-group">
-                    <label><b>Telefone :</b></label>
-                    <input class="form-control mb-3" type="text" placeholder="(99)9999-9999" name="telefoneContato" id="telefoneUsuario" maxlength="14" required>
-                </div>
-                <div class="form-group">
-                    <label><b>Assunto :</b></label>
-                    <input class="form-control" name="assuntoContato" id="assuntoUsuario"maxlength="50">
-                </div>
-                <div class="form-group">
-                <label><b>Comentários :</b><br /></label required>
-                    <textarea class="form-control" name="comentContato" id="comentUsuario"rows="8"></textarea>
-                </div>
-                <div>
-                    <input type="checkbox" checked name="chamada" id="chamada" />
-                    <label><b>Quero abrir um chamado para este assunto</b></label>
-                </div>                
-                    <button id="btContato" type="button" class="btn btn-info"><b>Confirmar</b></button>                
-            </fieldset>
-            </form>    
-        </section>
-
-
-    <script src= "../js/contato.js"></script>
-    <%- include("footer.ejs")%>
+<%- include("footer.ejs")%>

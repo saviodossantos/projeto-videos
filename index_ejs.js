@@ -1,4 +1,88 @@
 (async () => {
+   
+   const { application } = require('express')
+   const express = require('express')
+   const app = express()
+   const db = require("./db.js")
+   const bodyParser=require("body-parser")
+   const session=require("express-session")
+   const mysqlSession = require("express-mysql-session")(session)
+   const url = require("url")
+   const port = 3000
+
+   app.set("view engine", "ejs")
+   app.use(bodyParser.urlencoded({extended:false}))
+   app.use(bodyParser.json())
+   app.use(express.static('projeto-videos'))
+   app.use("/imgs", express.static("imgs"))
+   app.use("/js", express.static("js"))
+   app.use("/css", express.static("css"))
+   app.use("/adm",express.static("adm"))
+
+   const options ={
+      expiration: 10800000,
+      createDatabaseTable: true,
+      schema: {
+          tableName: 'session_tbl',
+          columnNames: {
+              session_id: 'session_id',
+              expires: 'expires',
+              data: 'data'
+          }
+      }  
+  }
+
+
+await db.makeSession(app,options,session)
+
+function checkFirst(req, res, next) {
+   if (!req.session.userInfo) {
+     res.redirect('/promocoes');
+   } else {
+     next();
+   }
+ }
+ 
+ function checkAuth(req, res, next) {
+   if (!req.session.userInfo) {
+     res.send('Você não está autorizado para acessar esta página');
+   } else {
+     next();
+   }
+ }
+ 
+ var userInfo=''
+ app.locals.info = {
+     user:userInfo
+ }
+ 
+   const consultaAdm = await db.selectAdm()
+   const consulta = await db.selectFilmes()
+   const consultaCarrinho = await db.selectCarrinho()
+   consultaFilmes = await db.selectFilmes()
+   
+   app.get("/login",async(req,res) => {
+      res.render(`login`)
+   })
+
+   
+   app.post("/login", async (req,res)=>{
+      const {email,senha} = req.body
+      const logado = await db.selectUsers(email,senha)
+      if(logado != ""){
+      req.session.userInfo = email
+      userInfo = req.session.userInfo
+      req.app.locals.info.user= userInfo
+      res.redirect('/')
+      } else {res.send("<h2>Login ou senha não conferem</h2>")}
+  })
+  app.use('/logout', function (req,res) {
+   req.app.locals.info = {}
+   req.session.destroy()
+   res.clearCookie('connect.sid', { path: '/' });
+   res.redirect("/login") 
+
+ })
 
     const express = require('express')
         const app = express()
