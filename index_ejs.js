@@ -60,7 +60,8 @@ function checkFirst(req, res, next) {
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
    consultaFilmes = await db.selectFilmes()
-   
+   consultaContato = await db.selectContato()
+   consultaProdutos = await db.selectProdutos()
    app.get("/login",async(req,res) => {
       res.render(`login`)
    })
@@ -217,6 +218,16 @@ app.get("/adm/cadastroAdm",async(req,res)=>{
     res.render(`adm/login-admin`,{
 })
  })
+ app.get("/adm/relatorio-chamadas",async(req,res) => {
+   res.render(`adm/relatorio-chamadas`,{
+      contato: consultaContato
+})
+})
+app.get("/adm/relatorio-produtos",async(req,res) => {
+   res.render(`adm/relatorio-produtos`,{
+      filmes:consultaProdutos
+})
+})
 
  app.post("/adm/login-admin", async (req,res)=>{
    const {email,senha} = req.body
