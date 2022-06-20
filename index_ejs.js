@@ -71,19 +71,19 @@ function checkFirst(req, res, next) {
       const {email,senha} = req.body
       const logado = await db.selectUsers(email,senha)
       if(logado != ""){
-      req.session.userInfo = email
+      req.session.userInfo = [email,logado[0].adm]
       userInfo = req.session.userInfo
       req.app.locals.info.user= userInfo
-      res.redirect('/')
-      } else {res.send("<h2>Login ou senha não conferem</h2>")}
+      userInfo[1] == 0 ? res.redirect('/') : res.redirect('/adm')
+      } else {res.render("loginNaoConfere")}
   })
-  app.use('/logout', function (req,res) {
+  app.use('/logout', function (req, res) {
    req.app.locals.info = {}
    req.session.destroy()
-   res.clearCookie('connect.sid', { path: '/' });
-   res.redirect("/login") 
+   res.clearCookie('connect.sid', { path:'/' })
+ res.redirect("/login")
 
- })
+})
 
 
    app.get("/", async (req, res) => {
@@ -205,18 +205,14 @@ app.get("/adm/cadastroAdm",async(req,res)=>{
  })
  app.post("/adm/cadastroAdm",async(req,res)=>{
    const info=req.body
-   await db.cadastroAdm({
+   await db.insertUsuarios({
    nome:info.nome,
    email:info.email,
    telefone:info.telefone,
    senha:info.senha,
-   confsenha:info.confsenha})
+   confsenha:info.confsenha,
+   adm:info.adm})
    res.redirect(`/adm`)
- })
-
- app.get("/adm/login-admin",async(req,res) => {
-    res.render(`adm/login-admin`,{
-})
  })
  app.get("/adm/relatorio-chamadas",async(req,res) => {
    res.render(`adm/relatorio-chamadas`,{
@@ -228,24 +224,6 @@ app.get("/adm/relatorio-produtos",async(req,res) => {
       filmes:consultaProdutos
 })
 })
-
- app.post("/adm/login-admin", async (req,res)=>{
-   const {email,senha} = req.body
-   const logado = await db.selectAdm(email,senha)
-   if(logado != ""){
-   req.session.userInfo = email
-   userInfo = req.session.userInfo
-   req.app.locals.info.user= userInfo
-   res.redirect('/adm')
-   } else {res.send("<h2>Login ou senha não conferem</h2>")}
-})
-app.use('/logout', function (req,res) {
-req.app.locals.info = {}
-req.session.destroy()
-res.clearCookie('connect.sid', { path: '/' });
-res.redirect(`adm/login-adm`) 
-})
-
 
 app.get("/adm/cadastroProduto",async(req,res)=>{
    let infoUrl=req.url
