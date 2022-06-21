@@ -2,46 +2,40 @@
 <%- include('header.ejs') %>
 <%- include('nav.ejs') %>
         
-        <section>
+        <section class="container">
             <article>
-                
-                <div class="row ">
-                    <div class="col-sm-4 mt-3 filmes">
-                        <h4 class="col-sm-12">
-                            <%=galeria[0].titulo%>
-                        </h4>
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <img src="/imgs/<%=galeria[0].imagem%>" class="w-100 imagens">
-                            </div>
-                            <div clas="col-sm-7">
-                                <p>Ano: <%=galeria[0].ano%>
-                                </p>
-                                <p>Categoria: <%=galeria[0].genero%>
-                                </p>
-                                <p>
-                                    <%=galeria[0].sinopse.substring(0,100)+"..."%>
-                                </p>
-                            </div>
-                        </div>
+                <div class="mt-5 mb-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2> <%=galeria[0].titulo%></h2>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img src="/imgs/<%=galeria[0].imagem%>" class="w-100 imagens">  
+                                </div>
+                           <div class="col-sm-7">
+                                <p class="text-white "><p><strong>Ano: </strong><%= galeria[0].Ano%></p>
+                             <p><strong>Categoria: </strong><%=galeria[0].genero%> </p><p class="sinopse"><strong>Sinopse: </strong> <%= galeria[0].sinopse%> </p>
                     </div>
+                            </div>
+                        </div> 
+                        </div>
                 </div>
-                <div id="galeriaVideos" class="mt-4 mb-4">
-                    <div class="row wrap">
+            
+                    <div class="row wrap mt-5">
                         <div class="col-sm-4">
                             <a href="produtos.html">
-                                <img src="../imgs/filme1.jpeg" class="imagens">
+                                <img src="../imgs/filme1.jpeg" class="imagensIndex">
                             </a>
                         </div>
 
                         <div class="col-sm-4">
                             <a href="produtos.html">
-                                <img src="../imgs/filme3.jpeg" class="imagens">
+                                <img src="../imgs/filme3.jpeg" class="imagensIndex">
                             </a>
                         </div>
                         <div class="col-sm-4">
                             <a href="produtos.html">
-                                <img src="../imgs/filme9.jpeg" class="imagens">
+                                <img src="../imgs/filme9.jpeg" class="imagensIndex">
                             </a>
                         </div>
                     </div>

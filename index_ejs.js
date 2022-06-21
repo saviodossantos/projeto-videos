@@ -55,8 +55,7 @@
    app.locals.info = {
       user: userInfo
    }
-
-   const consultaAdm = await db.selectAdm()
+   
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
    // const insertCarrinho = await db.insertCarrinho()
@@ -136,17 +135,7 @@
          galeria: consultaInit
       })
    })
-   app.post("/cadastro", async (req, res) => {
-      const info = req.body
-      await db.cadastroContato({
-         nome: info.nome,
-         email: info.email,
-         telefone: info.telefone,
-         senha: info.senha,
-         conf_senha: info.conf_senha
-      })
-      res.redirect("/login")
-   })
+  
 
 
    app.get("/carrinho", (req, res) => {
@@ -229,7 +218,7 @@ app.get("/adm/cadastroAdm",async(req,res)=>{
  })
  app.post("/adm/cadastroAdm",async(req,res)=>{
    const info=req.body
-   await db.insertUsuarios({
+   await db.insertAdm({
    nome:info.nome,
    email:info.email,
    telefone:info.telefone,
@@ -238,6 +227,28 @@ app.get("/adm/cadastroAdm",async(req,res)=>{
    adm:info.adm})
    res.redirect(`/adm`)
  })
+ app.get("/adm/login-admin",async(req,res) => {
+   res.render(`adm/login-admin`)
+})
+
+
+app.post("/adm/login-admin", async (req,res)=>{
+   const {email,senha} = req.body
+   const logado = await db.selectAdm(email,senha)
+   if(logado != ""){
+   req.session.userInfo = email
+   userInfo = req.session.userInfo
+   req.app.locals.info.user= userInfo
+   res.redirect('/adm')
+   } else {res.send("<h2>Login ou senha não conferem</h2>")}
+ })
+app.use('/logout', function (req, res) {
+req.app.locals.info = {}
+req.session.destroy()
+res.clearCookie('connect.sid', { path:'/' })
+res.redirect("/login-admin")
+
+})
  app.get("/adm/relatorio-chamadas",async(req,res) => {
    res.render(`adm/relatorio-chamadas`,{
       contato: consultaContato
@@ -257,6 +268,16 @@ app.get("/adm/cadastroProduto",async(req,res)=>{
    
  })
  }) 
+ app.post("/cadastro",async(req,res)=>{
+   const info=req.body
+    await db.insertUsuarios({
+   nome:info.nome,
+   email:info.email,
+   telefone:info.telefone,
+   senha:info.senha,
+   conf_senha:info.conf_senha})
+   res.redirect("/login")
+ })
  app.post("/adm/cadastroProduto",async(req,res)=>{
    const info=req.body
    await db.insertFilmes({
