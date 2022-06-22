@@ -39,7 +39,7 @@
                 </table>
                 <div id="totalCarrinho">
                     <p id="totalItens">Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2) %> </span></p>
-                    <button class="btn btn-info btn-sm" id="limparCarrinho">Limpar carrinho</button>
+                    <button type="button" class="btn btn-info btn-sm bt-limparCarrinho" id="limparCarrinho">Limpar carrinho</button>
                     <p id="carrinhoVazio"></p>
                 </div>
                 
@@ -67,21 +67,21 @@
             </div>
         </div>
 
-        <div id="galeriaVideos" class="mt-4 mb-4">
+        <div class="mt-4 mb-4">
             <div class="row wrap">
                 <div class="col-sm-4">
                     <a href="/produtos">
-                        <img src="../imgs/filme1.jpeg" class="imagens">
+                        <img src="../imgs/<%= filme[11].imagem %>" class="imagens">
                     </a>
                 </div>
                 <div class="col-sm-4">
                     <a href="/produtos">
-                        <img src="../imgs/filme2.jpeg" class="imagens">
+                        <img src="../imgs/<%= filme[18].imagem %>" class="imagens">
                     </a>
                 </div>
                 <div class="col-sm-4">
                     <a href="/produtos">
-                        <img src="../imgs/filme3.jpeg" class="imagens">
+                        <img src="../imgs/<%= filme[7].imagem %>" class="imagens">
                     </a>
                 </div>
             </div>
@@ -91,19 +91,5 @@
 </section>
 
 <script src="../js/carrinho_ejs.js"></script>
-<script>
-    $().ready(function () {
-    $('.btn-excluir').click(function () {
-        let dataid = $(this).attr('data-id')
-
-        $.post("/delete-carrinho", {
-            carrinho_id: dataid
-        },
-            function (data, status) {
-                location.href = '/carrinho'
-            }, 'json')
-    })
-})
-</script>
 <%- include ('footer') %>
 

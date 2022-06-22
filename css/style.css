@@ -19,15 +19,18 @@ body{
 }
 
 .fundo-escuro {
-    /* background-color: red; */
     background-image: linear-gradient(to bottom, transparent, black);
     height: 30rem;
     width: 22rem;
     position: absolute;
-    /* opacity: .8; */
-    /* z-index: 1; */
     top: 0;
     border-radius: 1rem;
+}
+
+/* bt add carrinho index */
+.bt-addCarrinho{
+background-color: transparent;
+cursor: default !important;
 }
 
 .infos{
