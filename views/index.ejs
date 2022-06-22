@@ -9,27 +9,38 @@
                     <img class="w-100 imagensIndex" src="imgs/<%=item.imagem%>" alt="Card image cap">
                     <div class="infoFilme">
                         <div class="fundo-escuro">
-
                             <div class="infos d-flex justify-content-between">
                                 <a href="/single?id=<%=item.filmes_id%>">
-                                <i class="fas fa-info-circle ml-4"></i>
-                            </a>
-                            <!-- <h4 class="text-center"><%=item.titulo%></h4> -->
-                            <!-- <span>R$ <%=item.valor%></span> -->
-                            <a href="#">
-                                <i class="fas fa-cart-arrow-down mr-4"></i>
-                            </a>
-                            <!-- <p ><%=item.sinopse.substring(0,100)+"..."%></p> -->
-                            <!-- <button class="btn btn-dark bt-carrinho">Adicionar ao carrinho</button> -->
-                        </div>
+                                    <i class="fas fa-info-circle ml-4"></i>
+                                </a>
+                                <button type="button" class="bt-addCarrinho" data-id="<%=item.filmes_id%>">
+                                    <i type="button" class="fas fa-cart-arrow-down mr-4"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <% }) %>
+            <% }) %>
         </div>
 
     </article>
 </section>
+
+<script>
+    $().ready(function () {
+        $('.bt-addCarrinho').click(function () {
+            let dataid = $(this).attr('data-id')
+            $.post("/add-carrinho", {
+                produto: dataid,
+                servico: 1,
+                usuarios: 1
+            },
+            function (data, status) {
+                alert("Filme adicionado ao carrinho.")
+            })
+        })
+    })
+</script>
 
 
 <%- include ('footer') %>
