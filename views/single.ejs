@@ -6,16 +6,15 @@
             <article>
                 <div class="mt-5 mb-6">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <h2> <%=galeria[0].titulo%></h2>
+                        <div class="col-sm-12">
+                            <h2> <%=galeria[0].titulo%> (<span><%=galeria[0].genero%>, <%= galeria[0].Ano%></span>)</h2>
                             <div class="row">
-                                <div class="col-sm-5">
-                                    <img src="/imgs/<%=galeria[0].imagem%>" class="w-100 imagens">  
-                                </div>
-                           <div class="col-sm-7">
-                                <p class="text-white "><p><strong>Ano: </strong><%= galeria[0].Ano%></p>
-                             <p><strong>Categoria: </strong><%=galeria[0].genero%> </p><p class="sinopse"><strong>Sinopse: </strong> <%= galeria[0].sinopse%> </p>
-                    </div>
+                                <div class="col-sm-6">
+                                    <iframe width="530" height="315" src="<%=galeria[0].trailer%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                   </div>
+                           <div class="col-sm-6">
+                             <p class="sinopse"><strong>Sinopse:  <%= galeria[0].sinopse%> </strong></p>
+                   </div>
                             </div>
                         </div> 
                         </div>
