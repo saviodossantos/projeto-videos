@@ -36,7 +36,7 @@ border:none;
 
 .infos{
     margin-top: 26rem;
-    /* opacity: 0; */
+    opacity: 0;
     transition: .5s;
     z-index: 2;
 }
