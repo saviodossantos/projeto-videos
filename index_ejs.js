@@ -59,10 +59,8 @@
    const consultaAdm = await db.selectAdm()
    const consulta = await db.selectFilmes()
    const consultaCarrinho = await db.selectCarrinho()
-   // const insertCarrinho = await db.insertCarrinho()
    // const consultaCupom = await db.selectCupom()
    const deleteItemCarrinho = await db.deleteItemCarrinho()
-   // const limpaCarrinho = await db.deleteAllCarrinho()
    consultaFilmes = await db.selectFilmes()
    consultaContato = await db.selectContato()
    consultaProdutos = await db.selectProdutos()
@@ -151,11 +149,16 @@
 
    app.get("/carrinho", (req, res) => {
       res.render(`carrinho`, {
-         carrinho: consultaCarrinho,
-         // delete: deleteItemCarrinho,
-         // limpaCarrinho: limpaCarrinho
-         // cupom: consultaCupom
+         filme: consulta,
+         carrinho: consultaCarrinho
       })
+   })
+   
+   app.post("/delete-all-carrinho", async (req, res) => {
+      const info = req.body
+      await db.deleteAllCarrinho(info.carrinho_id)
+
+      res.send(info)
    })
 
    app.post("/delete-carrinho", async (req, res) => {
@@ -165,13 +168,11 @@
       res.send(info)
    })
 
-   //    app.post("/carrinho", async (req, res) => {
-   //       const info = req.body
-   //       await db.insertCarrinho({
-   //           produto: info.filmes_id
-   //       })
-   //       res.send(req.body)
-   //   })
+   app.post("/add-carrinho", async (req, res) => {
+      const info = req.body
+      await db.insertCarrinho(info.servico,info.produto,info.usuarios)
+      res.send(info)
+   })
 
    app.get("/promocoes", async (req, res) => {
       const consultaPromo = await db.selectPromo()
