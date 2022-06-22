@@ -25,24 +25,30 @@
                 <div class="col-sm-3 mt-3 dd-flex justify-content-end">
                     <div class="navbar-text">
                         
+                    </div>
+                    <div class="col-sm-3 mt-3 dd-flex justify-content-end">
+                        <% if (info.user){ %>
+                        <div class="navbar-text">
+    
+                            <span class="d-inline-block mr-3 font-weight-bold text-white">
+                                <%=info.user%>
+                            </span>
+    
+                        </div>
+                        <span id="bemVindo"></span>
+    
                         
-                
-                    </div>                    
-                    <span class="d-inline-block mr-3 font-weight-bold text-white">
-                        <%=info.user%>
-                       </span>
-                                      
-                    <% if (info.user){ %>
-                        <button class="nav-item">
-                            <a style="cursor:pointer;text-decoration:underline" href="/logout" class="btn btn-danger ml-2" >Sair</a>
-                        </button>
-                    <% } else { %>
-                        <button class="nav-item">
-                            <a id="entrar" href="/login" class="btn btn-danger " >Entrar</a>
-                        </button>
-                    <% } %>
-                </ul>
-            </div>         
+                            <div class="nav-item">
+                                <a href="/logout" class="btn btn-danger ml-26">Sair</a>
+                            </div>
+                        <% } else { %>
+                            <div class="nav-item">
+                                <a href="login-admin" class="btn btn-danger ">Entrar</a>
+                            </div>
+                        <% } %>
+    
+                    </div>
+                     
 
                 
             </div>
