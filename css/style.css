@@ -31,11 +31,12 @@ body{
 .bt-addCarrinho{
 background-color: transparent;
 cursor: default !important;
+border:none;
 }
 
 .infos{
     margin-top: 26rem;
-    opacity: 0;
+    /* opacity: 0; */
     transition: .5s;
     z-index: 2;
 }
