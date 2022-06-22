@@ -57,8 +57,6 @@
    }
    
    const consulta = await db.selectFilmes()
-   const consultaCarrinho = await db.selectCarrinho()
-   // const consultaCupom = await db.selectCupom()
    const deleteItemCarrinho = await db.deleteItemCarrinho()
    consultaFilmes = await db.selectFilmes()
    consultaContato = await db.selectContato()
@@ -133,10 +131,9 @@
          galeria: consultaInit
       })
    })
-  
 
-
-   app.get("/carrinho", (req, res) => {
+   app.get("/carrinho", async(req, res) => {
+      const consultaCarrinho = await db.selectCarrinho()
       res.render(`carrinho`, {
          filme: consulta,
          carrinho: consultaCarrinho
@@ -146,7 +143,6 @@
    app.post("/delete-all-carrinho", async (req, res) => {
       const info = req.body
       await db.deleteAllCarrinho(info.carrinho_id)
-
       res.send(info)
    })
 

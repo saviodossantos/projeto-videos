@@ -5,10 +5,10 @@ $().ready(function () {
         $.post("/delete-all-carrinho", {
             carrinho_id: dataid
         },
-            function (data, status) {
-                alert("Carrinho limpo com sucesso.")
-                location.href = '/carrinho'
-            }, 'json')
+        function (data, status) {
+            alert("Carrinho limpo com sucesso.")
+            location.href = '/carrinho'
+        }, 'json')
     })
 
     $('.btn-excluir').click(function () {
@@ -35,14 +35,11 @@ let totalProdutos = document.querySelector("#totalProdutos")
 let valor = document.querySelector("#valorTotal")
 let conteudoCarrinho = document.querySelector("#conteudoCarrinho")
 
-
-
 // var val1 = carrinhoJSON.preco[0];
 // var val2 = carrinhoJSON.preco[1];
 // var val3 = carrinhoJSON.preco[2];
 // var valorTotal = parseInt(val1) + parseInt(val2) + parseInt(val3);
 // valor.innerHTML = valorTotal
-
 
 let totalCarrinho = document.querySelector("#totalCarrinho")
 let totalItens = document.querySelector("#totalItens")
@@ -51,7 +48,7 @@ var p = document.createElement("p")
 
 totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-between d-flex "
 totalCarrinho.style.border = "1px solid white"
-// totalItensResult.innerHTML =  valorTotal
+totalItensResult.innerHTML =  valorTotal
 
 totalCarrinho.appendChild(p)
 
@@ -127,33 +124,6 @@ document.querySelector("#calcularCupom").onclick = function () {
     }
 
 }
-
-
-// excluir produto ======================================================
-// for (i = 0; i < carrinhoJSON.produto.length; i++) {
-//     let excluirProduto = document.querySelector("#excluirProduto" + [i])
-//     let tr = document.querySelector("#produto" + i)
-
-//     console.log(i)
-//     console.log(excluirProduto)
-//     excluirProduto.onclick = function () {
-//         if (confirm("Deseja deletar esse produto?")) {
-//             if (excluirProduto[i] == tr[i]) {
-//                 tr.innerHTML = ""
-//                 totalProdutos.innerHTML = totalProdutos.innerHTML - 1
-//                 valor.innerHTML = valorTotal - carrinhoJSON.preco[0]
-//                 // totalItensResult.innerHTML = valorTotal - carrinhoJSON.preco[0]
-
-//             }
-//         }
-
-//         i--
-//         console.log(i)
-
-//     }
-
-// }
-
 
 //calcular porcentagem ======================================================
 function calcularPorcentagem() {
