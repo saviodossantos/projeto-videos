@@ -1,17 +1,30 @@
-console.log("teste")
+// jquery para excluir um item e limpar o carrinho inteiro 
+$().ready(function () {
+    $('.bt-limparCarrinho').click(function () {
+        let dataid = $(this).attr('data-id')
+        $.post("/delete-all-carrinho", {
+            carrinho_id: dataid
+        },
+            function (data, status) {
+                alert("Carrinho limpo com sucesso.")
+                location.href = '/carrinho'
+            }, 'json')
+    })
 
-// $().ready(function () {
-//     $('.btn-excluir').click(function () {
-//         let dataid = $(this).attr('data-id')
+    $('.btn-excluir').click(function () {
+        let dataid = $(this).attr('data-id')
 
-//         $.post("/delete-carrinho", {
-//             id: dataid
-//         },
-//             function (data, status) {
-//                 location.href = '/carrinho'
-//             }, 'json')
-//     })
-// })
+        $.post("/delete-carrinho", {
+            carrinho_id: dataid
+        },
+            function (data, status) {
+                alert("Filme removido do carrinho.")
+                location.href = '/carrinho'
+            }, 'json')
+    })
+})
+
+// ======================================== fim do jquery ========================================
 
 let carrinho = [
     '{"produto":["filme1","filme2","filme3"],"nome":["The Batman","Doutor Estranho: Multiverso da Loucura","Matrix 4"],"qtd":["1","1","1"],"preco":[20,30,10]}'
@@ -130,13 +143,13 @@ document.querySelector("#calcularCupom").onclick = function () {
 //                 totalProdutos.innerHTML = totalProdutos.innerHTML - 1
 //                 valor.innerHTML = valorTotal - carrinhoJSON.preco[0]
 //                 // totalItensResult.innerHTML = valorTotal - carrinhoJSON.preco[0]
-                
+
 //             }
 //         }
-        
+
 //         i--
 //         console.log(i)
-        
+
 //     }
 
 // }
@@ -174,23 +187,23 @@ function calcularPorcentagem() {
 
 
 
-function q(el){
+function q(el) {
     return document.querySelector(el)
 }
 
 
- function calcularCarrinho() {
-     valorTotal = parseFloat(q("#preco" + carrinhoJSON.produto[0]).innerHTML) + parseFloat(q("#preco" + carrinhoJSON.produto[1]).innerHTML) + parseFloat(q("#preco" + carrinhoJSON.produto[2]).innerHTML)
+function calcularCarrinho() {
+    valorTotal = parseFloat(q("#preco" + carrinhoJSON.produto[0]).innerHTML) + parseFloat(q("#preco" + carrinhoJSON.produto[1]).innerHTML) + parseFloat(q("#preco" + carrinhoJSON.produto[2]).innerHTML)
 
-     valor.innerHTML = valorTotal
- }
+    valor.innerHTML = valorTotal
+}
 
- function alteraCarrinho() {
-     q("#preco" + carrinhoJSON.produto[0]).innerHTML = (parseFloat(q("#preco" + carrinhoJSON.produto[0]).innerHTML) * q("#qtdTelas" + carrinhoJSON.produto[0]).value)
+function alteraCarrinho() {
+    q("#preco" + carrinhoJSON.produto[0]).innerHTML = (parseFloat(q("#preco" + carrinhoJSON.produto[0]).innerHTML) * q("#qtdTelas" + carrinhoJSON.produto[0]).value)
 
-     calcularCarrinho();
- }
+    calcularCarrinho();
+}
 
- calcularCarrinho()
+calcularCarrinho()
 
- document.querySelector("#qtdTelas" + carrinhoJSON.produto[0]).addEventListener("change", alteraCarrinho)
+document.querySelector("#qtdTelas" + carrinhoJSON.produto[0]).addEventListener("change", alteraCarrinho)
