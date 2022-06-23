@@ -3,15 +3,14 @@ body{
     color: white;
 }
 
+nav .btn{
+    width: 11rem;
+}
+
 .imagens{
     border-radius: 1rem;
     height: 100%;
-    /* transition: width .5s; aplica o efeito de transição em cada elemento com essa class */
 }
-
-/* .imagens:hover{ faz o efeito de transição acontecer
-    border:1px solid red;
-} */
 
 .imagensIndex{
     border-radius: 1rem;
@@ -67,4 +66,12 @@ div.fundo-escuro:hover .infos{
     border: 1px solid #fff;
     border-radius: 13px;
     background-color: rgb(45, 45, 45);
+}
+
+
+/* single  */
+
+.iframeSingle{
+    border-radius: 2rem;
+    box-shadow: 0 0 .4rem red;
 }
