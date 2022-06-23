@@ -5,6 +5,7 @@
     <title>StreamOn</title>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome/css/all.min.css">
@@ -16,17 +17,17 @@
     <div class="container">
         <header>
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <a href="/">
                         <img src="/imgs/LogotipoStreamOn.png" width="150">
                     </a>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-8 d-flex justify-content-center">
 
-                    <h1 class="mt-5"><i>Número 1 em streaming! </i></h1>
+                    <img class="mt-2" width="210" src="/imgs/Streaming.png">
 
                 </div>
-                <div class="col-sm-3 mt-3 dd-flex justify-content-end">
+                <div class="col-sm-2 mt-3 d-flex justify-content-end">
                     <% if (info.user){ %>
                     <div class="navbar-text">
 
@@ -35,15 +36,15 @@
                         </span>
 
                     </div>
-                    <span id="bemVindo"></span>
+                    <!-- <span id="bemVindo"></span> -->
 
                     
                         <div class="nav-item">
-                            <a href="/logout" class="btn btn-danger ml-26">Sair</a>
+                            <a href="/logout" class="btn btn-danger btn-sm"><i class="fas fa-sign-out-alt"></i> Sair</a>
                         </div>
                     <% } else { %>
                         <div class="nav-item">
-                            <a href="/login" class="btn btn-danger ">Entrar</a>
+                            <a href="/login" class="btn btn-danger btn-sm"><i class="fas fa-sign-in-alt"></i> Entrar</a>
                         </div>
                     <% } %>
 
