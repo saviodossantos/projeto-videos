@@ -13,11 +13,17 @@
                         </span>
                     </h2>
                     <div class="row">
-                        <div class="col-sm-12 d-flex justify-content-center mb-5">
-                            <iframe class="iframeSingle" width="800" height="448" src="<%=galeria[0].trailer%>"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                        <div class="col-sm-12">
+                            <h2> <%=galeria[0].titulo%> (<span><%=galeria[0].genero%>, <%= galeria[0].Ano%></span>)</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <iframe width="530" height="315" src="<%=galeria[0].trailer%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                   </div>
+                           <div class="col-sm-6">
+                             <p class="sinopse"><strong>Sinopse:  <%= galeria[0].sinopse%> </strong></p>
+                   </div>
+                            </div>
+                        </div> 
                         </div>
                         <div class="col-sm-12 d-flex justify-content-around">
                             <h4 class="font-italic font-weight-bold">Sinopse</h4>
