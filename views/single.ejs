@@ -40,9 +40,28 @@
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             
-                            <button type="button" class="btn btn-info btn-lg mr-3" disabled>
+                            <button type="button" class="btn btn-info btn-lg mr-3 share-btn" >
                                 <i class="fas fa-share-alt"></i>
                             </button>
+
+                            <div class="share-options">
+                                <p class="title">Compartilhe com amigos!</p>
+                                <div class="social-media">
+                                    <a href="">
+                                        <button class="social-media-btn">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </button>
+                                    </a>
+
+                                    <a href="https://twitter.com/intent/tweet" target="_blank">
+                                        <button class="social-media-btn"><i class="fab fa-twitter"></i>
+                                        </button>
+                                    </a>
+
+                                    <button class="social-media-btn"><i class="fab fa-facebook-f"></i></button>
+                                </div>
+                                
+                            </div>
 
                             <button type="button" class="btn btn-info btn-lg" disabled>
                                 <i class="fas fa-bookmark"></i>
@@ -81,6 +100,13 @@
 </section>
 
 <script>
+    const shareBtn = document.querySelector('.share-btn');
+    const shareOptions = document.querySelector('.share-options');
+
+    shareBtn.addEventListener('click', () => {
+        shareOptions.classList.toggle('active');
+    })
+
     $().ready(function () {
         $('.btn-addCarrinho').click(function () {
             let dataid = $(this).attr('data-id')

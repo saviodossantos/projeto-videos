@@ -90,8 +90,6 @@
 
    app.get("/", async (req, res) => {
       res.render(`index`, {
-         titulo: " Conheça os nossos Filmes",
-         promo: " Todos os Filmes com 10% de desconto !",
          filmes: consulta,
          galeria: consultaFilmes
       })
