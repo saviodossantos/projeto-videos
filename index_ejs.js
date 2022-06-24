@@ -162,7 +162,6 @@
    app.get("/promocoes", async (req, res) => {
       const consultaPromo = await db.selectPromo()
       res.render(`promocoes`, {
-         filmes: consulta,
          galeria: consultaPromo
       })
    })
@@ -186,7 +185,7 @@
       res.send("<h2>Lista de promoções atualizada!</h2><a href='./promocoes'>Voltar</a>")
    })
 
-   app.get("/upd-promo", async (req, res) => {
+   app.get("/upd-promo", (req, res) => {
       res.render(`adm/atualiza-promocoes`, {
          filmes: consulta,
          filmes: consultaFilmes

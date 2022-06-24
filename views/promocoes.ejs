@@ -9,7 +9,7 @@
 
         <div class="row">
 
-            <% filmes.forEach((item)=>{ %>
+            <% galeria.forEach((item)=>{ %>
                 <div class="col-sm-4 mt-3 filmes">
                     <h4 class="col-sm-12">
                         <%= item.titulo%>
@@ -22,7 +22,7 @@
                                 <div class="col-sm-7">
                                     <p>Categoria: <%= item.genero %>
                                     </p>
-                                    <p>Ano: <%= item.ano %>
+                                    <p>Ano: <%= item.Ano %>
                                     </p>
                                     <p class="sinopse">
                                         <%= item.sinopse.substring(0,100)+"..." %>
