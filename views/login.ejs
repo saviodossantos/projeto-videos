@@ -1,7 +1,4 @@
 
-<%- include('header.ejs') %>
-<%- include('nav.ejs') %>
-
 <head>
     <title>StreamOn</title>
     <meta charset="utf-8">
@@ -10,10 +7,10 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
-    <header class="text-center">
+<body class="container">
+    <header class="text-center mb-2">
         <a href="/">
-            <img src="/imgs/LogotipoStreamOn.png" width="250">
+            <img class="mt-5" src="/imgs/LogotipoStreamOn.png" width="250 ">
         </a>
 
     </header>
@@ -30,7 +27,7 @@
                 <input class="form-control" type="password" name="senha" id="senha" maxlength="8" required>
             </div>
             <div>
-                <button class="btn btn-info" ><b>Confirmar</b></button>
+                <button class="btn btn-danger" ><b>Confirmar</b></button>
             </div>
         </fieldset>
     </form>
