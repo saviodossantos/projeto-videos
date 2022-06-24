@@ -70,12 +70,15 @@
       const {email,senha} = req.body
       const logado = await db.selectUsers(email,senha)
       if(logado != ""){
-      req.session.userInfo = [email,logado[0].adm]
+      req.session.userInfo = [email]
       userInfo = req.session.userInfo
       req.app.locals.info.user= userInfo
-      userInfo[1] == 0 ? res.redirect('/') : res.redirect('/adm')
-      } else {res.render("loginNaoConfere")}
-  })
+      res.redirect('/')
+      } else {
+         res.render(`erro`)
+      }
+   })
+   
   app.use('/logout', function (req, res) {
    req.app.locals.info = {}
    req.session.destroy()
@@ -236,7 +239,7 @@ app.post("/adm/login-admin", async (req,res)=>{
    userInfo = req.session.userInfo
    req.app.locals.info.user= userInfo
    res.redirect('/adm')
-   } else {res.send("<h2>Login ou senha não conferem</h2>")}
+   } else {res.render(`adm/erroadm`)}
  })
 app.use('/logout', function (req, res) {
 req.app.locals.info = {}

@@ -46,7 +46,7 @@ let totalItens = document.querySelector("#totalItens")
 let totalItensResult = document.querySelector("#totalItensResult")
 var p = document.createElement("p")
 
-totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-between d-flex "
+totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-around d-flex "
 totalCarrinho.style.border = "1px solid white"
 //totalItensResult.innerHTML =  valorTotal
 

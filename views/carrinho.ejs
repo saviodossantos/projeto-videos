@@ -8,9 +8,9 @@
             <div id="carrinho" class="col-sm-7 mt-5 mb-5 text-center">
                 <table class="table text-white" id="listaCarrinho">
                     <tr>
-                        <th>Produto</th>
-                        <th>Telas</th>
-                        <th>Preço</th>
+                        <th><i class="fas fa-film"></i> Produto</th>
+                        <th><i class="fas fa-desktop"></i> Telas</th>
+                        <th><i class="fas fa-money-bill-wave"></i> Preço</th>
                         <th></th>
                     </tr>
                     <% total = 0 
@@ -30,7 +30,7 @@
                         </td>
                         <td style="vertical-align:unset;">
                             
-                            <button class="btn btn-sm btn-outline-danger btn-excluir" data-id="<%= item.carrinho_id %>">Excluir</button>
+                            <button class="btn btn-sm btn-outline-danger btn-excluir" data-id="<%= item.carrinho_id %>"><i class="fas fa-trash-alt"></i></button>
 
                         </td>
                     </tr>
@@ -38,8 +38,8 @@
 
                 </table>
                 <div id="totalCarrinho">
-                    <p id="totalItens">Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2) %> </span></p>
-                    <button type="button" class="btn btn-info btn-sm bt-limparCarrinho" id="limparCarrinho">Limpar carrinho</button>
+                    <p id="totalItens"><i class="fas fa-coins"></i> Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2) %> </span></p>
+                    <button type="button" class="btn btn-info btn-sm bt-limparCarrinho" id="limparCarrinho"><i class="fas fa-trash-alt"></i> Limpar carrinho</button>
                     <p id="carrinhoVazio"></p>
                 </div>
                 
@@ -49,20 +49,25 @@
                 <h5 class="text-center">Resumo do Pedido</h5>
                 <div class="resumoPedido p-3 mt-3">
                     <!-- <p><span id="totalProdutos"></span> Produtos</p> -->
-                    <p><%= carrinho.length %> Produtos</p>
-                    <p>Total R$ <span id="valorTotal"><%= total.toFixed(2) %></span> </p>
+                    <p><i class="fas fa-film"></i> <%= carrinho.length %> Produtos</p>
+                    <p><i class="fas fa-coins"></i> Total R$ <span id="valorTotal"><%= total.toFixed(2) %></span> </p>
                     <div>
                         <label for="valor" class="mt-5">Tem cupom de desconto?</label>
                         <br>
-                        <input type="text" id="cupom" name="valor" class="form-control"
-                            placeholder="Insira o código aqui">
+                        <div class="input-group">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="cupomDesconto"><i class="fas fa-tag"></i> </span>
+                            </div>
+                            <input type="text" id="cupom" name="valor" class="form-control" aria-describedby="cupomDesconto" placeholder="Insira o código aqui">
+                        </div>
                         <br>
                     </div>
                     <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
                     <!-- <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p> -->
-                    <input id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3" value="Calcular">
-                    <button class="btn btn-sm btn-primary mt-3">Continuar</button>
-                    <p class="small mt-3"><a href="/">Adicionar mais produtos</a></p>
+                    <button id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3"><i class="fas fa-calculator"></i> Calcular</button>
+                    <button class="btn btn-sm btn-primary mt-3"><i class="fas fa-wallet"></i> Continuar</button>
+                    <button class="btn btn-sm btn-secondary mt-3"><a class="text-white" href="/"><i class="fas fa-plus"></i> Adicionar mais produtos</a></button>
                 </div>
             </div>
         </div>
