@@ -75,7 +75,7 @@
       req.app.locals.info.user= userInfo
       res.redirect('/')
       } else {
-         res.render("loginNaoConfere")
+         res.render(`erro`)
       }
    })
    
@@ -240,7 +240,7 @@ app.post("/adm/login-admin", async (req,res)=>{
    userInfo = req.session.userInfo
    req.app.locals.info.user= userInfo
    res.redirect('/adm')
-   } else {res.send("<h2>Login ou senha não conferem</h2>")}
+   } else {res.render(`adm/erroadm`)}
  })
 app.use('/logout', function (req, res) {
 req.app.locals.info = {}
