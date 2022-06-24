@@ -60,6 +60,7 @@
    const deleteItemCarrinho = await db.deleteItemCarrinho()
    consultaFilmes = await db.selectFilmes()
    consultaContato = await db.selectContato()
+   consultaUsuarios = await db.selectUsuarios()
    consultaProdutos = await db.selectProdutos()
    app.get("/login",async(req,res) => {
       res.render(`login`)
@@ -259,7 +260,11 @@ app.get("/adm/relatorio-produtos",async(req,res) => {
       filmes:consultaProdutos
 })
 })
-
+app.get("/adm/relatorio-usuarios",async(req,res) => {
+   res.render(`adm/relatorio-usuarios`,{
+      usuarios:consultaUsuarios
+})
+})
 app.get("/adm/cadastroProduto",async(req,res)=>{
    let infoUrl=req.url
    let urlProp= url.parse(infoUrl,true)
