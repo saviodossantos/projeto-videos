@@ -1,7 +1,7 @@
 console.log('Testando JS')
 
 //escopos var let const
-let videos = '{"Nome":"Silvio","idade":"50","email":"silvio22@gmail.com","preferencia": "Açao ,Terror, Suspense","dataInicio":"13/05/2022","tipoAssinante":"Ouro","valor":"R$:39,50"}'
+let videos = '{"Nome":"Silvio","email":"silvio22@gmail.com","preferencia": " Açã ,Terror, Suspense","dataInicio":"13/05/2022","tipoAssinante":"Ouro","valor":"R$:39,50"}'
 
 console.log(videos)
 let videosJSON= JSON.parse(videos)
@@ -20,7 +20,6 @@ let p6=document.querySelector("#p6")
 
 
 h3.innerHTML=videosJSON.Nome
-p1.innerHTML="Idade: "+videosJSON.idade
 p2.innerHTML="E-mail: "+videosJSON.email
 p3.innerHTML="Preferência:" +videosJSON.preferencia
 p4.innerHTML="Data Inicio:" +videosJSON.dataInicio
