@@ -86,30 +86,27 @@ div.fundo-escuro:hover .infos{
 
 .share-options{
     position: absolute;
-    bottom: 4rem;
-    right: 21.8rem;
+    bottom: -3rem;
+    right: 11.7rem;
     width: auto;
     height: auto;
-    transform-origin: bottom center;
+    transform-origin: left center;
     transform: scale(0);
     border-radius: 1rem;
     background-color: white;
     color: #000;
     padding: 20px;
     transition: .5s;
-    transition-delay: .5s;;
     z-index: 1;
 }
 
 .share-options.active{
     transform: scale(1);
-    transition-delay: 0s;
 }
 
 .title{
     opacity: 0;
     transition: .5s;
-    transition-delay: 0s;
     font-size: 20px;
     border-bottom: 1px solid black;
     width: fit-content;
@@ -119,7 +116,6 @@ div.fundo-escuro:hover .infos{
 .social-media{
     opacity: 0;
     transition: .5s;
-    transition-delay: 0s;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -156,5 +152,4 @@ div.fundo-escuro:hover .infos{
 .share-options.active .title, .share-options.active .social-media, .share-options.active {
     opacity: 1;
     transition: .5s;
-    transition-delay: .5s;
 }
