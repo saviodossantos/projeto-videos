@@ -167,7 +167,11 @@
          galeria: consultaPromo
       })
    })
-
+   app.get("/usuario", (req, res) => {
+      res.render(`perfil-usuario`, {
+         galeria:consultaUsuarios
+      })
+   })
    app.get("/single", async (req, res) => {
       let infoUrl = req.url
       let urlProp = url.parse(infoUrl, true)
