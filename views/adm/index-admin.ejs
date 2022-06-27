@@ -19,8 +19,10 @@
                         <img src="/imgs/LogotipoStreamOn.png" width="150">
                     </a>
                 </div>
-                <div class="col-sm-6">
-                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                <div class="col-sm-5 d-flex justify-content-center">
+
+                    <img class="mt-2" width="210" src="/imgs/Streaming.png">
+
                 </div>
                 <div class="col-sm-3 mt-3 dd-flex justify-content-end">
                     <div class="navbar-text">
@@ -39,7 +41,7 @@
     
                         
                             <div class="nav-item">
-                                <a href="/logout" class="btn btn-danger ml-26">Sair</a>
+                                <a href="/adm/logout-admin" class="btn btn-danger ml-26">Sair</a>
                             </div>
                         <% } else { %>
                             <div class="nav-item">
@@ -54,15 +56,15 @@
             </div>
         </header>
            <div class="row">
-              <nav class=" mb-4 mt-5">
+            <nav class=" mb-4 mt-5">
                 <div>
                     <a href="/adm/cadastroProduto" class="btn btn-dark col-sm-12 mb-4">Produtos</a>
                 </div>
-                <div>
-                    <a class="btn btn-dark col-sm-12 mb-4">Cupons</a>
-                </div>
                 <div>  
                     <a href="/adm/cadastroAdm" class="btn btn-dark col-sm-12 mb-4">Cadastro</a>
+                </div>
+                <div> 
+                    <a href="/adm/relatorio-usuarios" class="btn btn-dark col-sm-12 mb-4"> Relatorio Usuários</a>
                 </div>
                 <div> 
                     <a href="/adm/relatorio-produtos" class="btn btn-dark col-sm-12 mb-4"> Relatorio produtos</a>
@@ -70,6 +72,7 @@
                 <div> 
                     <a href="/adm/relatorio-chamadas" class="btn btn-dark col-sm-12 mb-4"> Relatorio chamadas</a>
                 </div> 
+                
              </nav>
            </div>
         <footer class="mt-5">

@@ -60,6 +60,7 @@
    const deleteItemCarrinho = await db.deleteItemCarrinho()
    consultaFilmes = await db.selectFilmes()
    consultaContato = await db.selectContato()
+   consultaUsuarios = await db.selectUsuarios()
    consultaProdutos = await db.selectProdutos()
    app.get("/login",async(req,res) => {
       res.render(`login`)
@@ -241,11 +242,11 @@ app.post("/adm/login-admin", async (req,res)=>{
    res.redirect('/adm')
    } else {res.render(`adm/erroadm`)}
  })
-app.use('/logout', function (req, res) {
+app.use('/adm/logout-admin', function (req, res) {
 req.app.locals.info = {}
 req.session.destroy()
 res.clearCookie('connect.sid', { path:'/' })
-res.redirect("/login-admin")
+res.redirect(`/adm`)
 
 })
  app.get("/adm/relatorio-chamadas",async(req,res) => {
@@ -258,7 +259,11 @@ app.get("/adm/relatorio-produtos",async(req,res) => {
       filmes:consultaProdutos
 })
 })
-
+app.get("/adm/relatorio-usuarios",async(req,res) => {
+   res.render(`adm/relatorio-usuarios`,{
+      usuarios:consultaUsuarios
+})
+})
 app.get("/adm/cadastroProduto",async(req,res)=>{
    let infoUrl=req.url
    let urlProp= url.parse(infoUrl,true)

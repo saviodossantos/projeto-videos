@@ -1,11 +1,10 @@
 <nav class="d-flex justify-content-between mb-4 mt-2">
     <a href="/" class="btn btn-dark"><i class="fas fa-home"></i> Início</a>
     <a href="/produtos" class="btn btn-dark"><i class="fas fa-film"></i> Produtos</a>
-    <a href="/contato" class="btn btn-dark"><i class="fas fa-address-card"></i> Contato</a>
     <a href="/cadastro" class="btn btn-dark"><i class="fas fa-user"></i> Cadastre-se</a>
     <a href="/carrinho" class="btn btn-dark"><i class="fab fa-opencart"></i> Carrinho</a>
-    <% 
-        arr=[1,5,6,7,8,9,10,4,11,12]
-        n= parseInt(Math.random()* arr.length) %>
+    <a href="/contato" class="btn btn-dark"><i class="fas fa-address-card"></i> Contato</a>
+    <% arr=[1,5,6,7,8,9,10,4,11,12]
+    n=parseInt(Math.random()* arr.length) %>
         <a class="btn btn-dark" href="/single?id=<%=arr[n]%>"><i class="fas fa-random"></i> Surpreenda-me</a>
 </nav>
