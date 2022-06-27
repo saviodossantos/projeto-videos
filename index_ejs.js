@@ -243,11 +243,11 @@ app.post("/adm/login-admin", async (req,res)=>{
    res.redirect('/adm')
    } else {res.render(`adm/erroadm`)}
  })
-app.use('/logout', function (req, res) {
+app.use('/adm/logout-admin', function (req, res) {
 req.app.locals.info = {}
 req.session.destroy()
 res.clearCookie('connect.sid', { path:'/' })
-res.redirect("/login-admin")
+res.redirect(`/adm`)
 
 })
  app.get("/adm/relatorio-chamadas",async(req,res) => {
