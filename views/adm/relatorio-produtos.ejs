@@ -3,6 +3,7 @@
 <head>
     <title>StreamOn</title>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/style.css">
@@ -18,11 +19,8 @@
                         <img src="/imgs/LogotipoStreamOn.png" width="150">
                     </a>
                 </div>
-                <div class="col-sm-7 d-flex justify-content-center">
-
-                    <img class="mt-2" width="210" src="/imgs/Streaming.png">
-
-                </div>
+                <div class="col-sm-6">
+                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
                     <table class="table text-white" id="listaCarrinho">
                         <tr>
                             <th>Titulo</th>
@@ -32,6 +30,8 @@
                             <th>Imagem</th>
                             <th>Promo</th>
                             <th>Valor</th>
+                            <th>trailer</th>
+                            <th></th>
                         </tr>
                         <% filmes.forEach((item)=>{ %>
                         <tr>
@@ -61,18 +61,37 @@
                                 <%= item.valor %>
                                 
                            </td>
-                                
-                                 
-                           
-                        
-                           <% }) %>
+                           <td style="vertical-align:unset;">
+                            <%= item.trailer %>
+                            
+                       </td>
+                       <td style="vertical-align:unset;">
+                       <button data-id="<%=item.filmes_id%>" class="btn btn-info bt-edit">Editar</button>
+                       <% }) %>
+                   </td>
                     </table>
                 </div>
             </header>
-
+            <script>
+                $().ready(function(){
+                
+                $('.bt-edit').click(function(){
+                
+                let dataid=$(this).attr('data-id')
+                
+                        $.post("/upd-form-produto",
+                        {
+                        id:dataid
+                        },
+                        function(data,status)
+                        {
+                        location.href='/upd-form-produto'
+                        })
+                    })
+                })
+                </script>
                         <footer class="mt-5">
                             <p>&copy;2022 - Todos os direitos reservados</p>
                         </footer>
                     </body>
                     </html>
-        
