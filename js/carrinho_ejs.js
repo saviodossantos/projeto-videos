@@ -81,8 +81,8 @@ limparCarrinho.onclick = function () {
 }
 
 //cupom de desconto ======================================================
-var Cupom20 = 123
-var Cupom10 = "456"
+var Cupom10 = '10MENOS'
+var Cupom20 = '20MENOS'
 var DESCONTO1 = ("20")
 var DESCONTO2 = ("10")
 
@@ -90,11 +90,8 @@ let cupom = document.querySelector("#cupom")
 
 let totalDesconto = document.querySelector("#totalDesconto")
 totalDesconto.style.display = "none"
-// let totalDesconto2 = document.querySelector("#totalDesconto2")
-// totalDesconto2.style.display = "none"
 
 let valor1 = document.querySelector("#TOTAL") // Cupom20
-// let valor2 = document.querySelector("#TOTAL2") // Cupom10
 
 var PORCENTAGEM = parseInt((valorTotal * DESCONTO1) / 100);
 var TOTAL = parseInt((valorTotal - PORCENTAGEM))
@@ -102,10 +99,9 @@ valor1.innerHTML = TOTAL
 
 var PORCENTAGEM2 = parseInt((valorTotal * DESCONTO2) / 100);
 var TOTAL2 = parseInt((valorTotal - PORCENTAGEM2))
-// valor2.innerHTML = TOTAL2
 
 // calcular cupom ======================================================
-console.log("onclick")
+
 document.querySelector("#calcularCupom").onclick = function () {
     if (totalDesconto.style.display == "none") {
 
@@ -114,7 +110,7 @@ document.querySelector("#calcularCupom").onclick = function () {
             totalDesconto.style.display = ""
         } else if (cupom.value == Cupom10) {
             alert("Você ganhou 10% de desconto.")
-            totalDesconto2.style.display = ""
+            totalDesconto.style.display = ""
         } else {
             alert("Código incorreto ou expirado.")
         }

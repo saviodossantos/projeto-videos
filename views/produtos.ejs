@@ -1,59 +1,84 @@
 <%- include ('header') %>
-<%- include ('nav') %>
+    <%- include ('nav') %>
 
         <section>
-            <table class="w-100" border="0">            
-                <tr>
-                    <td><iframe class="w-100" width="400" height="250" marginheight="40" marginwidth="100"src="" id=tra0 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
-                    <td><iframe class="w-100" width="400" height="250" marginheight="40" marginwidth="100" src="" id=tra1 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
-                    <td><iframe class="w-100" width="400" height="250" src="" id=tra2 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></td>
-                </tr>
-                </table>
+            <div class="row">
+
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-8">
+                    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner iframeSingle">
+                            <div class="carousel-item active">
+                                <iframe class="d-block w-100" width="800" height="448" marginheight="40"
+                                    marginwidth="100" src="" id="tra0" title="YouTube video player"
+                                    frameborder="0"></iframe>
+                            </div>
+                            <div class="carousel-item">
+                                <iframe class="d-block w-100" width="800" height="448" marginheight="40"
+                                    marginwidth="100" src="" id="tra1" title="YouTube video player" frameborder="0"></iframe>
+                            </div>
+                            <div class="carousel-item">
+                                <iframe class="d-block w-100" width="800" height="448" marginheight="40"
+                                    marginwidth="100" src="" id="tra2" title="YouTube video player" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <article>
-                <p class="col-sm-8"> Aqui você encontra o melhor dos nossos conteúdos em HD!</p>
-                <hr>
-                <div id="galeriaLivros" class="mt-4 mb-6">
+                <div id="galeriaLivros" class="mt-5 mb-6">
                     <div class="row">
                         <% galeria.forEach((item)=>{ %>
-                        <div class="col-sm-6">
-                            <h3> <%=item.titulo%></h3>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <a href="/single?id=<%=item.filmes_id%>">
-                                        <img src="imgs/<%=item.imagem%>" class="w-100 imagens"  />
-                                    </a>
-                                </div>
-                                <p class="col-sm-6 text-white"><%=item.sinopse.substring(0,200)+"..."%>
-                                </p>
+                            <div class="col-sm-6">
+                                <h3>
+                                    <%=item.titulo%>
+                                </h3>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="/single?id=<%=item.filmes_id%>">
+                                            <img src="imgs/<%=item.imagem%>" class="w-100 imagens" />
+                                        </a>
+                                    </div>
+                                    <p class="col-sm-6 text-white">
+                                        <%=item.sinopse.substring(0,200)+"..."%>
+                                    </p>
 
+                                </div>
                             </div>
-                        </div> <% }) %>
-                        </div>
+                            <% }) %>
+                    </div>
                 </div>
                 <div class="row">
-                        <div class="col-sm-4 mt-5">
-                            <a href="/single">
-                                <img src="../imgs/filme5.jpeg" class="imagens">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 mt-5">
-                            <a href="/single">
-                                <img src="../imgs/filme6.jpeg" class="imagens">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 mt-5">
-                            <a href="/single">
-                                <img src="../imgs/filme7.jpeg" class="imagens">
-                            </a>
-                        </div>
+                    <div class="col-sm-4 mt-5">
+                        <a href="/single?id=<%= galeria[4].filmes_id %>">
+                            <img src="../imgs/filme5.jpeg" class="imagens w-100">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 mt-5">
+                        <a href="/single?id=<%= galeria[12].filmes_id %>">
+                            <img src="../imgs/filme13.jpeg" class="imagens w-100">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 mt-5">
+                        <a href="/single?id=<%= galeria[6].filmes_id %>">
+                            <img src="../imgs/filme7.jpeg" class="imagens w-100">
+                        </a>
+                    </div>
 
-                    </div></div>
                 </div>
-                </article>
+                </div>
+                </div>
+            </article>
         </section>
 
-<!-- <script src="../js/geral.js"></script> -->
-<script src="../js/produtos.js"></script>
+        <!-- <script src="../js/geral.js"></script> -->
+        <script src="../js/produtos.js"></script>
 
-<%- include ('footer') %>
-
+        <%- include ('footer') %>
