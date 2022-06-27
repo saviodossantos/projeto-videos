@@ -293,6 +293,26 @@ app.get("/adm/cadastroProduto",async(req,res)=>{
 
    res.redirect(`/adm`)
  })
-   app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
+ app.get("/upd-form-produto",async(req,res)=>{
+   const produto=await db.selectSingle(req.app.locals.idProd)
+    res.render('adm/atualiza-produtos',{
+     filmes:consultaFilmes,
+     id:req.app.locals.idProd,
+     produtoDaVez:produto
+   })
+    })
+    app.post("/upd-form-produto",(req,res)=>{
+     req.app.locals.idProd=req.body.id
+     res.send('Produto exibido com sucesso')
+      })
+
+      app.post("/atualiza_single",async(req,res)=>{
+       const b=req.body
+     await db.updateProduto(b.titulo, b.genero, b.Ano, b.sinopse, b.imagem, b.promo, b.valor, b.trailer, b.id)
+       res.send('Produto atualizado com sucesso')
+        })
+   
+app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 
 })()
+
