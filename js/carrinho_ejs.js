@@ -46,39 +46,9 @@ let totalItens = document.querySelector("#totalItens")
 let totalItensResult = document.querySelector("#totalItensResult")
 var p = document.createElement("p")
 
-totalCarrinho.className = "pt-3 pb-3 pl-4 pr-4 justify-content-around d-flex "
 totalCarrinho.style.border = "1px solid white"
-//totalItensResult.innerHTML =  valorTotal
 
 totalCarrinho.appendChild(p)
-
-// limpar carrinho ======================================================
-let limparCarrinho = document.querySelector("#limparCarrinho")
-let carrinhoVazio = document.querySelector("#carrinhoVazio")
-carrinhoVazio.style.display = "none"
-totalCarrinho.style.display = ""
-
-limparCarrinho.onclick = function () {
-
-    if (carrinhoJSON.produto.length > 0 && carrinhoVazio.style.display == "none") {
-
-        for (var i = 0; i < carrinhoJSON.produto.length; i++) {
-            document.querySelector("#conteudoCarrinho").innerHTML = ""
-
-            carrinhoJSON.produto.shift()
-            valor.innerHTML = "0"
-            totalProdutos.innerHTML = "0"
-        }
-
-    }
-
-    limparCarrinho.style.display = "none"
-    carrinhoVazio.innerHTML = "O carrinho está vazio."
-    carrinhoVazio.style.display = ""
-    totalItens.style.display = "none"
-    totalItensResult.style.display = "none"
-
-}
 
 //cupom de desconto ======================================================
 var Cupom10 = '10MENOS'
