@@ -32,6 +32,18 @@ nav .btn{
     opacity: 1;
 }
 
+/* slider produtos */
+.carousel-indicators{
+    bottom: -1rem !important;
+}
+
+.carousel-indicators li{
+    height: 10px !important;
+    width: 10px !important;
+    border-radius: 50%;
+
+}
+
 /* bt add carrinho index */
 .bt-addCarrinho{
 background-color: transparent;
