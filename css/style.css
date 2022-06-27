@@ -165,3 +165,15 @@ div.fundo-escuro:hover .infos{
     opacity: 1;
     transition: .5s;
 }
+
+
+/* footer */
+
+.rodape{
+    background-color: #161616;
+    /* border-radius: 1rem; */
+}
+
+.rodape .icons{
+    font-size: 2rem;
+}
