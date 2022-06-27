@@ -40,14 +40,34 @@
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             
+                            
                             <button type="button" class="btn btn-info btn-lg mr-3" disabled>
-                                <i class="fas fa-share-alt"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-info btn-lg" disabled>
                                 <i class="fas fa-bookmark"></i>
                             </button>
                             
+                            <button type="button" class="btn btn-info btn-lg mr-3 share-btn" >
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            
+                            <div class="share-options">
+                                <p class="title">Compartilhe com amigos!</p>
+                                <div class="social-media">
+                                    <a href="https://api.whatsapp.com/send?phone=+5521976159700&text=Confira%20o%20filme%20<%= galeria[0].titulo %>%20na%20StreamOn%20www.ge.globo.com" target="_blank">
+                                        <button class="social-media-btn">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </button>
+                                    </a>
+
+                                    <a href="https://twitter.com/intent/tweet?text=Confira%20o%20filme%20<%= galeria[0].titulo %>%20na%20StreamOn%20www.ge.globo.com" target="_blank">
+                                        <button class="social-media-btn" style="background: #1DA1F2;"><i class="fab fa-twitter"></i>
+                                        </button>
+                                    </a>
+
+                                    <button class="social-media-btn" disabled><i class="fab fa-facebook-f"></i></button>
+                                    
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,18 +80,18 @@
             </div>
             <div class="col-sm-4">
                 <a href="produtos.html">
-                    <img src="../imgs/filme1.jpeg" class="imagens">
+                    <img src="../imgs/filme17.jpeg" class="imagens w-100">
                 </a>
             </div>
 
             <div class="col-sm-4">
                 <a href="produtos.html">
-                    <img src="../imgs/filme3.jpeg" class="imagens">
+                    <img src="../imgs/filme15.jpeg" class="imagens w-100">
                 </a>
             </div>
             <div class="col-sm-4">
                 <a href="produtos.html">
-                    <img src="../imgs/filme9.jpeg" class="imagens">
+                    <img src="../imgs/filme20.jpeg" class="imagens w-100">
                 </a>
             </div>
         </div>
@@ -81,6 +101,13 @@
 </section>
 
 <script>
+    const shareBtn = document.querySelector('.share-btn')
+    const shareOptions = document.querySelector('.share-options')
+
+    shareBtn.addEventListener('click', () => {
+        shareOptions.classList.toggle('active')
+    })
+
     $().ready(function () {
         $('.btn-addCarrinho').click(function () {
             let dataid = $(this).attr('data-id')
