@@ -1,13 +1,46 @@
-<%- include ('../header') %>
-<%- include ('../nav') %>
+<!Doctype html>
+<html>
 
-        <section class="row">
+<head>
+    <title>StreamOn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
 
-            <form action="./atualiza-promo" method="GET" class="mt-5 mb-5">
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="/adm/">
+                        <img src="/imgs/LogotipoStreamOn.png" width="150">
+                    </a>
+                </div>
+                <div class="col-sm-7 d-flex justify-content-center">
+
+                    <img class="mt-2" width="210" src="/imgs/Streaming.png">
+
+                </div>
+            </div>
+                <nav class="d-flex justify-content-between mb-5 mt-2">
+                    <a href="/adm/cadastroProduto" class="btn btn-dark">Produtos</a>
+                    <a href="/adm/cadastroAdm" class="btn btn-dark">Cadastro</a>
+                    <a href="/adm/relatorio-usuarios" class="btn btn-dark "> Relatorio Usuários</a>
+                    <a href="/adm/relatorio-produtos" class="btn btn-dark "> Relatorio produtos</a>
+                    <a href="/adm/relatorio-chamadas" class="btn btn-dark "> Relatorio chamadas</a>
+
+                </nav>
+        </header>
+
+        <section class="row d-flex justify-content-center align-items-center"style="border:1px solid #ccc;border-radius:7px;">
+
+            <form action="./atualiza-promo" method="GET" class="mt-5 mb-5 " >
 
 
                 <div class="form-group">
-                    <label for="filmes">filmes: </label>
+                    <label for="filmes">Filmes: </label>
                     <select name="id">
                         <% filmes.forEach((item)=>{ %>
                             <option value="<%=item.filmes_id%>">
@@ -18,14 +51,18 @@
                 </div>
                 <div class="form-group">
                     <label for="promo">Adicionar a lista de promoções?</label>
-                    <input type="radio" class="col-lg-1" value="1" id="promo_sim" name="promo"> Sim
-                    <input type="radio" class="col-lg-1" value="0" id="promo_nao" name="promo"> Não
-                </div>
+                    <div>
+                    <input type="radio" class="col-lg-2 " value="1" id="promo_sim" name="promo"> Sim
+                    <input type="radio" class="col-lg-2" value="0" id="promo_nao" name="promo"> Não
+                </div></div>
 
-                <button type="submit" class="btn btn-primary">Confirmar</button>
+                <button type="submit" class="btn btn-dark">Confirmar</button>
             </form>
 
 
         </section>
-
-        <%- include ('../footer') %>
+        <footer class="mt-5">
+            <p>&copy;2022 - Todos os direitos reservados</p>
+        </footer>
+    </body>
+    </html>
