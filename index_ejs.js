@@ -227,7 +227,7 @@ app.get("/adm/cadastroAdm",async(req,res)=>{
    senha:info.senha,
    confsenha:info.confsenha,
    adm:info.adm})
-   res.redirect(`/adm`)
+   res.redirect(`/adm/login-admin`)
  })
  app.get("/adm/login-admin",async(req,res) => {
    res.render(`adm/login-admin`)
