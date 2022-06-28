@@ -23,10 +23,10 @@
                             <p class="font-italic"><%= item.titulo %></p>
                         </td>
                         <td style="vertical-align:unset;">
-                            <input class="form-control" id="qtdTelasfilme<%= item.filmes_id %>" type="number" min="1" max="5" value="1">
+                            <input class="form-control qtdtelas" id="qtdTelasfilme<%= item.filmes_id %>" type="number" min="1" max="5" value="1">
                         </td>
                         <td style="vertical-align:unset;">
-                            R$ <%= item.valor %>
+                            R$ <%= item.valor.replace('.', ',') %>
                         </td>
                         <td style="vertical-align:unset;">
                             
@@ -37,10 +37,13 @@
                     <% }) %>
 
                 </table>
-                <div id="totalCarrinho">
-                    <p id="totalItens"><i class="fas fa-coins"></i> Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2) %> </span></p>
+                <div id="totalCarrinho" class="pt-3 pb-3 pl-3 pr-3 d-flex justify-content-between">
+                    <% if (carrinho.length > 0){ %>
+                    <p id="totalItens"><i class="fas fa-coins"></i> Total dos itens: R$ <span id="totalItensResult"><%= total.toFixed(2).replace('.', ',') %> </span></p>
                     <button type="button" class="btn btn-info btn-sm bt-limparCarrinho" id="limparCarrinho"><i class="fas fa-trash-alt"></i> Limpar carrinho</button>
-                    <p id="carrinhoVazio"></p>
+                    <% }else{ %>
+                    <p id="carrinhoVazio" class="d-flex align-items-center">O carrinho está vazio.</p>
+                    <% } %>
                 </div>
                 
             </div>
@@ -48,9 +51,8 @@
             <div class="col-sm-3">
                 <h5 class="text-center">Resumo do Pedido</h5>
                 <div class="resumoPedido p-3 mt-3">
-                    <!-- <p><span id="totalProdutos"></span> Produtos</p> -->
                     <p><i class="fas fa-film"></i> <%= carrinho.length %> Produtos</p>
-                    <p><i class="fas fa-coins"></i> Total R$ <span id="valorTotal"><%= total.toFixed(2) %></span> </p>
+                    <p><i class="fas fa-coins"></i> Total R$ <span id="valorTotal"><%= total.toFixed(2).replace('.',',') %></span> </p>
                     <div>
                         <label for="valor" class="mt-5">Tem cupom de desconto?</label>
                         <br>
@@ -63,11 +65,14 @@
                         </div>
                         <br>
                     </div>
-                    <p id="totalDesconto"> Total com o desconto R$ <span id="TOTAL"></span></p>
-                    <!-- <p id="totalDesconto2"> Total com o desconto R$ <span id="TOTAL2"></span></p> -->
-                    <button id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3"><i class="fas fa-calculator"></i> Calcular</button>
-                    <button class="btn btn-sm btn-primary mt-3"><i class="fas fa-wallet"></i> Continuar</button>
-                    <button class="btn btn-sm btn-secondary mt-3"><a class="text-white" href="/"><i class="fas fa-plus"></i> Adicionar mais produtos</a></button>
+                    <div class="container">
+                        <div class="row d-flex justify-content-between">
+                            <p class="col-sm-12" id="totalDesconto">Cupom aplicado!</p>
+                            <button id="calcularCupom" type="button" class="btn btn-sm btn-info mt-3 col-sm-2"><i class="fas fa-calculator"></i> </button>
+                            <button class="btn btn-sm btn-primary mt-3 col-sm-9"><i class="fas fa-wallet"></i> Continuar</button>
+                            <button class="btn btn-sm btn-secondary mt-3 col-sm-12"><a class="text-white" href="/"><i class="fas fa-plus"></i> Adicionar mais produtos</a></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
