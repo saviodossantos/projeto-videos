@@ -315,6 +315,12 @@ app.get("/adm/cadastroProduto",async(req,res)=>{
      await db.updateProduto(b.titulo, b.genero, b.Ano, b.sinopse, b.imagem, b.promo, b.valor, b.trailer, b.id)
        res.send('Produto atualizado com sucesso')
         })
+        app.post("/delete-produto", async(req,res) => {
+         const info = req.body
+         await db.deleteProduto(info.filmes_id)
+   
+         res.send(info)
+      })
    
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 

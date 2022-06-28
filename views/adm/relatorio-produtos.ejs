@@ -67,6 +67,9 @@
                        </td>
                        <td style="vertical-align:unset;">
                        <button data-id="<%=item.filmes_id%>" class="btn btn-info bt-edit">Editar</button>
+                       </td>
+                       <td style="vertical-align:unset;">
+                        <button data-id="<%=item.filmes_id%>" class="btn btn-info btn-excluir">Excluir</button>
                        <% }) %>
                    </td>
                     </table>
@@ -88,6 +91,20 @@
                         location.href='/upd-form-produto'
                         })
                     })
+                    $('.btn-excluir').click(function () {
+        let dataid = $(this).attr('data-id')
+
+        $.post("/delete-produto", {
+            filmes_id: dataid
+        },
+            function (data, status) {
+                alert("Deseja remover esse produto?")
+                location.href = '/adm/relatorio-produtos'
+            }, 'json')
+    
+    
+})
+
                 })
                 </script>
                         <footer class="mt-5">
