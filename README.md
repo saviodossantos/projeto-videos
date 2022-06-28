@@ -67,3 +67,7 @@ No terminal, instalar via npm:
 - Paloma
 - Sávio
 - Silvio
+
+
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/10135385/176288098-a5f17f60-4780-45bd-9cb5-502383b561e5.gif)
