@@ -3,7 +3,7 @@
 Projeto do Grupo 1 (Squad One) do programa Impulso Tec 2022.
 
 <p align="justify">
-  <img src="./imgs/LogotipoStreamOn.png" width="150">
+  <img src="./imgs/SQUADONE.png" width="150">
 </p>
 
 # Tecnologias utilizadas
