@@ -188,7 +188,7 @@
    app.get("/atualiza-promo", async (req, res) => {
       let qs = url.parse(req.url, true).query
       await db.updatePromo(qs.promo, qs.id)//localhost:3000/atualiza-promo?promo=1&id=1
-      res.send("<h2>Lista de promoções atualizada!</h2><a href='./promocoes'>Voltar</a>")
+      res.render(`adm/promo-atualizada`)
    })
 
    app.get("/upd-promo", (req, res) => {
