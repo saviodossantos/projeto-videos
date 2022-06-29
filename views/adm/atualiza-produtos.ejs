@@ -62,7 +62,7 @@
                                 <input class="form-control" name="trailer" id="" value="<%=produtoDaVez[0].trailer%>">
                             </li>
                             <div>
-                                <img src="imgs/<%=produtoDaVez[0].imagem%>" class="w-50">
+                                <img src="/imgs/<%=produtoDaVez[0].imagem%>" class="w-50">
                             </div>
                             <li>
                                 <button type="button"class="btn btn-info mt-5 bt-prod">Confirmar</button>
@@ -87,10 +87,13 @@
          genero:$('#form-produto input[name=genero]').val(),
          Ano:$('#form-produto input[name=Ano]').val(),
          sinopse:$('#form-produto textarea[name=sinopse]').val(),
-         imagem:$('#form-produto input [name=imagem]').val(),
-         promo:$('#form-produto input [name=promo]').val(),
-         valor:$('#form-produto input [name=valor').val(),
-         trailer:$('#form-produto input [name=trailer]').val()
+         imagem:$('#form-produto input[name=imagem]').val(),
+         promo:$('#form-produto input[name=promo]').val(),
+         valor:$('#form-produto input[name=valor]').val(),
+         trailer:$('#form-produto input[name=trailer]').val()
+         
+
+        
             },function(data,status){
              alert(data)
             })
@@ -98,7 +101,7 @@
         
     
         $('.bt-voltar').click(function(){
-            location.href='/adm'
+            location.href='/adm/relatorio-produtos'
         })
     })
         </script>
