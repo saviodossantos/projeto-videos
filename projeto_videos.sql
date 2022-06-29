@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `projeto_videos` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `projeto_videos`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: projeto_videos
+-- Host: localhost    Database: projeto_videos
 -- ------------------------------------------------------
 -- Server version	8.0.29-0ubuntu0.20.04.3
 
@@ -59,7 +57,7 @@ CREATE TABLE `carrinho` (
   `qtdTelas` int DEFAULT NULL,
   `usuarios` varchar(100) NOT NULL,
   PRIMARY KEY (`carrinho_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +66,7 @@ CREATE TABLE `carrinho` (
 
 LOCK TABLES `carrinho` WRITE;
 /*!40000 ALTER TABLE `carrinho` DISABLE KEYS */;
+INSERT INTO `carrinho` VALUES (6,'1','3',NULL,'1'),(7,'1','2',NULL,'1'),(8,'1','1',NULL,'1'),(9,'1','5',NULL,'1'),(10,'1','5',NULL,'1');
 /*!40000 ALTER TABLE `carrinho` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +111,7 @@ CREATE TABLE `contato` (
   `email` longtext NOT NULL,
   `mensagem` longtext,
   PRIMARY KEY (`contato_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +120,7 @@ CREATE TABLE `contato` (
 
 LOCK TABLES `contato` WRITE;
 /*!40000 ALTER TABLE `contato` DISABLE KEYS */;
-INSERT INTO `contato` VALUES (1,'Silvio','conta bloqueada','silvio@gmail.com','999997070'),(2,'Luiz','troca de senha','luiz@gmail.com','985857070'),(3,'Grazi','meu pc esta com virus','grazi@gmail.com','989897070'),(4,'Mônica','de Souza de Lira Sales','serenalira@hotmail.com','hjtf'),(5,'Thiago Marinho','conceição','tradermarinho@hotmail.com','dfgs'),(6,'Thiago Marinho','conceição','tradermarinho@hotmail.com',''),(7,'João','Souza','joao@gmail.com','travando a tela'),(8,'Grazi','MedSan','grazi@gmail.com','Olá, meu nome é...');
+INSERT INTO `contato` VALUES (1,'Silvio','conta bloqueada','silvio@gmail.com','999997070'),(2,'Luiz','troca de senha','luiz@gmail.com','985857070'),(3,'Grazi','meu pc esta com virus','grazi@gmail.com','989897070'),(4,'Mônica','de Souza de Lira Sales','serenalira@hotmail.com','hjtf'),(5,'Thiago Marinho','conceição','tradermarinho@hotmail.com','dfgs'),(6,'Thiago Marinho','conceição','tradermarinho@hotmail.com',''),(7,'João','Souza','joao@gmail.com','travando a tela');
 /*!40000 ALTER TABLE `contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,9 +271,8 @@ CREATE TABLE `usuarios` (
   `telefone` varchar(12) DEFAULT NULL,
   `senha` varchar(45) DEFAULT NULL,
   `conf_senha` varchar(45) DEFAULT NULL,
-  `adm` int DEFAULT '0',
   PRIMARY KEY (`usuarios_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -283,7 +281,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Silvio','silvio@gmail.com','999997070','Silvio99','',NULL),(2,'Luiz','luiz@gmail.com','985997070','2089455aa7ca15e173a3117107cb5835','',NULL),(3,'Grazi','grazi@gmail.com','98392222','grazi123','',NULL),(4,'xxxxx','albert@gmail.com','0','123','123',NULL),(5,NULL,NULL,NULL,NULL,'123',NULL),(6,NULL,NULL,NULL,NULL,'123',NULL),(7,NULL,NULL,NULL,NULL,'678',NULL),(8,NULL,NULL,NULL,NULL,'456',NULL),(9,NULL,NULL,NULL,NULL,'ghj',NULL),(10,NULL,NULL,NULL,NULL,'456',NULL),(11,'MARIA CRISTINA GONCALVES DE SOUZA','monycalyra@gmail.com','2123940679','thi','thi',NULL),(12,'Mônica de Souza de Lira Sales','serenalira@hotmail.com','2131571271','122','123',NULL),(13,'João','joao@gmail.com','2199815672','123','123',NULL),(14,'Pedro','pedro@gmail.com','2199815672','123',NULL,NULL),(15,'Fernado','fernando@gmail.com','2199815672','123','123',NULL),(16,'fabio','fabio@gmail.com','2199815672','123','123',NULL),(17,'ligia','email@email.com','111111111111','123','123',NULL),(18,'teste','teste@email.com','123456789000','123','123',NULL),(19,'Grazi','grazi@gmail.com','000000000000','123','123',0);
+INSERT INTO `usuarios` VALUES (1,'Silvio','silvio@gmail.com','999997070','Silvio99',''),(2,'Luiz','luiz@gmail.com','985997070','2089455aa7ca15e173a3117107cb5835',''),(3,'Grazi','grazi@gmail.com','98392222','grazi123',''),(4,'xxxxx','albert@gmail.com','0','123','123'),(5,NULL,NULL,NULL,NULL,'123'),(6,NULL,NULL,NULL,NULL,'123'),(7,NULL,NULL,NULL,NULL,'678'),(8,NULL,NULL,NULL,NULL,'456'),(9,NULL,NULL,NULL,NULL,'ghj'),(10,NULL,NULL,NULL,NULL,'456'),(11,'MARIA CRISTINA GONCALVES DE SOUZA','monycalyra@gmail.com','2123940679','thi','thi'),(12,'Mônica de Souza de Lira Sales','serenalira@hotmail.com','2131571271','122','123'),(13,'João','joao@gmail.com','2199815672','123','123'),(14,'Pedro','pedro@gmail.com','2199815672','123',NULL),(15,'Fernado','fernando@gmail.com','2199815672','123','123'),(16,'fabio','fabio@gmail.com','2199815672','123','123'),(17,'ligia','email@email.com','111111111111','123','123'),(18,'teste','teste@email.com','123456789000','123','123');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,4 +323,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-27 22:07:14
+-- Dump completed on 2022-06-23 14:39:17
