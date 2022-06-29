@@ -2,7 +2,7 @@ console.log('teste')
 var trailerArr0 = [
    'https://www.youtube.com/embed/sNKVwV_IAYA',
    'https://www.youtube.com/embed/yJnzCBt5j1M',
-   'https://www.youtube.com/embed/ZUqU9SQOt10',
+   'https://www.youtube.com/embed/NKYYcobaj9w',
    'https://www.youtube.com/embed/J24AlOYHpVU',
    'https://www.youtube.com/embed/AD5cvVk-4Ps',
    'https://www.youtube.com/embed/Vbop2W9hjJM',
