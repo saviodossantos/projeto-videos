@@ -12,7 +12,7 @@ var videos = [
 ]
 
 var galeriaVideos = document.querySelector("#galeriaVideos") //var galeria acessa div com id galeria
-let videosRecentes = document.querySelector("#videosRecentes")
+
 
 
 for (var i = 0; i < videos.length; i++) { //lógica de iteração para consumo do array
