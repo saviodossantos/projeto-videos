@@ -96,12 +96,6 @@
       })
    })
 
-   app.get("/produtos", (req, res) => {
-      res.render(`produtos`, {
-         galeria: consultaFilmes
-      })
-   })
-
    app.get("/contato", async (req, res) => {
       let infoUrl = req.url
       let urlProp = url.parse(infoUrl, true)
@@ -257,8 +251,9 @@ res.redirect(`/adm`)
 })
 })
 app.get("/adm/relatorio-produtos",async(req,res) => {
+   const consulta = await db.selectFilmes()
    res.render(`adm/relatorio-produtos`,{
-      filmes:consultaProdutos
+      filmes:consulta
 })
 })
 app.get("/adm/relatorio-usuarios",async(req,res) => {
