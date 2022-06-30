@@ -19,8 +19,10 @@
                         <img src="/imgs/SQUADONE.png" width="150">
                     </a>
                 </div>
-                <div class="col-sm-6">
-                    <h1 class="mt-5"><i>Número 1 em streaming!</i></h1>
+                <div class="col-sm-7 d-flex justify-content-center">
+                    <img src="/imgs/Streaming.png" class="mt-2"width="210">
+                    </div>
+                    <section class="container">
                     <table class="table text-white" id="listaCarrinho">
                         <tr>
                             <th>Titulo</th>
@@ -74,7 +76,8 @@
                    </td>
                     </table>
                 </div>
-            </header>
+            </header> 
+        </section>
             <script>
                 $().ready(function(){
                 
@@ -98,7 +101,7 @@
             filmes_id: dataid
         },
             function (data, status) {
-                alert("Deseja remover esse produto?")
+                alert("produto exluído com sucesso !")
                 location.href = '/adm/relatorio-produtos'
             }, 'json')
     
