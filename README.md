@@ -38,12 +38,12 @@ No terminal, instalar via npm:
 
 # Executar o projeto
 
-- Clone o repositório
-- git clone https://github.com/saviodossantos/projeto-videos.git
+## Clone o repositório via terminal com o comando:
+    git clone https://github.com/saviodossantos/projeto-videos.git
 
-- Entre no diretório
-- views/index.ejs
+- As modificações em servidor são feitas na pasta views.
 
+## Caso não tenha as dependências instaladas:
 - Instalar dependencia
 - npm install
 
@@ -59,10 +59,10 @@ No terminal, instalar via npm:
 
 - Carolina
 - Grazielle
+- Karol
 - Lucimara
 - Luiz
 - Luna
-- Mona
 - Monica
 - Paloma
 - Sávio
