@@ -37,7 +37,7 @@
 
    function checkFirst(req, res, next) {
       if (!req.session.userInfo) {
-         res.redirect('/promocoes');
+         res.redirect('adm/login-admin');
       } else {
          next();
       }
@@ -119,7 +119,7 @@
          email: info.cad_email,
          mensagem: info.cad_mensagem
       })
-      res.redirect("/promocoes")
+      res.redirect("/")
    })
 
    app.get("/cadastro", async (req, res) => {
@@ -203,7 +203,7 @@
          galeria:consultaProduto
      })
  })
- app.get("/adm", async (req, res) => {
+ app.get("/adm",checkFirst, async (req, res) => {
    res.render(`adm/index-admin`, {
       titulo: "login do Adm",      
       filmes: consulta,
@@ -305,7 +305,8 @@ app.get("/adm/cadastroProduto",async(req,res)=>{
      produtoDaVez:produto
    })
     })
-    app.post("/upd-form-produto",(req,res)=>{
+    app.post("/upd-form-produto",async(req,res)=>{
+      const produto=await db.selectSingle(req.app.locals.idProd)
      req.app.locals.idProd=req.body.id
      res.send('Produto exibido com sucesso')
       })
