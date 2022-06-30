@@ -245,7 +245,8 @@ res.clearCookie('connect.sid', { path:'/' })
 res.redirect(`/adm`)
 
 })
- app.get("/adm/relatorio-chamadas",async(req,res) => {
+app.get("/adm/relatorio-chamadas",async(req,res) => {
+   consultaContato = await db.selectContato()
    res.render(`adm/relatorio-chamadas`,{
       contato: consultaContato
 })
